@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 _site/*
 _theme_packages/*
 
@@ -9,3 +10,10 @@ Thumbs.db
 .rbenv-version
 .rvmrc
 /vendor
+=======
+_site
+.DS_Store
+*.swp
+.sass-cache
+
+>>>>>>> 800481251429c7cfd347e3163f90f35eca4a1b96
