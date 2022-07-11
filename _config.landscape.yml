@@ -1,1 +1,9 @@
+# Favicon
 favicon: /images/favicon.ico
+
+# Local search
+# Dependencies: https://github.com/flashlab/hexo-generator-search
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: -1
