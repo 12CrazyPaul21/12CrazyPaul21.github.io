@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 _site/*
 _theme_packages/*
 
@@ -16,4 +15,4 @@ _site
 *.swp
 .sass-cache
 
->>>>>>> 800481251429c7cfd347e3163f90f35eca4a1b96
+public
