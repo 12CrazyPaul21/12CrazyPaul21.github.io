@@ -9,7 +9,7 @@ category:
  - [Git, 版本控制]
 ---
 ## commit message规范
-&emsp;参考angular的commit格式
+参考angular的commit格式
 ### 格式
 ```
 <type>(<scope>): <subject>
@@ -25,7 +25,7 @@ category:
 <脚注>
 ```
 ### type
-&emsp;描述提交的类型
+描述提交的类型
 ```
 feat:     增加新功能(feature)
 fix:      修复bug
@@ -42,26 +42,26 @@ ci:       与CI（持续集成服务）有关的改动
 chore:    不修改src或者test的其余修改，例如构建过程或辅助工具的变动
 ```
 ### scope
-&emsp;描述提交影响的作用域，可使用项目名或者模块名等
+描述提交影响的作用域，可使用项目名或者模块名等
 ### subject
-&emsp;提交消息的标题
+提交消息的标题
 ### body
-&emsp;正文体
+正文体
 ### footer
-&emsp;脚注，包含Breaking Changes和Affect issues。
+脚注，包含Breaking Changes和Affect issues。
 #### Breaking Changes
-&emsp;breaking change即可能会产生破坏性的重要改变，比如接口改变、与上个版本不兼容等，需要在Footer以BREAKING CHANGE:开头，后面加上对变动的描述、以及变动理由和迁移方法等信息。
-&emsp;例子：
+breaking change即可能会产生破坏性的重要改变，比如接口改变、与上个版本不兼容等，需要在Footer以BREAKING CHANGE:开头，后面加上对变动的描述、以及变动理由和迁移方法等信息。
+例子：
 ```
 BREAKING CHANGE: refactor to use JavaScript features not available in Node 6.
 ```
 #### Affect issues
-&emsp;针对某些issue进行描述，这里的使用与托管的平台有关。比如：[github关于issue的规范](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue)。
-&emsp;模式：
+针对某些issue进行描述，这里的使用与托管的平台有关。比如：[github关于issue的规范](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue)。
+模式：
 ```
 KEYWORD #ISSUE-NUMBER
 ```
-&emsp;例子：
+例子：
 ```
 修复issue
 Fix #200
@@ -74,7 +74,7 @@ resolve #400
 re #500
 ```
 ### 关于撤销操作(revert)
-&emsp;描述撤销操作提交时使用以下格式(其中的hash是被撤销的commit的hash)：
+描述撤销操作提交时使用以下格式(其中的hash是被撤销的commit的hash)：
 ```
 revert: <subject>
 This reverts commit <hash>
