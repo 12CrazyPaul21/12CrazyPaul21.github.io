@@ -12,12 +12,12 @@ category:
 ### 使用二分法(bisect)定位引入的bug
 
 #### 情景模拟准备
-&emsp;仓库中有一个record.txt文本文件,如果有一行的文本为"有bug"表示存在bug。已知其中一个正常提交的commit id是902c829f42b14d547330519993674e7f909a73a4，引入bug提交的commit id是98068739138d5785f2186d37efdfadfe9b5ebf1d。
+仓库中有一个record.txt文本文件,如果有一行的文本为"有bug"表示存在bug。已知其中一个正常提交的commit id是902c829f42b14d547330519993674e7f909a73a4，引入bug提交的commit id是98068739138d5785f2186d37efdfadfe9b5ebf1d。
 
 #### 名词定义
-&emsp; bad：存在bug的提交
+ bad：存在bug的提交
 
-&emsp; good：无bug的提交
+ good：无bug的提交
 
 #### 做法1
  1. 开始进入二分法定位bug时需要指定一个已知存在bug(bad)与无bug(good)的提交
