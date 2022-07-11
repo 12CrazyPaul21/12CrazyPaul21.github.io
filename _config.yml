@@ -97,7 +97,12 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
+theme_config:
+  favicon:
+    small: /images/favicon-16x16.ico
+    medium: /images/favicon-32x32.ico
+    apple_touch_icon: /images/apple-touch-icon.png
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
