@@ -6,7 +6,7 @@ tags:
  - 最佳实践
  - Commit Message
 category:
- - [Git, 版本控制]
+ - [版本控制, Git, Commit]
 ---
 ## commit message规范
 参考angular的commit格式
