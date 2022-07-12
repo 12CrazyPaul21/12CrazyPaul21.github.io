@@ -272,7 +272,7 @@ reward_settings:
   comment: 请我喝瓶肥仔快乐水?
 
 reward:
-  wechatpay: /images/wechatpay.jpg
+  wechatpay: /images/wechatpay.png
   # alipay: /images/alipay.png
   # paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
