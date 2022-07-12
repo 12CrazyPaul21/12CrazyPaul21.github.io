@@ -102,6 +102,17 @@
   </div>
 {%- endif %}
 
+{%- if theme.sidebar_rss %}
+  <div class="motion-element">
+    <a target="_blank" class="social-link" href="{{ url_for(theme.sidebar_rss.link) }}" style="color: {{ theme.sidebar_rss.color }};">
+      <span class="icon">
+        <i class="{{ theme.sidebar_rss.icon }}"></i>
+      </span>
+      <span class="label">{{ theme.sidebar_rss.text }}</span>
+    </a>
+  </div>
+{%- endif %}
+
 {# Blogroll #}
 {%- if theme.links %}
   <div class="links-of-blogroll motion-element">

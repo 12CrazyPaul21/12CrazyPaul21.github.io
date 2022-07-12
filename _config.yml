@@ -108,3 +108,5 @@ theme_config:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+since: 2022
