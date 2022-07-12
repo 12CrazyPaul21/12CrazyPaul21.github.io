@@ -1,11 +1,10 @@
 ---
 title: hexo启用categories和tags页面
 tags:
-  - hexo
-  - next
+  - Hexo
+  - NexT
 categories:
-  - - hexo
-    - page
+  - [Hexo, Page]
 date: 2022-07-12 10:22:02
 ---
 
