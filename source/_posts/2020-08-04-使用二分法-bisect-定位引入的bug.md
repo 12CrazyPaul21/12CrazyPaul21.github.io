@@ -7,7 +7,7 @@ tags:
  - 版本控制
  - Bug定位
 category:
- - [Git, 版本控制, Bug定位]
+ - [版本控制, Git, Bug定位]
 ---
 ### 使用二分法(bisect)定位引入的bug
 
