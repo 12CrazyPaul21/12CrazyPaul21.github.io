@@ -45,12 +45,12 @@ Force overwriting the backup with -f
 git filter-branch -f --env-filter '
 	if test "$GIT_AUTHOR_EMAIL" = "<替换为原email>"
 	then
-        GIT_AUTHOR_NAME=<替换为新username>
+		GIT_AUTHOR_NAME=<替换为新username>
 		GIT_AUTHOR_EMAIL=<替换为新email>
 	fi
 	if test "$GIT_COMMITTER_EMAIL" = "<替换为原email>"
 	then
-        GIT_COMMITTER_NAME=<替换为新username>
+		GIT_COMMITTER_NAME=<替换为新username>
 		GIT_COMMITTER_EMAIL=<替换为新email>
 	fi
 ' -- --all
