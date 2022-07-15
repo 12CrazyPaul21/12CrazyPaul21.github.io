@@ -4,6 +4,7 @@ tags:
   - Docker
   - Image
   - Push
+  - Snippet
 categories:
   - - Docker
     - Image
