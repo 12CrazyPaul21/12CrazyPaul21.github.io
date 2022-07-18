@@ -29,13 +29,13 @@ date: 2022-07-17 22:22:40
 
 ## likely和unlikely的用途
 
-对于条件选择语句，gcc内建了一条指令（**__builtin_expect**）用于优化，在一个条件经常出现，或者该条件很少出现的时候，编译器可根据这条指令对**条件分支选择**进行**优化**。
+对于条件选择语句，gcc内建了一条指令（`__builtin_expect`）用于优化，在一个条件经常出现，或者该条件很少出现的时候，编译器可根据这条指令对**条件分支选择**进行**优化**。
 
 在Linux内核中把这条指令封装成了likely和unlikely宏，广泛用于**条件分支选择**语句上。
 
 ## gcc生效条件
 
-如果想要**__builtin_expect**这条指令起作用的话，最起码要O2的优化级别
+如果想要`__builtin_expect`这条指令起作用的话，最起码要O2的优化级别
 
 ```bash
 gcc -O2 ...
@@ -68,14 +68,14 @@ if (unlikely(a)) {
 
 ## 实现原理
 
-likely和unlikely在linux内核源码上其实就是宏，它们封装了__builtin_expect指令
+likely和unlikely在linux内核源码上其实就是宏，它们封装了`__builtin_expect`指令
 
 ```c++
 #define likely(x) __builtin_expect(!!(x), 1)
 #define unlikely(x) __builtin_expect(!!(x), 0)
 ```
 
-__builtin_expect是gcc内建的一个“函数”，它的原型如下：
+`__builtin_expect`是gcc内建的一个“函数”，它的原型如下：
 
 ```c++
 long __builtin_expect (long exp, long c)
@@ -85,7 +85,7 @@ long __builtin_expect (long exp, long c)
 
 ### 分析汇编实现
 
-想知道**__builtin_expect**指令是怎么实现的，最直观的方法就是看生成出来的汇编指令是怎样的，以下面这几部分代码生成汇编指令分析，使用的gcc版本为12.1.0（不同版本可能得到的指令不同）。
+想知道`__builtin_expect`指令是怎么实现的，最直观的方法就是看生成出来的汇编指令是怎样的，以下面这几部分代码生成汇编指令分析，使用的gcc版本为12.1.0（不同版本可能得到的指令不同）。
 
 ### 无优化的普通条件分支
 
@@ -371,7 +371,7 @@ int f(int i)
 }
 ```
 
-**`i == 2` 被认为比 `i` 的任何其他值更可能，但 `[[likely]]` 在 `i == 1` 的情况无效果，尽管它直落到 case 2: 标号。**
+`i == 2` 被认为比 `i` 的任何其他值更可能，但 `[[likely]]` 在 `i == 1` 的情况无效果，尽管它直落到 case 2: 标号。
 
 ### **例子**
 
