@@ -19,7 +19,5 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: {{matrix.node-version}}
-      - npm install
-        env:
-          CI: true
-      run: hexo generate
+      - run: npm install
+      - run: hexo generate
