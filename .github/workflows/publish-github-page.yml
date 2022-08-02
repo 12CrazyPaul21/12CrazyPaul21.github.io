@@ -1,0 +1,16 @@
+name: Publish Github Page
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-lastest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      run: hexo generate
