@@ -26,6 +26,12 @@ OKR的好处
 
 能从OKR中吸取什么样的实践方法
 
+O
+
+KR
+
+OKR与敏捷结合
+
 ## 没有标签的敏捷（Agile Without The Label）
 
 在展开工作后，我们不需要声称或者强调自己是敏捷的并且尽可能的避免使用敏捷用语。
@@ -202,19 +208,29 @@ Scrum**综合迭代和增量这两种开发方式的优点**，消除了单独�
 
 由谁担任
 
+
+
+John
+
 ### ScrumMaster
-
-
 
 职责
 
 由谁担任
+
+
+
+Phan
 
 ### 开发团队
 
 职责
 
 由谁担任
+
+
+
+John和Phan
 
 ## Link-Cooperation敏捷流程
 
@@ -237,6 +253,15 @@ Scrum**综合迭代和增量这两种开发方式的优点**，消除了单独�
 与Scrum过程一样，产品负责人和项目流程监管不同时兼任，但是它们都可以兼任开发人员。在这个项目上，John担任产品负责人和开发人员，Phan担任项目流程监管和开发人员。
 
 ### 项目拆分
+
+Link-Cooperation拆分成四个子项目：
+
+- Link-Cooperation Server：服务端
+- Link-Cooperation Web Manager Server：Link-Cooperation服务器集群的管理界面，放在master上，用于管理服务（启动、停止、重启）、监控服务器的资源（CPU、内存、网络、磁盘空间）、管理集群
+- 小程序端
+- 跨平台桌面端（Windows、MacOS、Linux【主要考虑Ubuntu、Kali、CentOS的X环境】）
+
+其中Link-Cooperation Web Manager Server可以保留到后续的版本再提上来
 
 ### 规划
 
@@ -315,6 +340,14 @@ Window create_main_view()
 #### 燃尽图
 
 #### 燃烧图
+
+#### 文档沟通工具
+
+Product Backlog
+
+Sprint Backlog（或Sprint Todo）
+
+User Story
 
 ### 平台
 
