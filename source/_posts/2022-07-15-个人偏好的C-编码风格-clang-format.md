@@ -13,7 +13,6 @@ categories:
 date: 2022-07-15 16:02:49
 ---
 
-
 ```yaml
 Language: Cpp
 Standard: Cpp11
@@ -101,4 +100,6 @@ SpacesInContainerLiterals: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
 ```
+
+更多风格定制可以参看：[Clang-Format Style Options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)
 
