@@ -107,6 +107,8 @@ theme_config:
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://PAGE_PUBLISH_TOKEN@github.com/12CrazyPaul21/12CrazyPaul21.github.io.git
+  branch: gh_pages
 
 since: 2022
