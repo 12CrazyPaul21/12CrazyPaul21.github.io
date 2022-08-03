@@ -110,6 +110,6 @@ deploy:
   type: git
   repo: https://github.com/12CrazyPaul21/12CrazyPaul21.github.io.git
   branch: gh-pages
-  token: PAGE_PUBLISH_TOKEN
+  token: $PAGE_PUBLISH_TOKEN
 
 since: 2022
