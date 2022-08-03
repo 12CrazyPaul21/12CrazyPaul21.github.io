@@ -17,7 +17,8 @@ jobs:
         with:
           node-version: '12.x'
       - name: Config Environment
-        env: PAGE_PUBLISH_TOKEN: ${{ secrets.PAGE_PUBLISH_TOKEN }}
+        env:
+          PAGE_PUBLISH_TOKEN: ${{ secrets.PAGE_PUBLISH_TOKEN }}
         run: echo $PAGE_PUBLISH_TOKEN
       - run: npm install hexo-cli -g
       - run: npm install
