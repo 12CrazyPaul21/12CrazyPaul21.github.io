@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  deployment:
     runs-on: ubuntu-20.04
     steps:
       - name: Git checkout
@@ -26,6 +26,7 @@ jobs:
         run: |
           git config --global user.name $PUBLISH_NAME
           git config --global user.email $PUBLISH_MAIL
+          sed -i "s/PAGE_PUBLISH_TOKEN/$PAGE_PUBLISH_TOKEN/g" ./_config.yml
 
       - name: Install dependencies
         run: |
