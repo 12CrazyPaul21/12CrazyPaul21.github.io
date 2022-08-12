@@ -104,6 +104,12 @@ theme_config:
     medium: /images/favicon-32x32.ico
     apple_touch_icon: /images/apple-touch-icon.png
 
+plugins:
+  - hexo-footnote
+
+footnote:
+  location_target_class: location-target
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
