@@ -2209,9 +2209,11 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 在确定需要建立哪些以及建立多少个产品列表时，有一个简单的原则：**一个产品，一个产品列表**，即每个产品都应当有自己单独的一个产品列表，提供对整个产品的描述并对需要完成的工作**排列优先顺序**。
 
-## Scrum敏捷工件
+## 敏捷工件
 
-PBI
+- PBI[^PBI]：产品待办列表条目
+- Product Backlog：产品级待办列表
+- Sprint Todo（Sprint Backlog）：冲刺级待办列表（在Scrum中称为Sprint Backlog，在Kanban中称为Todo，我们综合一下，称为Sprint Todo）
 
 ## DevOps
 
@@ -2454,6 +2456,54 @@ Link-Cooperation拆分成四个子项目：
 
 ### 工件
 
+- Product Backlog：产品级待办列表
+- Sprint Todo：冲刺级待办列表，在Scrum中通常称为Sprint Backlog，在Kanban中则称为Todo，我们综合一下，称为Sprint Todo
+- Product Backlog Item（PBI[^PBI]）：产品待办列表条目
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 规划
 
 在提出项目之后，最好尽快进入，准备并开始阶段，不然对项目的热情可能很快被消耗没了
@@ -2562,6 +2612,8 @@ void shutdown()
 }
 ```
 
+### DevOps
+
 ### 版本控制
 
 我们使用git来做版本控制，托管平台可能使用Github或者Gitee，但需要讨论过后才做决定。
@@ -2589,6 +2641,12 @@ rebase、merge、squash
 个人todo
 
 ​	微软的todo
+
+### 缺陷跟踪
+
+crashdump...
+
+log...
 
 ### 工具
 
