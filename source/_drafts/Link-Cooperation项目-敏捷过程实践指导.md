@@ -276,7 +276,7 @@ void Graphics::paint(Widget& widget)
 - 后续可能会不断引入新的Widget，paint函数的代码将会越来越长，充斥着大量类似的代码，**导致阅读困难和维护麻烦**
 - 每加入一个新的Widget，就需要修改paint函数，这违反了**开闭原则（OCP）**
 
-应对这样的问题，有很多总优化方法，这里讨论使用策略模式进行优化，一种简单的手段是使用map预先给widget的类型与对应的paint调用进行映射，然后在paint根据映射取得widget对应的paint操作，然后调用，以下是一个伪代码例子：
+应对这样的问题，有很多种优化方法（比如：责任树模式），这里讨论使用策略模式进行优化，一种简单的手段是使用map预先给widget的类型与对应的paint调用进行映射，然后在paint根据映射取得widget对应的paint操作，然后调用，以下是一个伪代码例子：
 
 ```c++
 void Graphics::init()
