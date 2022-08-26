@@ -1,5 +1,5 @@
 ---
-title: Hexo中Markdown使用非number类型的footnote
+title: hexo中Markdown使用非number类型的footnote
 tags:
   - Hexo
   - Markdown
