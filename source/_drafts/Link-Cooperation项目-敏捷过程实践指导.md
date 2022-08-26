@@ -202,180 +202,6 @@ SWOT分析模型分为两部分：
 - SW（优势与劣势分析）：主要用来分析内部条件
 - OT（机会与威胁分析）：主要用来分析外部条件
 
-## DevOps
-
-DevOps（Development和Operations的组合词），即**开发与运维一体化**，它跟敏捷过程同样都是一种**软件开发实践的方法论**，并且**DevOps通常是结合敏捷一起使用的**。DevOps由一套**文化理念**、**实践方法**和**工具链**支撑起来，用于促进开发（应用程序/软件工程）、技术运营和质量保障（QA）部门之间的**沟通**、协作与**整合**。DevOps非常注重**自动化**，通过自动化流程（“软件交付”和“架构变更”等多方面），来使构建、测试、发布软件能够更加地快捷、频繁和可靠。
-
-> Notes：DevOps现在几乎已经成为了软件工程的代名词。
-
-DevOps也可以看作**是敏捷开发的一种演化**，**弥补敏捷过程在部署方面的不足**，尽管开发人员使用敏捷降低了风险并提高了效率，但**部署仍停留在线性瀑布式结构**上。
-
-相对以前传统开发模型和敏捷开发，把开发、IT 运营、质量工程和安全这些角色孤立起来。为了应对这种开发与部署之间的脱节，需要同时做到“**敏捷开发**”和“**敏捷部署**”，DevOps把“开发人员（Dev）”、“运维人员（Ops）”结合起来，重视他们之间的协调和合作，同时将人员、流程和方法连接在一起提供持续价值，从而更快、更可靠地交付软件。
-
-为了让“开发人员”与“运维人员”更好的结合，通常需要组建**跨职能团队**，团队采用拥有**T型技能**的人员，他们既要懂开发，也要懂运维。
-
-运维人员会在项目开发期间就介入到开发过程中，了解开发人员使用的系统架构和技术路线，从而制定适当的运维方案。而开发人员也会在运维的初期参与到系统部署中，并提供系统部署的优化建议。
-
-在一些 DevOps 模式下，**质保和安全团队**也会与开发和运营团队更紧密地结合在一起，贯穿应用程序的整个生命周期。当安全是所有 DevOps 团队成员的工作重心时，被称为“**DevSecOps**”。
-
-![](../images/post/link_cooperation_agile/devops.png)
-
-### DevOps提出的初衷
-
-软件开发过程可采用大量手动操作，但这会导致大量代码错误。**开发团队和运营团队可能常常信息不同步**，而这可能会拖慢软件交付速度，辜负企业利益干系人的期望，这也是**传统瀑布模型和敏捷模型的短板**。
-
-> 尽管敏捷过程一致在促进开发上的敏捷，相对传统瀑布模型降低了风险并提高了效率，但是在**部署、运维上仍然存在脱节**，多数团队在**部署、运维仍然停留在线性瀑布式结构上**，甚至采用落后的手动部署、手动测试，这会导致实际的**交付速度减慢**并且**产品潜在的缺陷也会暴露的越晚**。简单说，敏捷过程实现了“敏捷开发”但并未实现“敏捷部署”，而为了使软件开发的各方面都拥抱敏捷带来的好处，Patrick Debois提出了DevOps的概念，使开发与运维结合，同时实现“**敏捷开发**”与“**敏捷部署**”。
-
-DevOps将开发和运营连接起来可增强可视性、使需求更为准确、改善沟通并加快发布。DevOps对于软件开发、部署和维护所涉的全部任务中都可提高效率。
-
-### DevOps的优势
-
-采用 DevOps 的文化、做法和工具的团队将获得高绩效，可以用更快的速度构建更好的产品以获得更高的客户满意度：
-
-- 高速运转的速度
-- 快速交付，发布更迅速，频率更高
-- 保持系统稳定性和可靠性
-- 缩短平均恢复时间
-- 减少浪费
-- 增强合作
-- 安全性
-
-### DevOps与敏捷如何彼此相关？
-
-尽管 DevOps 和敏捷都是软件开发实践，但两者的侧重略有不同。DevOps 是注重为参与软件开发、部署和维护的所有利益干系人创造高效率的一种文化。而敏捷是一个精益生产过程，可帮助提供软件开发生产框架。敏捷通常特定于开发团队，而 DevOps 涵盖了所有参与软件生产和维护的利益干系人。**DevOps 和敏捷可结合使用以创建高效的软件开发环境**。
-
-### 各部门之间的联系
-
-DevOps可划分三类部门：
-
-- 开发部门（Development）
-- 运维部门（IT Operations）
-- 质量保障部门（Quality Assurance）
-
-![](../images/post/link_cooperation_agile/devops_teams.png)
-
-### 生命周期
-
-![](../images/post/link_cooperation_agile/devops_lifecycle.png)
-
-<center><font size="2"><a href="https://azure.microsoft.com/zh-cn/resources/cloud-computing-dictionary/what-is-devops/">该图来自：《什么是 DevOps？》 by Microsoft Azure</a></font></center>
-#### 规划（Plan）
-
-DevOps团队构思、定义和描述他们即将构建的应用程序和系统的特性和功能。团队在低粒度和高粒度级别上跟踪从单个产品任务到跨多个产品组合的任务进展。
-
-DevOps 团队以敏捷和直观地方式进行规划的一些方法包括：
-
-- 创建积压工作 (Backlog)
-- 跟踪 bug
-- 使用 scrum 管理敏捷软件开发
-- 使用看板
-- 使用仪表板直观呈现进度
-
-#### 开发（Develop）
-
-开发阶段包括开发软件代码的各个方面。 在此阶段，DevOps 团队执行以下任务：
-
-- 选择开发环境
-- 编写、测试、查看和集成代码
-- 将代码构建到项目中以部署到各种环境中
-- 使用版本控制工具（通常 为 Git）协作处理代码并并行工作
-
-DevOps 团队寻求在不牺牲质量、稳定性和生产效率的情况下快速创新。为此，他们使用：
-
-- 高效的工具
-- 自动化单调和手动步骤
-- 通过自动化测试和持续集成以小增量迭代
-
-#### 交付（Deliver）
-
-交付是一致可靠地将应用程序部署到生产环境的过程，理想情况下，通过持续交付（CD）完成，交付还包括部署和配置交付环境的基础基础结构。
-
-#### 运维（Operate）
-
-运营阶段包括维护、监视和对生产环境中的应用程序进行故障排除。在采用 DevOps 做法时，团队致力于确保系统的可靠性、高可用性，并在加强安全性和治理的同时实现零停机的目标。DevOps 团队希望在问题影响客户体验之前发现问题，并在问题发生时迅速解决问题。保持这种警惕性需要丰富的遥测、可操作的警报以及全面了解程序和基础系统。
-
-#### 瀑布模型、敏捷模型和DevOps的生命周期对比
-
-对比前面所说的瀑布式开发和敏捷开发，我们可以明显看出，DevOps贯穿了软件全生命周期，而不仅限于开发阶段，如下图对比所示：
-
-![](../images/post/link_cooperation_agile/devops_lifecycle_compare.png)
-
-### CAMS价值体系
-
-- 文化（Culture）
-- 自动化（Automation）
-- 测量（Measurement）：指的是测量问题、事务的能力
-- 分享（Sharing）：分享想法和问题是合作的核心
-
-### DevOps基本原则之：The Three Ways（三大方法）
-
-- 流动原则（Principles of Flow）：加快技术价值流的流速，实现开发到运维的快速流动，缩短交付周期
-- 加大反馈循环（Principles of Feedback）：在工作流中运用持续快速的反馈机制，扩大反馈回路，防止问题复发，缩短问题检测周、实现快速修复，从源头上控制质量
-- 持续学习与改进的原则（Principles of Continual Learning）：搭建企业组织文化，从而支持动态的、严格的、科学的改进
-
-> Refs：
->
-> -  [《The Three Ways of DevOps》](https://blog.indrek.io/articles/3-ways-of-devops/#:~:text=The%20Three%20Ways%20of%20DevOps%201%20Principles%20of,safer%20systems.%20...%203%20Principles%20of%20Continual%20Learning)
-> - 《凤凰项目：一个IT运维的传奇故事》
-
-### DevOps三大支柱
-
-DevOps的三大支柱是**文化**、**最佳实践**以及相关**工具**
-
-#### 文化
-
-DevOps文化即**自动化**、**沟通**、**责任**、**责任分担**以及**增强协作**。 开发、IT 运维人员要作为一个团队开展协作。 这种文化应**营造**一种强调**尽早反馈**和**持续学习**且**允许试错**的**安全环境**。
-
-DevOps团队通过短周期发布软件保持敏捷。因为进度是渐进式的，缩短发布周期可以让计划和风险管理更容易，同时也减少了对系统稳定性的影响。缩短发布周期还可以让组织适应和应对不断变化的客户需求和竞争压力。
-
-此外，这种文化应赋予每个团队**全面的责任制**，同时提供完善的方法。
-
-可总结为：
-
-- 协作、可见性和一致性
-- 范围和责任的转变
-- 缩短发布周期
-- 持续学习
-
-#### 最佳实践
-
-各个公司的 DevOps 标准和最佳实践各有不同。 即便是同一公司的不同团队采用的实践方式也不尽相同。 只要所采用的实践方式能够帮助公司更快地交付优质软件，那么 DevOps 的目标就实现了。 以下是转向 DevOps 时可采用的一些实践：
-
-- 敏捷软件开发
-- 精益项目管理（Lean）
-- 版本控制（SCM | VCS | DVCS）
-- 持续集成（Continuous Integration，CI）
-- 持续部署（Continuous Deployment，CD）
-- 持续交付（Continuous Delivery）:在持续部署的基础之上，将产品交付到线上环境
-- **基础设施即代码（Infrastructure as Code，IaC）**：基础设施即代码是一种实践经验，无论是在本地还是在云中的基础设施，通过代码和软件部署技术（例如版本控制和持续集成）来预置和管理。简单的理解就是**使用代码来定义和管理基础设施，而不是使用手动流程**
-- 监控和日志记录
-- 沟通与合作
-- 全面自动化
-- 统一工具和平台
-- 验证性学习
-
-#### 工具
-
-![](../images/post/link_cooperation_agile/devops_tools_one.jpg)
-
-<center><font size="2"><a href="https://www.shalb.com/blog/what-is-devops-and-where-is-it-applied/">该图来自：《What is DevOps and where is it applied?》</a></font></center>
-![](../images/post/link_cooperation_agile/devops_tools_two.png)
-
-<center><font size="2"><a href="https://hoangdinhquang.me/a-note-on-devops-terminology/">该图来自：《A note on DevOps terminologies》</a></font></center>
-### DevOps的的知识体系图
-
-![](../images/post/link_cooperation_agile/devops_knowledge_architecture.png)
-
-<center><font size="2"><a href="https://www.cnblogs.com/yinzhengjie2020/p/12437420.html">该图来自：《DevOps 简介》 by 尹正杰</a></font></center>
-### 延伸阅读推荐
-
-> Refs：
->
-> - 《凤凰项目：一个IT运维的传奇故事》
-> - [《Azure - DevOps教程 - 简介》](https://azure.microsoft.com/zh-cn/solutions/devops/tutorial/)
-> - [《Amazon - What is DevOps》](https://aws.amazon.com/cn/devops/what-is-devops/)
-> - [《JFrog - What is DevOps》](http://www.jfrogchina.com/devops-tools/what-is-devops/)
-
 ## 面向对象设计原则
 
 - 单一职责原则（SRP，Single Responsibility Principle）：一个类**只负责一个功能领域中的相应职责**，该原则用于**控制类的粒度大小**，另外这条原则是实现高内聚、低耦合的指导方针。就一个类而言，应该仅有一个引起它变化的原因
@@ -2386,6 +2212,184 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ## Scrum敏捷工件
 
 PBI
+
+## DevOps
+
+DevOps（Development和Operations的组合词），即**开发与运维一体化**，它跟敏捷过程同样都是一种**软件开发实践的方法论**，并且**DevOps通常是结合敏捷一起使用的**。DevOps由一套**文化理念**、**实践方法**和**工具链**支撑起来，用于促进开发（应用程序/软件工程）、技术运营和质量保障（QA）部门之间的**沟通**、协作与**整合**。DevOps非常注重**自动化**，通过自动化流程（“软件交付”和“架构变更”等多方面），来使构建、测试、发布软件能够更加地快捷、频繁和可靠。
+
+> Notes：DevOps现在几乎已经成为了软件工程的代名词。
+
+DevOps也可以看作**是敏捷开发的一种演化**，**弥补敏捷过程在部署方面的不足**，尽管开发人员使用敏捷降低了风险并提高了效率，但**部署仍停留在线性瀑布式结构**上。
+
+相对以前传统开发模型和敏捷开发，把开发、IT 运营、质量工程和安全这些角色孤立起来。为了应对这种开发与部署之间的脱节，需要同时做到“**敏捷开发**”和“**敏捷部署**”，DevOps把“开发人员（Dev）”、“运维人员（Ops）”结合起来，重视他们之间的协调和合作，同时将人员、流程和方法连接在一起提供持续价值，从而更快、更可靠地交付软件。
+
+为了让“开发人员”与“运维人员”更好的结合，通常需要组建**跨职能团队**，团队采用拥有**T型技能**的人员，他们既要懂开发，也要懂运维。
+
+运维人员会在项目开发期间就介入到开发过程中，了解开发人员使用的系统架构和技术路线，从而制定适当的运维方案。而开发人员也会在运维的初期参与到系统部署中，并提供系统部署的优化建议。
+
+在一些 DevOps 模式下，**质保和安全团队**也会与开发和运营团队更紧密地结合在一起，贯穿应用程序的整个生命周期。当安全是所有 DevOps 团队成员的工作重心时，被称为“**DevSecOps**”。
+
+![](../images/post/link_cooperation_agile/devops.png)
+
+### DevOps提出的初衷
+
+软件开发过程可采用大量手动操作，但这会导致大量代码错误。**开发团队和运营团队可能常常信息不同步**，而这可能会拖慢软件交付速度，辜负企业利益干系人的期望，这也是**传统瀑布模型和敏捷模型的短板**。
+
+> 尽管敏捷过程一致在促进开发上的敏捷，相对传统瀑布模型降低了风险并提高了效率，但是在**部署、运维上仍然存在脱节**，多数团队在**部署、运维仍然停留在线性瀑布式结构上**，甚至采用落后的手动部署、手动测试，这会导致实际的**交付速度减慢**并且**产品潜在的缺陷也会暴露的越晚**。简单说，敏捷过程实现了“敏捷开发”但并未实现“敏捷部署”，而为了使软件开发的各方面都拥抱敏捷带来的好处，Patrick Debois提出了DevOps的概念，使开发与运维结合，同时实现“**敏捷开发**”与“**敏捷部署**”。
+
+DevOps将开发和运营连接起来可增强可视性、使需求更为准确、改善沟通并加快发布。DevOps对于软件开发、部署和维护所涉的全部任务中都可提高效率。
+
+### DevOps的优势
+
+采用 DevOps 的文化、做法和工具的团队将获得高绩效，可以用更快的速度构建更好的产品以获得更高的客户满意度：
+
+- 高速运转的速度
+- 快速交付，发布更迅速，频率更高
+- 保持系统稳定性和可靠性
+- 缩短平均恢复时间
+- 减少浪费
+- 增强合作
+- 安全性
+
+### DevOps与敏捷如何彼此相关？
+
+尽管 DevOps 和敏捷都是软件开发实践，但两者的侧重略有不同。DevOps 是注重为参与软件开发、部署和维护的所有利益干系人创造高效率的一种文化。而敏捷是一个精益生产过程，可帮助提供软件开发生产框架。敏捷通常特定于开发团队，而 DevOps 涵盖了所有参与软件生产和维护的利益干系人。**DevOps 和敏捷可结合使用以创建高效的软件开发环境**。
+
+### 各部门之间的联系
+
+DevOps可划分三类部门：
+
+- 开发部门（Development）
+- 运维部门（IT Operations）
+- 质量保障部门（Quality Assurance）
+
+![](../images/post/link_cooperation_agile/devops_teams.png)
+
+### 生命周期
+
+![](../images/post/link_cooperation_agile/devops_lifecycle.png)
+
+<center><font size="2"><a href="https://azure.microsoft.com/zh-cn/resources/cloud-computing-dictionary/what-is-devops/">该图来自：《什么是 DevOps？》 by Microsoft Azure</a></font></center>
+
+#### 规划（Plan）
+
+DevOps团队构思、定义和描述他们即将构建的应用程序和系统的特性和功能。团队在低粒度和高粒度级别上跟踪从单个产品任务到跨多个产品组合的任务进展。
+
+DevOps 团队以敏捷和直观地方式进行规划的一些方法包括：
+
+- 创建积压工作 (Backlog)
+- 跟踪 bug
+- 使用 scrum 管理敏捷软件开发
+- 使用看板
+- 使用仪表板直观呈现进度
+
+#### 开发（Develop）
+
+开发阶段包括开发软件代码的各个方面。 在此阶段，DevOps 团队执行以下任务：
+
+- 选择开发环境
+- 编写、测试、查看和集成代码
+- 将代码构建到项目中以部署到各种环境中
+- 使用版本控制工具（通常 为 Git）协作处理代码并并行工作
+
+DevOps 团队寻求在不牺牲质量、稳定性和生产效率的情况下快速创新。为此，他们使用：
+
+- 高效的工具
+- 自动化单调和手动步骤
+- 通过自动化测试和持续集成以小增量迭代
+
+#### 交付（Deliver）
+
+交付是一致可靠地将应用程序部署到生产环境的过程，理想情况下，通过持续交付（CD）完成，交付还包括部署和配置交付环境的基础基础结构。
+
+#### 运维（Operate）
+
+运营阶段包括维护、监视和对生产环境中的应用程序进行故障排除。在采用 DevOps 做法时，团队致力于确保系统的可靠性、高可用性，并在加强安全性和治理的同时实现零停机的目标。DevOps 团队希望在问题影响客户体验之前发现问题，并在问题发生时迅速解决问题。保持这种警惕性需要丰富的遥测、可操作的警报以及全面了解程序和基础系统。
+
+#### 瀑布模型、敏捷模型和DevOps的生命周期对比
+
+对比前面所说的瀑布式开发和敏捷开发，我们可以明显看出，DevOps贯穿了软件全生命周期，而不仅限于开发阶段，如下图对比所示：
+
+![](../images/post/link_cooperation_agile/devops_lifecycle_compare.png)
+
+### CAMS价值体系
+
+- 文化（Culture）
+- 自动化（Automation）
+- 测量（Measurement）：指的是测量问题、事务的能力
+- 分享（Sharing）：分享想法和问题是合作的核心
+
+### DevOps基本原则之：The Three Ways（三大方法）
+
+- 流动原则（Principles of Flow）：加快技术价值流的流速，实现开发到运维的快速流动，缩短交付周期
+- 加大反馈循环（Principles of Feedback）：在工作流中运用持续快速的反馈机制，扩大反馈回路，防止问题复发，缩短问题检测周、实现快速修复，从源头上控制质量
+- 持续学习与改进的原则（Principles of Continual Learning）：搭建企业组织文化，从而支持动态的、严格的、科学的改进
+
+> Refs：
+>
+> -  [《The Three Ways of DevOps》](https://blog.indrek.io/articles/3-ways-of-devops/#:~:text=The%20Three%20Ways%20of%20DevOps%201%20Principles%20of,safer%20systems.%20...%203%20Principles%20of%20Continual%20Learning)
+> -  《凤凰项目：一个IT运维的传奇故事》
+
+### DevOps三大支柱
+
+DevOps的三大支柱是**文化**、**最佳实践**以及相关**工具**
+
+#### 文化
+
+DevOps文化即**自动化**、**沟通**、**责任**、**责任分担**以及**增强协作**。 开发、IT 运维人员要作为一个团队开展协作。 这种文化应**营造**一种强调**尽早反馈**和**持续学习**且**允许试错**的**安全环境**。
+
+DevOps团队通过短周期发布软件保持敏捷。因为进度是渐进式的，缩短发布周期可以让计划和风险管理更容易，同时也减少了对系统稳定性的影响。缩短发布周期还可以让组织适应和应对不断变化的客户需求和竞争压力。
+
+此外，这种文化应赋予每个团队**全面的责任制**，同时提供完善的方法。
+
+可总结为：
+
+- 协作、可见性和一致性
+- 范围和责任的转变
+- 缩短发布周期
+- 持续学习
+
+#### 最佳实践
+
+各个公司的 DevOps 标准和最佳实践各有不同。 即便是同一公司的不同团队采用的实践方式也不尽相同。 只要所采用的实践方式能够帮助公司更快地交付优质软件，那么 DevOps 的目标就实现了。 以下是转向 DevOps 时可采用的一些实践：
+
+- 敏捷软件开发
+- 精益项目管理（Lean）
+- 版本控制（SCM | VCS | DVCS）
+- 持续集成（Continuous Integration，CI）
+- 持续部署（Continuous Deployment，CD）
+- 持续交付（Continuous Delivery）:在持续部署的基础之上，将产品交付到线上环境
+- **基础设施即代码（Infrastructure as Code，IaC）**：基础设施即代码是一种实践经验，无论是在本地还是在云中的基础设施，通过代码和软件部署技术（例如版本控制和持续集成）来预置和管理。简单的理解就是**使用代码来定义和管理基础设施，而不是使用手动流程**
+- 监控和日志记录
+- 沟通与合作
+- 全面自动化
+- 统一工具和平台
+- 验证性学习
+
+#### 工具
+
+![](../images/post/link_cooperation_agile/devops_tools_one.jpg)
+
+<center><font size="2"><a href="https://www.shalb.com/blog/what-is-devops-and-where-is-it-applied/">该图来自：《What is DevOps and where is it applied?》</a></font></center>
+
+![](../images/post/link_cooperation_agile/devops_tools_two.png)
+
+<center><font size="2"><a href="https://hoangdinhquang.me/a-note-on-devops-terminology/">该图来自：《A note on DevOps terminologies》</a></font></center>
+
+### DevOps的的知识体系图
+
+![](../images/post/link_cooperation_agile/devops_knowledge_architecture.png)
+
+<center><font size="2"><a href="https://www.cnblogs.com/yinzhengjie2020/p/12437420.html">该图来自：《DevOps 简介》 by 尹正杰</a></font></center>
+
+### 延伸阅读推荐
+
+> Refs：
+>
+> - 《凤凰项目：一个IT运维的传奇故事》
+> - [《Azure - DevOps教程 - 简介》](https://azure.microsoft.com/zh-cn/solutions/devops/tutorial/)
+> - [《Amazon - What is DevOps》](https://aws.amazon.com/cn/devops/what-is-devops/)
+> - [《JFrog - What is DevOps》](http://www.jfrogchina.com/devops-tools/what-is-devops/)
 
 ## Link-Cooperation项目敏捷流程
 
