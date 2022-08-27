@@ -99,7 +99,7 @@ OKR可以精炼为一句话：**我将会完成【O】，使用的衡量指标�
 
 OKR 和敏捷有非常多的文化底蕴是一致的，比如：价值驱动，透明公开，持续适应，学习试错等。但如下图所示，我们也要意识到从根本上来说，他们的基因是不同的：
 
-![](/images/post/link_cooperation_agile/different_between_okr_and_agile.webp)
+![](../images/post/link_cooperation_agile/different_between_okr_and_agile.webp)
 
 <center><font size="2"><a href="https://www.infoq.cn/article/OFx8xxEVXtsIpYXldsqA">该图来自：《深入浅出了解 OKR（十）：OKR 在敏捷转型中的实践》 by 大叔杨</a></font></center>
 在很多行为方式上，OKR与敏捷（比如Scrum），也有非常多相似性，把它们结合使用的时候，可以**互相借鉴行为上的做法**。比如，在给Backlog进行优先级排序的时候，可以借鉴到OKR中，对OKR的目标进行优先级划分。
@@ -1153,15 +1153,15 @@ Scrum基于迭代开发和增量开发，这两个术语经常被用作一个概
 
 **迭代开发（Iterative Development）**承认我们在把事情做对之前有可能做错，在把事情做好之前有可能做坏。迭代是一种**有计划的修改策略**，通过多次开发来改善正在构建的特性，逐步得出一个完善的解决方案。例如，对于一个知之甚少的产品，开始时可以先通过**创建原型**以获得重要知识，接着在每次迭代时**根据上一个版本的反馈**，决定下一个版本需要对那些部分进行改进或者丢弃某些特性，创建一个更好一点的修订版本。在产品开发中，迭代开发是改进产品的一种非常好的方法，它最大的**缺点**是在遇到不确定因素时，很难事先确定（计划）需要改进多少次。示意图如下（来自：[difference between incremental and iterative][difference between incremental and iterative]）：
 
-![](/images/post/link_cooperation_agile/incremental_model_diagram.png)
+![](../images/post/link_cooperation_agile/incremental_model_diagram.png)
 
 **增量开发（Incremental Development）**则是把产品**分解成更小的特性**，**先构建一部分**，在每次增量过程中了解它们在目标使用环境的具体情形，然后根据更多的理解来做出调整，**构建更多的特性，直到最后组成项目的整体**。它最大的**缺点**是逐步构建的过程中，有迷失全局的风险（见木不见林）。示意图如下（来自：[difference between incremental and iterative][difference between incremental and iterative]）：
 
-![](/images/post/link_cooperation_agile/iterative_model_diagram.png)
+![](../images/post/link_cooperation_agile/iterative_model_diagram.png)
 
 下面是一张给迭代与增量做对比，非常形象的一张图，同样来自：[difference between incremental and iterative][difference between incremental and iterative]
 
-![](/images/post/link_cooperation_agile/iterative_and_incremental_mona_lisa_diagram.png)
+![](../images/post/link_cooperation_agile/iterative_and_incremental_mona_lisa_diagram.png)
 
 ### 敏捷中的迭代和增量
 
@@ -1169,7 +1169,7 @@ Scrum**结合迭代和增量这两种开发方式的优点**，消除了单独�
 
 冲刺采用**蜂拥式（all-at-once）**的开发方法，在每个冲刺都执行所有的必要活动，创建可工作的产品增量（产品的一部分而不是全部），**每个冲刺完成一部分分析、设计、构建、集成和测试工作**。这样的好处是可以快速验证我们在开发产品特性时所作的假设。
 
-![](/images/post/link_cooperation_agile/scrum_sprint_with_iterative_and_incremental.png)
+![](../images/post/link_cooperation_agile/scrum_sprint_with_iterative_and_incremental.png)
 
 在Scrum中，并不是每次做一个阶段的工作，而是每次做一个特性，这样一来，在冲刺结束时就可以创建一个有价值的产品增量（产品的部分特性但不是全部）。
 
@@ -1432,7 +1432,7 @@ Scrum是一个用于组织和管理工作的框架，它建立在一套价值观
 
 > Scrum的实践体现在**具体角色**、**活动**、**敏捷工件**以及**相关规则**中
 
-![](/images/post/link_cooperation_agile/scrum_framework_chinese.png)
+![](../images/post/link_cooperation_agile/scrum_framework_chinese.png)
 
 ## Scrum角色
 
@@ -1591,7 +1591,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 如下图所示，SoS作为一种协调多个团队之间工作的方法，其实**是一种**类似Scrum团队在冲刺时每日例会的**会议**。只不过每日例会时只包含团队内的成员，而SoS是由各个团队的代表组成用来协调工作的。各个团队的参会者应当是**当时团队的最佳代言人**，另外SoS的会议时间长度最好**不要超过15分钟**。
 
-![](/images/post/link_cooperation_agile/scrum_of_scrums.png)
+![](../images/post/link_cooperation_agile/scrum_of_scrums.png)
 
 #### 版本火车（Agile Release Train，ART）
 
@@ -1599,7 +1599,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 如下图（来自：Scrum精髓：敏捷转型指南），参与版本火车的团队所有冲刺持续期都一样长，并且所有冲刺的步调都一致，在完成几个固定数量的冲刺后，就可以得到[^PSI]。
 
-![](/images/post/link_cooperation_agile/agile_release_train.png)
+![](../images/post/link_cooperation_agile/agile_release_train.png)
 
 另外，我认为在只有一个团队，然后一个大解决方案存在多个项目的时候，也可以参考版本火车的做法。
 
@@ -1625,7 +1625,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 如下图，Scrum在开发产品时，需要在多个层级上制定计划。其中每层规划会根据**输入**工件进行规划活动，然后**输出**规划成果。基本上高层规划的输出可能会作为低层规划的输入，不过这不是绝对的。比如冲刺规划，本轮冲刺的成果可能会作为下次冲刺规划的输入，这就发生在同一层级的规划上。又比如，产品级规划的输出正是组合规划的重要输入。
 
-![](/images/post/link_cooperation_agile/scrum_multi_level_planning.png)
+![](../images/post/link_cooperation_agile/scrum_multi_level_planning.png)
 
 #### 战略规划（Strategy Planning）
 
@@ -1637,7 +1637,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 > 团队需要保持专注、责任感，同时兼顾多个产品很难做到保证质量和专注度，所以最好不要同时超过两个产品。
 
-![](/images/post/link_cooperation_agile/scrum_portfolio_planning_illustrates.png)
+![](../images/post/link_cooperation_agile/scrum_portfolio_planning_illustrates.png)
 
 ##### 输入
 
@@ -1704,7 +1704,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 > - 在构想阶段可以考虑执行一次**知识获取冲刺**，以获取必要的知识
 > - 在开发产品或服务时，愿景往往表述为利益干系人**如何得到商业价值**
 
-![](/images/post/link_cooperation_agile/scrum_product_planning_illustrates.png)
+![](../images/post/link_cooperation_agile/scrum_product_planning_illustrates.png)
 
 ##### 输入
 
@@ -1753,7 +1753,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 > 可以在PBI列表上用线，规划出不同的版本，并与产品路线图关联起来
 
-![](/images/post/link_cooperation_agile/scrum_release_planning_illustrates.png)
+![](../images/post/link_cooperation_agile/scrum_release_planning_illustrates.png)
 
 ##### 版本发布节奏
 
@@ -1783,7 +1783,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 让**版本发布可视化**的一个简单方法是**在产品列表中画线**，线上方的所有条目是这个版本计划要做的，线下方的所有条目是这个版本不计划做的。在对产品有更深入的了解后，可以在产品列表中上下移动这条线。
 
-![](/images/post/link_cooperation_agile/scrum_version_line.png)
+![](../images/post/link_cooperation_agile/scrum_version_line.png)
 
 ##### 输入
 
@@ -1832,7 +1832,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 **使近期PBI[^PBI]快速、尽早映射（或插入）特定的冲刺中**是很有帮助的。在进行**冲刺映射**之前，需要产品列表[^PBI]具有这三个特征：**详略得当的**、**估算合理**以及**排定优先顺序的**。
 
-![](/images/post/link_cooperation_agile/scrum_sprint_map.png)
+![](../images/post/link_cooperation_agile/scrum_sprint_map.png)
 
 ##### 版本进展沟通手段
 
@@ -1850,9 +1850,9 @@ Scrum敏捷开发在最长一个月的迭代或周期中安排工作，这些迭
 
 冲刺活动流程与相关工件如下面两张图所示：
 
-![](/images/post/link_cooperation_agile/scrum_sprint_time_box.png)
+![](../images/post/link_cooperation_agile/scrum_sprint_time_box.png)
 
-![](/images/post/link_cooperation_agile/scrum_framework_chinese.png)
+![](../images/post/link_cooperation_agile/scrum_framework_chinese.png)
 
 ### Scrum冲刺活动与PDCA循环
 
@@ -1896,7 +1896,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 如果团队发现选区的条目太多或太少，或者选取的条目由于种种原因限制而实际不能在一个冲刺里一起开发，则可以**调整预期**或**重新细化冲刺目标**，以满足现有生产能力和相关约束。
 
-![](/images/post/link_cooperation_agile/scrum_sprint_planning_two_level.png)
+![](../images/post/link_cooperation_agile/scrum_sprint_planning_two_level.png)
 
 ##### 一次性冲刺规划
 
@@ -1904,7 +1904,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 使用这种方式时，开发团队先确定自己有多少生产能力可以用于完成工作。基于可用的生产能力，冲刺目标可能需要细化。接着，团队选择一个PBI[^PBI]，然后表示有信心在当前冲刺做完它。**重复这个过程**，直到团队没有余力再做更多工作，这时最终敲定承诺，结束冲刺规划活动。
 
-![](/images/post/link_cooperation_agile/scrum_sprint_planning_one_level.png)
+![](../images/post/link_cooperation_agile/scrum_sprint_planning_one_level.png)
 
 #### 活动
 
@@ -1957,7 +1957,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 冲刺执行的理想原则是**见机行事**，充分利用团队的技能，**逐步明确任务规划**，而不是试着事先列出一个完整而详细的工作计划。在冲刺执行期，团队为了适应环境变化，**可以持续进行任务规划**。
 
-![](/images/post/link_cooperation_agile/scrum_sprint_execution.png)
+![](../images/post/link_cooperation_agile/scrum_sprint_execution.png)
 
 #### 工作流程管理
 
@@ -1969,7 +1969,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 **蜂拥式**在每个冲刺都执行所有的必要活动，创建可工作的产品增量（产品的一部分而不是全部），**每个冲刺完成一部分分析、设计、构建、集成和测试工作**。这样的好处是可以快速验证我们在开发产品特性时所作的假设。
 
-![](/images/post/link_cooperation_agile/scrum_sprint_with_iterative_and_incremental.png)
+![](../images/post/link_cooperation_agile/scrum_sprint_with_iterative_and_incremental.png)
 
 另外**不能**把**瀑布式思维**应用于冲刺级别，这是一种为**危险的方式**，把冲刺执行当做一个**迷你瀑布项目**，如果使用这种方式，我们一开始就会同时做所有PBI，首先分析这次冲刺要做的所有条目，然后按顺序完成设计、编码和测试。这十分危险，到最后可能每个特性只完成了90%，而没有任何一个特性完成到100%。
 
@@ -2017,19 +2017,19 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 对于任务版，另一种敏捷方法“**看板（Kanban）**”，它使用**详细信息来可视化工作流的不同阶段**，可以配合使用
 
-![](/images/post/link_cooperation_agile/scrum_task_board.png)
+![](../images/post/link_cooperation_agile/scrum_task_board.png)
 
 ##### 冲刺燃起图（Sprint Burnup Chart）
 
 燃起图[^Burnup Chart]直观地展现了时间与已完成的工作间的关系，让团队成员可以看见其工作成果，这算是一种激励。
 
-![](/images/post/link_cooperation_agile/scrum_sprint_burnup_chart.png)
+![](../images/post/link_cooperation_agile/scrum_sprint_burnup_chart.png)
 
 ##### 冲刺燃尽图（Sprint Burndown Chart）
 
 **燃尽图[^Burndown Chart]也叫燃烧图**，Scrum提倡使用它来直观的展现项目总体进度，它展示了**时间与项目剩余总体工作量间的关系**。让人清晰直观的感受到随着时间的推移，项目所剩的工作量逐天减少。
 
-![](/images/post/link_cooperation_agile/scrum_sprint_burndown_chart.png)
+![](../images/post/link_cooperation_agile/scrum_sprint_burndown_chart.png)
 
 ### 冲刺评审（Sprint Review）
 
@@ -2495,7 +2495,7 @@ DevOps
 
 
 
-
+\- 现在这个状况非常适合使用敏捷
 
 
 
@@ -2512,6 +2512,16 @@ DevOps
 希望从过程中得到什么
 
 约束（时间精力，周期.......）
+
+### 原则和价值观
+
+迫不得已时不需要盲目遵守锁定目标的规则，要更注重实效
+
+一个产品，一个产品列表
+
+
+
+以两周左右时间为一次冲刺的时间盒，不允许由于工作未完成而延长冲刺时间，这是不能正常工作或者存在改进机会的征兆
 
 ### 团队规模
 
@@ -2540,6 +2550,14 @@ Link-Cooperation拆分成四个子项目：
 
 ### 活动
 
+#### 头脑风暴
+
+使用在线白板teamind
+
+。。。
+
+### 条目编号
+
 ### 工件
 
 - Product Backlog：产品级待办列表
@@ -2550,7 +2568,51 @@ Link-Cooperation拆分成四个子项目：
 
 
 
+ \- 对于bug、需求（PBI）或者说用户故事  等，都要用一个编号来代表   比如#256
 
+ 
+
+
+
+ \- todo、sprint backlog、product backlog
+
+  常见kanban的三个列表
+
+  todo，in progress，done
+
+
+
+
+
+  kanban与scrum在代办上的对应
+
+  backlog       product backlog
+
+  sprint todo    sprint backlog
+
+
+
+  参考: 同时还可以每天加入突发的随机todo，还有一个backlog，就是以后再做，随时可以do it today
+
+
+
+
+
+  https://www.shangyexinzhi.com/article/4421885.html
+
+
+
+   在SCRUM软件开发流程中，可将Sprint待办事项（Sprint Backlog Item）视为TODO,将产品待办事项（Product Backlog Item）视为KR。PBI拆解到SBI，类似OKR理路径的过程；研发工程师、PO（Product Owner产品经理）和客户采用ME-WE-ALL方法可以准确理解并快速确认客户需求和风险挑战，共创对策措施和TODO。
+
+
+
+
+
+  在一次冲刺时如果发现新的todo，如果体量比较小可以在本次冲刺完成，那么加入sprint backlog(sprint todo)，否则加入product backlog
+
+
+
+ \- product backlog，sprint backlog（todo），user story
 
 
 
@@ -2610,6 +2672,10 @@ Link-Cooperation拆分成四个子项目：
 
 ### 冲刺
 
+ \- 冲刺任务自己挑选
+
+
+
 #### 冲刺规划
 
 #### 每日例会
@@ -2639,6 +2705,14 @@ Link-Cooperation拆分成四个子项目：
 我们的文档不需要面面俱到，更不需要拘泥于一些可有可无的细节，只在“**必要的时候**”留下“**准确**”、“**精简**”和“**有价值**”的文档。
 
 product backlog、sprint backlog、todo、user story...
+
+### 代码风格问题
+
+ \- 代码风格一致性
+
+定个规则，全部制表符要用空格代替
+
+ \- 使用clang-format协作所有的源码格式
 
 ### 代码注释
 
@@ -2698,9 +2772,59 @@ void shutdown()
 }
 ```
 
+### 关于技术债
+
+ \- 技术债可视化方法
+
+### 相关过程的吸收
+
+参考吸收看板的一些实践
+
+使用 scrum 管理敏捷软件开发、使用看板以及使用仪表板直观呈现进度
+
+\- 敏捷 Scrum的冲刺遵循***\*PCDA循环规则\****（计划、执行、检查、改进行动）
+
+
+
+okr
+
+devops
+
+
+
+
+
+okr、devops与敏捷的结合
+
+  我们自己的OKR加入奖励机制，并用OKR来管理个人目标。另外OKR与敏捷结合，建立大小迭代模型，（OKR）大迭代以季度为单位，（敏捷）小迭代以冲刺为单位。
+
+
+
+  我们项目的开发和运维使用DevOps方法，该方法的开发流程会结合敏捷模型，
+
+  然后我们的个人目标采用OKR方法来制定和跟踪管理。
+
+
+
+  它们的共同使用，其实相当于建立起了，大小迭代模型。大迭代一般以季度为单位进行（属于OKR），而小迭代则以敏捷的冲刺为单位（属于敏捷）。季度规划可以非常明确的提出短期目标和结果，以便于大家的聚焦和小成就的积累。
+
+
+
+### OKR
+
+ \- okr与backlog、todo的映射
+
+  https://www.shangyexinzhi.com/article/4421885.html
+
 ### DevOps
 
-### 版本控制
+#### 工具
+
+### 协作
+
+
+
+### 版本控制相关实践方法
 
 我们使用git来做版本控制，托管平台可能使用Github或者Gitee，但需要讨论过后才做决定。
 
@@ -2716,6 +2840,12 @@ rebase、merge、squash
 
 
 
+ \- 拉代码的时候推荐使用git pull xxx --rebase
+
+
+
+使用git flow做分支管理
+
 ### 管理平台
 
 项目整体
@@ -2728,6 +2858,34 @@ rebase、merge、squash
 
 ​	微软的todo
 
+### 关于测试与质量保证
+
+自动化测试
+
+驱动测试开发
+
+增加提测
+
+​	走查
+
+​	提测
+
+​	上线
+
+
+
+Code Review（代码审查、代码复查、代码走查、代码走读）
+
+
+
+产品走查（Product work-through）
+
+
+
+静态代码扫描 lint
+
+
+
 ### 缺陷跟踪
 
 crashdump...
@@ -2735,6 +2893,32 @@ crashdump...
 log...
 
 ### 工具
+
+ \- kanban工具
+
+   PingCode，Worktile
+
+​    https://www.zhihu.com/question/30270633/answer/663153598
+
+ \- scrum工具
+
+   https://www.zhihu.com/question/19609029/answer/2497930850?utm_source=wechat_session&utm_medium=social&utm_oi=676230503762497536&utm_content=group3_Answer&utm_campaign=shareopn
+
+
+
+
+
+ \- 使用ci/cd，自动化测试和自动化部署，github actions，trivas要收费，过了试用期
+
+ \- github actions比travis慢，考虑直接在服务器上搭建jenkins
+
+ \- 考虑用微软的todo来协作
+
+ \- tapd
+
+ \- 善用容器，用来部署集成环境，构建、测试环境
+
+ \- 使用worktile，这个可以设定okr
 
 #### 产品列表
 
@@ -2781,6 +2965,14 @@ logview
 ### 接下来要做什么？
 
 进行一次认知冲刺，细化我们自己的敏捷过程
+
+确定相关工具和平台
+
+
+
+认知冲刺或知识冲刺，看看各个平台对http2.0和quic的支持
+
+决定devops过程采用的工具。。。。。
 
 ## 词汇表
 
