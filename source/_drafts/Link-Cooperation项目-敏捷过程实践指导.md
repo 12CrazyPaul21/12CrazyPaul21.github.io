@@ -2297,6 +2297,7 @@ Scrum团队需要有一个健全的完成的定义，自信构建的产品增量
 
 ## 敏捷相关核心工件
 
+- User Story：用户故事
 - PBI[^PBI]：产品待办列表条目
 - Product Backlog：产品级待办列表，即产品列表
 - Sprint Todo（Sprint Backlog）：冲刺级待办列表（在Scrum中称为Sprint Backlog，在Kanban中称为Todo，我们综合一下，称为Sprint Todo），即冲刺列表
