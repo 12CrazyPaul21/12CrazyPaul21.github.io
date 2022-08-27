@@ -550,6 +550,8 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_userstory_map.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》 - 故事地图例子</font></center>
+
+
 ## 产品列表
 
 产品列表是一个**按优先顺序排列的、预期产品功能列表**。产品列表由各个待办事项组成，即**PBI（Product Backlog Item）[^PBI]**或简称为**条目**。
