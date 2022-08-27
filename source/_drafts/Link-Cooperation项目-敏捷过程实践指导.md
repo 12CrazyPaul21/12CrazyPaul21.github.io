@@ -480,7 +480,6 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_card.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
-
 卡片不是为了捕获需求的所有组成信息而设的。实际上，我们故意使用空间有限的小卡片，目的就是让用户故事尽可能简洁。卡片上应该只用寥寥数语来点名需求的精髓或目的，它存在的意义是提醒利益干系人、产品负责人及开发团队进行更深入的讨论。
 
 ##### 会话（Conversation）
@@ -496,7 +495,6 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_confirmation.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
-
 这些满足条件也可以看作是高一级的接收测试。当然，开发故事的时候，肯定不会只运行这几个测试。实际上，虽然跟用户故事挂钩的接收测试只有几个，但团队还有数量比它多得多的具体技术层面的测试，是产品负责人不知道的。
 
 这些与故事挂钩的接收测试之所以存在，是因为**从产品负责人的角度看**，它们是捕获及沟通信息、确定故事是否已正确实现的重要方式之一。
@@ -510,7 +508,6 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_userstory_level.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
-
 - **史诗（Epic）**：最大的故事**以月为单位**，约为一两个到好几个月的大小，可跨越一整个或多个版本，可以被称为“**史诗级的故事**”
 - **特性**：第二级别故事的大小通常**以周为单位**，对单个冲刺来说还是有点大，有些团队把这称为”特性“
 - **故事**：最小的用户故事通常直接称之为“**故事**”，但为了避免与同样是“故事”的史诗、特性或其它大的条目相冲突，也可称作为“**冲刺故事**”或“**可实现故事**”，暗示它们的大小**以天为单位**，足够小，**可以放入一个冲刺做完**，需要注意，在写故事时需要**避免任务级的细节**
@@ -534,7 +531,6 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_non_functional_requirement_story.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
-
 ### 知识获取型故事
 
 有时我们需要创建一个**专注于知识获取的PBI**[^PBI]。比如在缺乏足够的产品或产品构建流程相关知识而驻足不前时，我们需要探索。这种探索有许多名字：**原型**、**概念验证**、**试验**、**学习**、**探针**等，它们基本上都是包含获取信息在内的探索活动。
@@ -544,7 +540,6 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_get_tech_story.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
-
 ### 收集故事
 
 以下两种方法可以用于收集用户故事
@@ -555,7 +550,6 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_userstory_map.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》 - 故事地图例子</font></center>
-
 ## 产品列表
 
 产品列表是一个**按优先顺序排列的、预期产品功能列表**。产品列表由各个待办事项组成，即**PBI（Product Backlog Item）[^PBI]**或简称为**条目**。
@@ -580,7 +574,6 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_pbi_priority_order.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》 - PBI排列优先级例子</font></center>
-
 ### 梳理
 
 #### 什么是梳理？
@@ -614,7 +607,6 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_dor.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
-
 梳理产品列表时，应当确保列表顶部的条目已就绪，可以放入冲刺中让开发团队有信心做相关的工作并在冲刺结束时完成。为“就绪”确定一个**有说服力的定义**，将极大提升Scrum团队成功实现冲刺目标的几率。
 
 > 对于PBI列表中**就绪条目的合理存量**，最好是**两到三个冲刺的故事量**，比如：如果团队一次冲刺能完成五个PBI，那么团队在梳理列表的时候，任何时候最好总有大约十到十五个PBI是准备就绪的。
@@ -640,7 +632,6 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_sprint_workflow.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
-
 ### 产品列表有哪些，应该有多少？
 
 在确定需要建立哪些以及建立多少个产品列表时，有一个简单的原则：**一个产品，一个产品列表**，即每个产品都应当有自己单独的一个产品列表，提供对整个产品的描述并对需要完成的工作**排列优先顺序**。
@@ -2662,13 +2653,9 @@ Link-Cooperation拆分成四个子项目：
 
 “完成-完成”
 
-## 
-
 
 
 对于版本规划，可以在pbi列表上用线，规划出不同的版本，并与产品路线图关联起来
-
-
 
 ### 冲刺
 
