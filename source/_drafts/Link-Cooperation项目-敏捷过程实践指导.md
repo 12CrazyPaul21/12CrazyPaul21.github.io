@@ -2294,7 +2294,7 @@ Scrum团队需要有一个健全的完成的定义，自信构建的产品增量
 - PBI[^PBI]：产品待办列表条目
 - Product Backlog：产品级待办列表，即产品列表
 - Sprint Todo（Sprint Backlog）：冲刺级待办列表（在Scrum中称为Sprint Backlog，在Kanban中称为Todo，我们综合一下，称为Sprint Todo），即冲刺列表
-- Sprint Task
+- Sprint Task：任务级列表
 - 就绪的定义[^DoR]
 - 完成的定义[^DoD]
 - 潜在可交付产品增量[^PSI]
@@ -2699,13 +2699,16 @@ Link-Cooperation拆分成四个子项目：
 
 product backlog、sprint backlog、todo、user story...
 
+
+
+这里要增加代码可读性，适当的注释，然后合理的提交日志消息来弥补轻文档
+
 ### 代码风格问题
 
- \- 代码风格一致性
+- 我们需要保持代码风格一致，可以使用clang-format或者类似的工具，在提交或者集成到IDE环境中，自动完成代码风格的格式化
 
-定个规则，全部制表符要用空格代替
+- 推荐一个规则，全部制表符使用空格代替，统一每个Tab使用四个空格
 
- \- 使用clang-format协作所有的源码格式
 
 ### 代码注释
 
@@ -2830,6 +2833,20 @@ commit消息。。。。
 git flow
 
 rebase、merge、squash
+
+
+
+在多人协作时，基于dev分支，多个feature进行协作了，为了使自己的提交更加干净，避免使用merge产生多余的Merge branch 'dev' into 'feature/xxx'日志
+
+可以使用rebase而不是merge
+
+在什么时候不该使用rebase，什么时候推荐使用rebase？
+
+
+
+使提交更加简洁，合并多条提交，考虑使用squash
+
+
 
 
 
