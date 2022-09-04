@@ -106,6 +106,7 @@ OKR 和敏捷有非常多的文化底蕴是一致的，比如：价值驱动，�
 ![](../images/post/link_cooperation_agile/different_between_okr_and_agile.webp)
 
 <center><font size="2"><a href="https://www.infoq.cn/article/OFx8xxEVXtsIpYXldsqA">该图来自：《深入浅出了解 OKR（十）：OKR 在敏捷转型中的实践》 by 大叔杨</a></font></center>
+
 在很多行为方式上，OKR与敏捷（比如Scrum），也有非常多相似性，把它们结合使用的时候，可以**互相借鉴行为上的做法**。比如，在给Backlog进行优先级排序的时候，可以借鉴到OKR中，对OKR的目标进行优先级划分。
 
 除了互相借鉴外，它们的共同使用，其实相当于**建立起了大小迭代模型**（显然是OKR的周期会比敏捷的冲刺要长）。**大迭代（OKR）**一般以季度为单位进行，而**小迭代（敏捷）**则以冲刺为单位。季度规划可以非常明确的提出短期目标和结果，以便于大家的聚焦和小成就的积累。
@@ -232,6 +233,7 @@ SWOT分析模型分为两部分：
   ![](../images/post/link_cooperation_agile/rep_ccp_crp.png)
 
 <center><font size="2"><a href="https://blog.csdn.net/hello_ejb3/article/details/124003535">该图来自：《聊聊软件开发的REP、CCP、CRP原则》</a></font></center>
+
 其它原则：
 
 - 无环依赖原则（ADP，No-Annulus Dependency Principle）：在包的依赖关系图中不允许存在环
@@ -516,6 +518,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_card.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
+
 卡片不是为了捕获需求的所有组成信息而设的。实际上，我们故意使用空间有限的小卡片，目的就是让用户故事尽可能简洁。卡片上应该只用寥寥数语来点名需求的精髓或目的，它存在的意义是提醒利益干系人、产品负责人及开发团队进行更深入的讨论。
 
 ##### 会话（Conversation）
@@ -531,6 +534,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_confirmation.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
+
 这些满足条件也可以看作是高一级的接收测试。当然，开发故事的时候，肯定不会只运行这几个测试。实际上，虽然跟用户故事挂钩的接收测试只有几个，但团队还有数量比它多得多的具体技术层面的测试，是产品负责人不知道的。
 
 这些与故事挂钩的接收测试之所以存在，是因为**从产品负责人的角度看**，它们是捕获及沟通信息、确定故事是否已正确实现的重要方式之一。
@@ -544,6 +548,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_userstory_level.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
+
 - **史诗（Epic）**：最大的故事**以月为单位**，约为一两个到好几个月的大小，可跨越一整个或多个版本，可以被称为“**史诗级的故事**”
 - **特性**：第二级别故事的大小通常**以周为单位**，对单个冲刺来说还是有点大，有些团队把这称为”特性“
 - **故事**：最小的用户故事通常直接称之为“**故事**”，但为了避免与同样是“故事”的史诗、特性或其它大的条目相冲突，也可称作为“**冲刺故事**”或“**可实现故事**”，暗示它们的大小**以天为单位**，足够小，**可以放入一个冲刺做完**，需要注意，在写故事时需要**避免任务级的细节**
@@ -567,6 +572,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_non_functional_requirement_story.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
+
 ### 知识获取型故事
 
 有时我们需要创建一个**专注于知识获取的PBI**[^PBI]。比如在缺乏足够的产品或产品构建流程相关知识而驻足不前时，我们需要探索。这种探索有许多名字：**原型**、**概念验证**、**试验**、**学习**、**探针**等，它们基本上都是包含获取信息在内的探索活动。
@@ -576,6 +582,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_get_tech_story.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
+
 ### 收集故事
 
 以下两种方法可以用于收集用户故事
@@ -586,6 +593,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_userstory_map.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》 - 故事地图例子</font></center>
+
 ## 产品列表
 
 产品列表是一个**按优先顺序排列的、预期产品功能列表**。产品列表由各个待办事项组成，即**PBI（Product Backlog Item）[^PBI]**或简称为**条目**。
@@ -610,6 +618,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_pbi_priority_order.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》 - PBI排列优先级例子</font></center>
+
 ### 梳理
 
 #### 什么是梳理？
@@ -643,6 +652,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_dor.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
+
 梳理产品列表时，应当确保列表顶部的条目已就绪，可以放入冲刺中让开发团队有信心做相关的工作并在冲刺结束时完成。为“就绪”确定一个**有说服力的定义**，将极大提升Scrum团队成功实现冲刺目标的几率。
 
 > 对于PBI列表中**就绪条目的合理存量**，最好是**两到三个冲刺的故事量**，比如：如果团队一次冲刺能完成五个PBI，那么团队在梳理列表的时候，任何时候最好总有大约十到十五个PBI是准备就绪的。
@@ -668,6 +678,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/scrum_sprint_workflow.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
+
 ### 产品列表有哪些，应该有多少？
 
 在确定需要建立哪些以及建立多少个产品列表时，有一个简单的原则：**一个产品，一个产品列表**，即每个产品都应当有自己单独的一个产品列表，提供对整个产品的描述并对需要完成的工作**排列优先顺序**。
@@ -681,6 +692,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/waterfall_life_cycle_phases.png)
 
 <center><font size="2"><a href="https://kruschecompany.com/waterfall-software-development-methodology/">该图来自：《What is the Waterfall software development methodology and is it still relevant?》</a></font></center>
+
 - 可行性分析与计划
 - 需求分析与定义
 - 软件设计
@@ -750,12 +762,15 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 ![](../images/post/link_cooperation_agile/rapid_prototype_one.webp)
 
 <center><font size="2"><a href="https://www.jianshu.com/p/39b6d8a10e0a">该图来自：《码歌老薛聊聊软件开发模型(瀑布模型、快速原型、螺旋以及敏捷开发模式)》</a></font></center>
+
 ![](../images/post/link_cooperation_agile/rapid_prototype_two.png)
 
 <center><font size="2"><a href="https://www.rocheindustry.com/guide-to-rapid-prototyping/">该图来自：《THE COMPLETE GUIDE TO RAPID PROTOTYPING FOR PRODUCT DEVELOPMENT》</a></font></center>
+
 ![](../images/post/link_cooperation_agile/rapid_prototype_three.jpg)
 
 <center><font size="2"><a href="https://universityinnovation.org/wiki/Resource:Rapid_Prototyping">该图来自：《Rapid Prototyping》</a></font></center>
+
 流程：
 
 - 快速分析
@@ -936,6 +951,7 @@ BVT好处在于，**节约测试的时间成本，减少不必要的测试轮数
 ![](../images/post/link_cooperation_agile/v_model.png)
 
 <center><font size="2"><a href="https://blog.csdn.net/MXB_1220/article/details/124845092">该图来自：《软件测试模型有哪些？》</a></font></center>
+
 #### 特点
 
 - 测试阶段划分得很清楚
@@ -965,6 +981,7 @@ W模型提出了**测试活动与研发活动并行**的概念，**强调测试�
 ![](../images/post/link_cooperation_agile/w_model.png)
 
 <center><font size="2"><a href="https://blog.csdn.net/MXB_1220/article/details/124845092">该图来自：《软件测试模型有哪些？》</a></font></center>
+
 #### 优点
 
 - 测试伴随着整个软件开发周期，而且测试的对象不仅仅是程序，需求、功能和设计同样要测试
@@ -992,6 +1009,7 @@ Marick 也质疑**单元测试和集成测试的区别**，很多软件开发团
 ![](../images/post/link_cooperation_agile/x_model.png)
 
 <center><font size="2"><a href="https://blog.csdn.net/MXB_1220/article/details/124845092">该图来自：《软件测试模型有哪些？》</a></font></center>
+
 X模型**左边**表明针对单独的程序片段n进行独立的编码和测试活动，右边是功能的集成测试，以此为基本过程，不断迭代，通过集成活动最终成为可执行程序，然后再对这些可执行程序进行测试。通过集成测试的成品可以进行封装并提交给系统测试环节或直接给用户，也可以作为更大规模和范围内集成的一部分。多条并行的曲线表示变更可以在各个部分发生。
 
 X模型提出了**探索性测试**的概念，探索性测试与常规的测试方法不同，**其无须事先制定测试计划或设计**，有经验的测试工程师可根据自己的思维活动及对被测对象的理解，在测试计划之外发现更多的软件错误，避免把大量时间花费在编写测试文档上，导致真正用于测试的时间减少。但探索性测试通常情况下仅作为其他测试方法的补充，因其消耗测试资源较多，且受制于测试工程师的经验，所以**不能成为独立的测试方法**。
@@ -1010,6 +1028,7 @@ X 模型提倡公司**根据自身的实际情况确定是否要进行单元测�
 ![](../images/post/link_cooperation_agile/h_model.png)
 
 <center><font size="2"><a href="https://blog.csdn.net/MXB_1220/article/details/124845092">该图来自：《软件测试模型有哪些？》</a></font></center>
+
 **真正的测试级别之间不存在严格的次序关系**，各阶段间可以反复触发、迭代、增量。为了解决 V 模型和 W 模型存在的问题，有专家提出了 H 模型。
 
 H模型与W模型一样，揭示了**软件测试活动应该是一个独立的软件生产流程**，H模型将**测试活动**与**其他研发流程**独立，**形成一个完全独立的流程**，**测试贯穿产品整个生命周期**，与其他流程（计划、需求分析、用例设计、环境搭建、提交缺陷、评估总结等）**并发地进行**，不需要等到程序全部开发完成才开始执行测试。
@@ -2185,6 +2204,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 ![](../images/post/link_cooperation_agile/scrum_planning_poker_2.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
+
 #### 冲刺速率
 
 **速率**是**每个冲刺完成的工作量**。速率是在冲刺结束时**由已完成的所有PBI[^PBI]大小之和来衡量**的。一个PBI要么已完成，要么未完成，产品负责人从未完成的条目中得不到任何价值，所以速率并不包含未完成的PBI的大小。
@@ -2283,6 +2303,7 @@ Scrum有一条重要的规则：**一旦制定冲刺目标，在冲刺执行开�
 ![](../images/post/link_cooperation_agile/scrum_sprint_complete_sample.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
+
 ##### 什么是完成的定义？
 
 在大多数情况下，**完成的定义**至少要产生一个产品功能的完整切片，即经过设计、构建、集成、测试并编写了文档，能够交付已验证的客户价值。但是，为了得到一个有用的**检查列表**，这些大级别的工作项需要进一步细化。完成的定义可以随时间进行演变。
@@ -2386,6 +2407,7 @@ DevOps可划分三类部门：
 ![](../images/post/link_cooperation_agile/devops_lifecycle.png)
 
 <center><font size="2"><a href="https://azure.microsoft.com/zh-cn/resources/cloud-computing-dictionary/what-is-devops/">该图来自：《什么是 DevOps？》 by Microsoft Azure</a></font></center>
+
 #### 规划（Plan）
 
 DevOps团队构思、定义和描述他们即将构建的应用程序和系统的特性和功能。团队在低粒度和高粒度级别上跟踪从单个产品任务到跨多个产品组合的任务进展。
@@ -2486,14 +2508,17 @@ DevOps团队通过短周期发布软件保持敏捷。因为进度是渐进式�
 ![](../images/post/link_cooperation_agile/devops_tools_one.jpg)
 
 <center><font size="2"><a href="https://www.shalb.com/blog/what-is-devops-and-where-is-it-applied/">该图来自：《What is DevOps and where is it applied?》</a></font></center>
+
 ![](../images/post/link_cooperation_agile/devops_tools_two.png)
 
 <center><font size="2"><a href="https://hoangdinhquang.me/a-note-on-devops-terminology/">该图来自：《A note on DevOps terminologies》</a></font></center>
+
 ### DevOps的的知识体系图
 
 ![](../images/post/link_cooperation_agile/devops_knowledge_architecture.png)
 
 <center><font size="2"><a href="https://www.cnblogs.com/yinzhengjie2020/p/12437420.html">该图来自：《DevOps 简介》 by 尹正杰</a></font></center>
+
 ### 延伸阅读推荐
 
 > - 《凤凰项目：一个IT运维的传奇故事》
@@ -3000,9 +3025,11 @@ void shutdown()
 ![](../images/post/link_cooperation_agile/devops_tools_one.jpg)
 
 <center><font size="2"><a href="https://www.shalb.com/blog/what-is-devops-and-where-is-it-applied/">该图来自：《What is DevOps and where is it applied?》</a></font></center>
+
 ![](../images/post/link_cooperation_agile/devops_tools_two.png)
 
 <center><font size="2"><a href="https://hoangdinhquang.me/a-note-on-devops-terminology/">该图来自：《A note on DevOps terminologies》</a></font></center>
+
 ### 工件
 
 目前我们可以确定以下一些工件：
