@@ -3065,44 +3065,6 @@ void shutdown()
 
 > **记住：实践出真知！！！**
 
-## 词汇表
-
-[^XP]: 极限编程（ExtremeProgramming，简称XP），敏捷开发的一种方法
-
-[^John]: 兼任产品负责人和开发团队成员
-
-[^Phan]: 兼任ScrumMaster和开发团队成员
-
-[^PBI]: Product Backlog Item，产品列表条目
-
-[^PSI]: Potentially Shippable Product Increment，潜在可交付增量
-
-[^WIP]: Work In Process，积压的工作，进入开发过程但并没有完成，对客户或用户来说也不可用的工作。指产品或服务的所有当前在做得或在排队等待做的资产或工作成果
-
-[^MMF]: Minimum Marketable Features，最小适销特性集（MMFs），与一个特性相关的最小功能集合，交付时客户必须能认可其价值（适销）。与“最小可发布特性集MRF”相对
-
-[^MRF]: Minimum Releasable Features，最小可发布特性集（MRFs），（1）一个发布必须包含的特性的最小集合，使此版本能够发布。（2）由一组最小适销的特性组成的特性集。与“必须有的特性集（MVP）”同义
-
-[^MVP]: Minimum Viable Product，最小可行产品（MVP），只包含能够部署的特性、没有其他特性的产品
-
-[^MarginalBenefit]:经济学上的概念，最需要的时候，效益是最大的，往后不断递减
-
-[^UAT]: User Acceptance Test，用户接收测试，它支撑用户或客户
-
-[^AT]: Acceptance Test，接收（验收，最好用接收的译法）测试，在敏捷过程中，它并不是在最后阶段才执行的，而是在开发过程中持续执行的，从在敏捷方法中所发挥的作用来看，接收测试时支撑团队和开发过程的，而UAT则是支撑用户或客户的，出现在开发过程之后。UAT侧重于验收，有已通过检验、可以付款的意思，而AT侧重于引导团队与干系人之间的沟通，指引开发过程沿着正确的方向前进
-
-[^TDD]: Test-Driven Development，测试驱动开发，敏捷开发中的一种核心实践
-
-[^Milestone]: 里程碑
-
-[^DoD]: Definition of Done即完成的定义。（1）在冲刺结束时，团队宣布他们的工作成果能够变成“潜在可发布”之前，团队期望成功完成工作的检查列表。最小的完成的定义应该是能产生产品功能的一个完整切片，它应该是经过设计的、已经构建的、集成过的、测试过的并且提供了良好的文档，最终会交付经验证的客户价值。（2）此术语有时被用来描述应用于所有PBI的接收标准。（3）与“就绪的定义”相对
-
-[^DoR]: Definition of Ready（DoR）即就绪的定义，一个包含条件的检查列表，在冲刺规划过程中，认为一个产品列表已经就绪可以放入一个冲刺之前，这个检查列表中的**条件必须满足**
-
-[^BurnupChart]: 直观地展现了时间与已完成的工作间的关系，让团队成员可以看见其工作成果
-
-[^BurndownChart]: 燃尽图可直观的展现项目总体进度，展示了时间与项目剩余总体工作量间的关系
-
 ## 引用链接
 
 [difference between incremental and iterative]: https://www.zentao.pm/agile-knowledge-share/Scrum-what-the-difference-between-incremental-and-iterative-development-845.html	"Scrum: what's the difference between incremental and iterative development?"
@@ -3129,3 +3091,41 @@ void shutdown()
 - 《凤凰项目：一个IT运维的传奇故事》
 - 《敏捷软件开发：原则、模式与实践》
 - 《Scrum精髓：敏捷转型指南》，官方内容样本https://innolution.com/essential-scrum/table-of-contents
+
+## 词汇表
+
+[^XP]: 极限编程（ExtremeProgramming，简称XP），敏捷开发的一种方法
+
+[^John]: 兼任产品负责人和开发团队成员
+
+[^Phan]: 兼任ScrumMaster和开发团队成员
+
+[^PBI]: Product Backlog Item，产品列表条目
+
+[^PSI]: Potentially Shippable Product Increment，潜在可交付增量
+
+[^WIP]: Work In Process，积压的工作，进入开发过程但并没有完成，对客户或用户来说也不可用的工作。指产品或服务的所有当前在做得或在排队等待做的资产或工作成果
+
+[^MMF]: Minimum Marketable Features，最小适销特性集（MMFs），与一个特性相关的最小功能集合，交付时客户必须能认可其价值（适销）。与“最小可发布特性集MRF”相对
+
+[^MRF]: Minimum Releasable Features，最小可发布特性集（MRFs），（1）一个发布必须包含的特性的最小集合，使此版本能够发布。（2）由一组最小适销的特性组成的特性集。与“必须有的特性集（MVP）”同义
+
+[^MVP]: Minimum Viable Product，最小可行产品（MVP），只包含能够部署的特性、没有其他特性的产品
+
+[^MarginalBenefit]: 经济学上的概念，最需要的时候，效益是最大的，往后不断递减
+
+[^UAT]: User Acceptance Test，用户接收测试，它支撑用户或客户
+
+[^AT]: Acceptance Test，接收（验收，最好用接收的译法）测试，在敏捷过程中，它并不是在最后阶段才执行的，而是在开发过程中持续执行的，从在敏捷方法中所发挥的作用来看，接收测试时支撑团队和开发过程的，而UAT则是支撑用户或客户的，出现在开发过程之后。UAT侧重于验收，有已通过检验、可以付款的意思，而AT侧重于引导团队与干系人之间的沟通，指引开发过程沿着正确的方向前进
+
+[^TDD]: Test-Driven Development，测试驱动开发，敏捷开发中的一种核心实践
+
+[^Milestone]: 里程碑
+
+[^DoD]: Definition of Done即完成的定义。（1）在冲刺结束时，团队宣布他们的工作成果能够变成“潜在可发布”之前，团队期望成功完成工作的检查列表。最小的完成的定义应该是能产生产品功能的一个完整切片，它应该是经过设计的、已经构建的、集成过的、测试过的并且提供了良好的文档，最终会交付经验证的客户价值。（2）此术语有时被用来描述应用于所有PBI的接收标准。（3）与“就绪的定义”相对
+
+[^DoR]: Definition of Ready（DoR）即就绪的定义，一个包含条件的检查列表，在冲刺规划过程中，认为一个产品列表已经就绪可以放入一个冲刺之前，这个检查列表中的**条件必须满足**
+
+[^BurnupChart]: 直观地展现了时间与已完成的工作间的关系，让团队成员可以看见其工作成果
+
+[^BurndownChart]: 燃尽图可直观的展现项目总体进度，展示了时间与项目剩余总体工作量间的关系
