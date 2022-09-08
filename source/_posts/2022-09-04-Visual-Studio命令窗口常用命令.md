@@ -4,6 +4,8 @@ tags:
   - Snippet
   - Visual Studio
   - Command Window
+categories:
+  - [Visual Studio, Command Window]
 date: 2022-09-04 20:36:33
 ---
 
