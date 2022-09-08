@@ -33,7 +33,7 @@ date: 2022-09-08 11:10:30
 
 ## 开发相关指引
 
-- Python模块的共用头文件是Python.h
+- Python模块的公用头文件是Python.h
 
 - 写pyd模块的目的有可能是为某个还没有Python Binding的库编写Wrapper，那么可以在项目中把该库的头文件和库文件路径引入进来
 
