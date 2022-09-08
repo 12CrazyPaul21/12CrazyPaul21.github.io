@@ -45,6 +45,7 @@ date: 2022-09-08 11:10:30
 > - [Python/C API 参考手册](https://docs.python.org/zh-cn/3/c-api/index.html)
 > - [扩展和嵌入 Python 解释器](https://docs.python.org/zh-cn/3/extending/index.html)
 > - [解析参数并构建值变量](https://docs.python.org/zh-cn/3/c-api/arg.html#arg-parsing)
+> - [自定义扩展类型](https://docs.python.org/zh-cn/3/extending/newtypes_tutorial.html)
 
 ## 关于混合模式调试和调试符号
 
