@@ -38,12 +38,23 @@ date: 2022-09-08 11:10:30
 - 需要注意32位或64位匹配
 - 具体的开发方式以及结构组织请直接看官方文档
 
-> 相关开发手册和Example可以查看以下链接：
+> 相关开发手册和Example可查看以下链接：
 >
 > - [创建适用于 Python 的 C++ 扩展](https://docs.microsoft.com/zh-cn/visualstudio/python/working-with-c-cpp-python-in-visual-studio?view=vs-2022)
 > - [microsoft/python-sample-vs-cpp-extension](https://github.com/Microsoft/python-sample-vs-cpp-extension)
 > - [Python/C API 参考手册](https://docs.python.org/zh-cn/3/c-api/index.html)
 > - [扩展和嵌入 Python 解释器](https://docs.python.org/zh-cn/3/extending/index.html)
+
+## 关于混合模式调试和调试符号
+
+如果需要安装Python的调试符号和调试工具，新版本Python需要在安装程序中指定下载。
+
+![](../images/post/visual_studio_pyd_dev/python_installer_debug_symbol_and_tool.png)
+
+> 关于Visual Studio中的混合模式调试可查看以下链接：
+>
+> - [安装用于 Python 解释器的调试符号](https://docs.microsoft.com/zh-cn/visualstudio/python/debugging-symbols-for-mixed-mode-c-cpp-python?view=vs-2022)
+> - [Python/C++ 混合模式调试](https://docs.microsoft.com/zh-cn/visualstudio/python/debugging-mixed-mode-c-cpp-python-in-visual-studio?view=vs-2022)
 
 ## 示例说明
 
