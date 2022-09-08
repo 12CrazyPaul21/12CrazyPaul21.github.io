@@ -45,3 +45,104 @@ date: 2022-09-08 11:10:30
 > - [Python/C API 参考手册](https://docs.python.org/zh-cn/3/c-api/index.html)
 > - [扩展和嵌入 Python 解释器](https://docs.python.org/zh-cn/3/extending/index.html)
 
+## 示例说明
+
+模块名：BytertcSDKWrapper
+
+模块内方法：example
+
+```c++
+#include <Python.h>
+
+/*
+ * 实现example方法.
+ */
+
+// example方法的文档说明
+PyDoc_STRVAR(BytertcSDKWrapper_example_doc, "example(obj, number)\
+\
+Example function");
+
+// example方法实现
+PyObject *BytertcSDKWrapper_example(PyObject *self, PyObject *args, PyObject *kwargs) {
+    /* Shared references that do not need Py_DECREF before returning. */
+    PyObject *obj = NULL;
+    int number = 0;
+
+    /* Parse positional and keyword arguments */
+    static char* keywords[] = { "obj", "number", NULL };
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, "Oi", keywords, &obj, &number)) {
+        return NULL;
+    }
+
+    /* Function implementation starts here */
+
+    if (number < 0) {
+        PyErr_SetObject(PyExc_ValueError, obj);
+        return NULL;    /* return NULL indicates error */
+    }
+
+    Py_RETURN_NONE;
+}
+
+/*
+ * 列出加入BytertcSDKWrapper模块的所有方法，在exec_BytertcSDKWrapper中使用.
+ */
+static PyMethodDef BytertcSDKWrapper_functions[] = {
+    { "example", (PyCFunction)BytertcSDKWrapper_example, METH_VARARGS | METH_KEYWORDS, BytertcSDKWrapper_example_doc },
+    { NULL, NULL, 0, NULL } /* 标注结尾 */
+};
+
+/*
+ * 初始化BytertcSDKWrapper模块，可能会被多次调用，所以需要避免使用static状态.
+ */
+int exec_BytertcSDKWrapper(PyObject *module) {
+    // 注册要添加的方法
+    PyModule_AddFunctions(module, BytertcSDKWrapper_functions);
+
+    // 添加一些模块的元信息
+    PyModule_AddStringConstant(module, "__author__", "huzhiqin");
+    PyModule_AddStringConstant(module, "__version__", "1.0.0");
+    PyModule_AddIntConstant(module, "year", 2022);
+
+    return 0; /* success */
+}
+
+/*
+ * BytertcSDKWrapper模块文档信息.
+ */
+PyDoc_STRVAR(BytertcSDKWrapper_doc, "The BytertcSDKWrapper module");
+
+/*
+ * 模块slot，有create和exec slot，这里登记的是exec.
+ *
+ * @notes: New in 3.5
+ */
+static PyModuleDef_Slot BytertcSDKWrapper_slots[] = {
+    { Py_mod_exec, exec_BytertcSDKWrapper },
+    { 0, NULL }
+};
+
+/*
+ * 模块定义.
+ */
+static PyModuleDef BytertcSDKWrapper_def = {
+    PyModuleDef_HEAD_INIT,
+    "BytertcSDKWrapper",     /* 模块名字，必须与“配置属性”>“常规”>“目标名称”一致 */
+    BytertcSDKWrapper_doc,   /* 模块文档描述 */
+    0,                       /* m_size */
+    NULL,                    /* m_methods */
+    BytertcSDKWrapper_slots, /* create or exec */
+    NULL,                    /* m_traverse */
+    NULL,                    /* m_clear */
+    NULL,                    /* m_free */
+};
+
+/*
+ * 导出BytertcSDKWrapper模块，必须以PyInit_<module-name>，这样的方式命名.
+ */
+PyMODINIT_FUNC PyInit_BytertcSDKWrapper() {
+    return PyModuleDef_Init(&BytertcSDKWrapper_def);
+}
+```
+
