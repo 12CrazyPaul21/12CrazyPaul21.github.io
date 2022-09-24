@@ -42,6 +42,8 @@ Visual Studio C/C++解决方案的`<项目名>.@sha.vcxproj.user`文件可以存
 </Project>
 ```
 
+> 上面的DebuggerFlavor也可以改为WindowsLocalDebugger
+
 `meson.build`部分内容：
 
 ```javascript
