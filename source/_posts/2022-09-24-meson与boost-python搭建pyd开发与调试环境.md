@@ -15,8 +15,9 @@ date: 2022-09-24 21:48:59
 ## Python与boost::python相关文档
 
 - [Boost.Python](https://www.boost.org/doc/libs/1_45_0/libs/python/doc/index.html)
-- [boost.python wiki](https://wiki.python.org/moin/boost.python)
-
+- [Boost.Python WiKi](https://wiki.python.org/moin/boost.python)
+- [Boost.Python Example](https://github.com/boostorg/python/tree/develop/example)
+- [Boost.Python Test Cases](https://github.com/boostorg/python/tree/develop/test)
 - [Python/C API 参考手册](https://docs.python.org/zh-cn/3/c-api/index.html)
 - [扩展和嵌入 Python 解释器](https://docs.python.org/zh-cn/3/extending/index.html)
 
