@@ -23,7 +23,7 @@ date: 2022-09-24 21:48:59
 
 ## 搭建基础环境
 
-这里说明的是在Windows环境下的Visual Studio开发32位的pyd模块，并且Python、boost::python都是采用**/MT**（即使是在Debug构建模式下）的静态链接。
+这里说明的是在Windows环境下的Visual Studio开发32位的pyd模块，并且Python、boost::python都是采用/MT（即使是在Debug构建模式下）的静态链接。
 
 > 之所以在Debug构建模式也采用/MT，是因为boost::python模块的一些Assert在32位的Debug构建模式下会失败，目前发现的是与对齐相关的一些断言
 
