@@ -103,7 +103,15 @@ class Callback
         }
 
         PyGILState_STATE state = PyGILState_Ensure();
-        call_method<void>(m_self, "event", message, boost::python::object());
+        try {
+            call_method<void>(m_self, "event", std::string(message), boost::python::object());
+        }
+        catch (const boost::python::error_already_set&) {
+            boost::python::handle_exception();
+        }
+        catch (const std::exception&) {
+            boost::python::handle_exception();
+        }
         PyGILState_Release(state);
     }
 
@@ -114,7 +122,15 @@ class Callback
         }
 
         PyGILState_STATE state = PyGILState_Ensure();
-        call_method<void>(m_self, "event", message, data.copy());
+		try {
+            call_method<void>(m_self, "event", std::string(message), data.copy());
+        }
+        catch (const boost::python::error_already_set&) {
+            boost::python::handle_exception();
+        }
+        catch (const std::exception&) {
+            boost::python::handle_exception();
+        }
         PyGILState_Release(state);
     }
 
