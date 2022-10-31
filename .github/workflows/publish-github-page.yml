@@ -33,7 +33,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          apt-get install pandoc -y
+          sudo apt-get install pandoc -y
           npm install hexo-cli -g
           npm install
 
