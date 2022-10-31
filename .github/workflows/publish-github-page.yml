@@ -17,6 +17,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '12.x'
+      
+      - name: Pandoc
+        uses: docker://pandoc/core:2.7
 
       - name: Config environment
         env:
