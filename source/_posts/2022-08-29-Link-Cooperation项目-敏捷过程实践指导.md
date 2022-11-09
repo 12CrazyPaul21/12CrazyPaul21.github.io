@@ -2,7 +2,10 @@
 title: Link-Cooperation项目 - 敏捷过程实践指导
 tags:
   - Link-Cooperation
-  - 项目日志 - 传统开发模型 - 传统测试模型 - 目标制定原则
+  - 项目日志
+  - 传统开发模型
+  - 传统测试模型
+  - 目标制定原则
   - 敏捷过程（Agile）
   - OKR - DevOps
   - 极限编程（XP）
