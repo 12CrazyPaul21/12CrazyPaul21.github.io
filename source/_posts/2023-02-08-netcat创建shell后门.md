@@ -25,3 +25,13 @@ nc -L -p <端口> -t -e cmd.exe
 nc <ip or server host> <port>
 ```
 
+## 后台运行
+
+```bash
+# windows
+start /b nc -L -p <端口> -t -e cmd.exe
+
+# unix
+nc -L -p <端口> -t -d -e /bin/bash
+```
+
