@@ -55,7 +55,7 @@ pip install PyQtWebEngine-Qt5==5.15.2
 
 ### 3. 安装python 2.7.5
 
-https://www.python.org/downloads/release/python-275/
+[Python 2.7.5 Download](https://www.python.org/downloads/release/python-275/)
 
 编译QWebEngine依赖python2，这里装32位或64位的都可以
 
@@ -74,13 +74,13 @@ https://www.python.org/downloads/release/python-275/
 
 ### 2. 确定路径（根据实际修改）
 
-build目录：D:\build
+build目录：`D:\build`
 
-qmake路径：D:\Qt\5.15.2\msvc2019\bin\qmake.exe
+qmake路径：`D:\Qt\5.15.2\msvc2019\bin\qmake.exe`
 
-QWebEngine源码路径：D:\Qt\5.15.2\Src\qtwebengine
+QWebEngine源码路径：`D:\Qt\5.15.2\Src\qtwebengine`
 
-vc x64_x86 交叉编译prompt路径："C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsamd64_x86.bat"
+vc x64_x86 交叉编译prompt路径：`"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsamd64_x86.bat"`
 
 **注意：**QWebEngine这里必须用x64_x86交叉编译环境来编译
 
@@ -152,7 +152,7 @@ D:/Qt/5.15.2/Src/qtwebengine/src/3rdparty/chromium/third_party/blink/renderer/co
 
 编译的输出包括：
 
-**D:\build\bin**
+**`D:\build\bin`**
 
 ```
 Qt5WebEngine.dll
@@ -163,7 +163,7 @@ QtWebEngineProcess.exe
 
 把它们拷贝到打包环境仓库的bin32目录下
 
-**D:\build\src\core\release**
+**`D:\build\src\core\release`**
 
 ```
 # 这部分如果不更新的话，devtool用不了
@@ -174,4 +174,4 @@ qtwebengine_resources_100p.pak
 qtwebengine_resources_200p.pak
 ```
 
-把它们拷贝到打包环境仓库的bin32\PyQt5\Qt\resources目录下（如果目录不存在就直接新建）
+把它们拷贝到打包环境仓库的`bin32\PyQt5\Qt\resources`目录下（如果目录不存在就直接新建）
