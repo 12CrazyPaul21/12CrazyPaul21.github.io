@@ -45,7 +45,7 @@ AlwaysBreakTemplateDeclarations: true
 BinPackArguments: true
 BinPackParameters: true
 # BitFieldColonSpacing: Both
-BreakBeforeBraces: Allman
+BreakBeforeBraces: Custom # Allman
 BraceWrapping:
   # AfterCaseLabel: true
   AfterClass: true
