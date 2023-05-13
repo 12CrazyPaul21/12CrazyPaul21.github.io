@@ -19,6 +19,7 @@ Standard: Cpp11
 UseTab: Never
 TabWidth: 4
 IndentWidth: 4
+AccessModifierOffset: -4
 # AccessModifierOffset: 2
 AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: true
@@ -30,7 +31,7 @@ AlignEscapedNewlines: Right
 AlignTrailingComments: true
 # AllowAllArgumentsOnNextLine: false
 # AllowAllConstructorInitializersOnNextLine: false
-AllowAllParametersOfDeclarationOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: false
 AllowShortCaseLabelsOnASingleLine: false
 # AllowShortEnumsOnASingleLine: true
@@ -41,10 +42,10 @@ AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: true
-BinPackArguments: false
-BinPackParameters: false
+BinPackArguments: true
+BinPackParameters: true
 # BitFieldColonSpacing: Both
-BreakBeforeBraces: Custom # or Allman
+BreakBeforeBraces: Allman
 BraceWrapping:
   # AfterCaseLabel: true
   AfterClass: true
@@ -65,7 +66,7 @@ BraceWrapping:
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeComma
 BreakStringLiterals: false
-ColumnLimit: 0
+ColumnLimit: 120
 CompactNamespaces: false
 ConstructorInitializerIndentWidth: 2
 Cpp11BracedListStyle: true
@@ -99,6 +100,7 @@ SpacesInCStyleCastParentheses: false
 SpacesInContainerLiterals: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
+ContinuationIndentWidth: 4
 ```
 
 更多风格定制可以参看：[Clang-Format Style Options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)
