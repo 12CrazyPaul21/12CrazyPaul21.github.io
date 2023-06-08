@@ -34,8 +34,8 @@ python.exe .\tools\git-sync-deps
 ## configure
 
 ```bash
-# release模式，并启用opengl
-bin/gn gen out/build --args="is_debug=false skia_use_gl=true"
+# debug模式，并启用opengl
+bin/gn gen out/build --args="is_debug=true skia_use_gl=true"
 ```
 
 如果提示以下错误
