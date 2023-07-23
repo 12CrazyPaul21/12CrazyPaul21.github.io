@@ -37,9 +37,13 @@ $env:https_proxy='http://127.0.0.1:23457'
 # /etc/proxychains4.conf配置例子
 # ...省略
 
+# 避免环回地址走代理，如果有其它地址需要排除的也可以用类似的写法
+localnet 127.0.0.0/255.0.0.0
+localnet ::1/128
+
 [ProxyList]
-#socks4  proxy.example.com 1080
-#socks5  proxy.example.com 9050
+# socks4  proxy.example.com 1080
+# socks5  proxy.example.com 9050
 http    proxy.example.com 8080
 ```
 
