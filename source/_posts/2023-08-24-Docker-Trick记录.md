@@ -72,7 +72,7 @@ REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
 buildme      latest    436032454dd8   7 seconds ago   8.45MB
 ```
 
-每一个 `FROM` 代表了一个stage，上面加入的 `FROM scratch` 讲其分为了两个stage，第一个stage负责编译 `client` 和 `server` ，第二个stage将产出从第一个stage拷贝过来，最终构建的image会保留最后一个的stage。从 `docker images buildme` 的输出可以看到，image的体积从 `150MB` 降到了 `8.45MB`。
+每一个 `FROM` 代表了一个stage，上面加入的 `FROM scratch` 将其分为了两个stage，第一个stage负责编译 `client` 和 `server` ，第二个stage将产出从第一个stage拷贝过来，最终构建的image会保留最后一个的stage。从 `docker images buildme` 的输出可以看到，image的体积从 `150MB` 降到了 `8.45MB`。
 
 ### 并行构建
 
@@ -138,7 +138,7 @@ buildme-server   latest    666d492d9f13   5 seconds ago    4.2MB
 
 ## 利用Cache Mount存储package cache
 
-对于一些仅需要在 `Build` 阶段使用的依赖，这里说的依赖指通过包管理器下载的编译工具、三方库、临时文件等，可以使用 **Cache Mount** 挂在到这些依赖的指定目录，这样的话当添加新依赖或者该 `Layer` 的指令需要重新执行时，可以直接使用缓存中的内容，而不需要重新处理已存在 **Cache Mount** 中的依赖，合理利用可以加快 `Image` 的构建速度。
+对于一些仅需要在 `Build` 阶段使用的依赖，这里说的依赖指通过包管理器下载的编译工具、三方库、临时文件等，可以使用 **Cache Mount** 将这些依赖的指定目录挂载起来，这样的话当添加新依赖或者该 `Layer` 的指令需要重新执行时，可以直接使用缓存中的内容，而不需要重新处理已存在 **Cache Mount** 中的依赖，合理利用可以加快 `Image` 的构建速度。
 
 > 注意：**Cache Mount** 中的缓存只存在于 `Build` 阶段，当 `Image` 实例化为 `Container` 运行之后就不存在了，如果希望在运行阶段也可以使用的话，使用其他的方法，比如 **Bind Mount**。
 
@@ -158,7 +158,7 @@ buildme-server   latest    666d492d9f13   5 seconds ago    4.2MB
   ENTRYPOINT [ "/bin/server" ]
 ```
 
-golang通过 `go get` 下载的 `mod` 默认位于 `$GOPATH/pkg/mod` 中（其中 `$GOPATH 默认为 `/go`），上面将该目录使用 **Cache Mount** 挂载，要观察缓存是否生效的话，可以参考guide中以下的做法：
+golang通过 `go get` 下载的 `mod` 默认位于 `$GOPATH/pkg/mod` 中（其中 `$GOPATH` 默认为 `/go`），上面将该目录使用 **Cache Mount** 挂载，要观察缓存是否生效的话，可以参考guide中以下的做法：
 
 ```bash
 # 1. 清理构建缓存
@@ -198,7 +198,7 @@ awk '/proxy.golang.org/' log2.txt
 
 ## 利用Bind Mount减少构造时的文件拷贝
 
-对于仅在 `Build` 阶段使用，已存在于宿主机的代码或配置等文件，可以通过 `Bind Mount` 来减少构建时文件拷贝的开销，这将直接使用宿主机上的文件。
+对于仅在 `Build` 阶段使用，且已存在于宿主机的代码或配置等文件，可以通过 `Bind Mount` 来减少构建时文件拷贝的开销，这将直接使用宿主机上的文件。
 
 ```dockerfile
 # syntax=docker/dockerfile:1
