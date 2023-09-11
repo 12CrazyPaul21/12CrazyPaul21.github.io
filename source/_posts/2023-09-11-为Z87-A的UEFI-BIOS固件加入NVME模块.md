@@ -50,7 +50,7 @@ NVM Express 驱动的官方目录在 [NVM Express Drivers](https://nvmexpress.or
 
 ![](../images/post/nvme/2.png)
 
-<center><font size="2">这里是将压缩过 NVMeExpressDxE_compressed.ffs 插入了固件中</font></center>
+<center><font size="2">这里是将压缩过的 NVMeExpressDxE_compressed.ffs 插入了固件中</font></center>
 
 ### 3. 导出固件
 
