@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"phantom27.xyz","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="↑↑↓↓←←→→abab提供机制而不是策略!!!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="♬ Phantom Blog">
+<meta property="og:url" content="https://phantom27.xyz/index.html">
+<meta property="og:site_name" content="♬ Phantom Blog">
+<meta property="og:description" content="↑↑↓↓←←→→abab提供机制而不是策略!!!">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="huzhiqin">
+<meta property="article:tag" content="music,development,software,blog,hacker,cracker,reverse,network,音乐,软件开发,逆向">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://phantom27.xyz/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>♬ Phantom Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="♬ Phantom Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">♬ Phantom Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">梦幻空花 ~ 何劳把捉</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/12CrazyPaul21" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://phantom27.xyz/2023/09/11/%E4%B8%BAZ87-A%E7%9A%84UEFI-BIOS%E5%9B%BA%E4%BB%B6%E5%8A%A0%E5%85%A5NVME%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="huzhiqin">
+      <meta itemprop="description" content="↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="♬ Phantom Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/11/%E4%B8%BAZ87-A%E7%9A%84UEFI-BIOS%E5%9B%BA%E4%BB%B6%E5%8A%A0%E5%85%A5NVME%E6%A8%A1%E5%9D%97/" class="post-title-link" itemprop="url">为 Z87-A 的 UEFI BIOS 固件加入 NVME 模块</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-09-11 00:07:52" itemprop="dateCreated datePublished" datetime="2023-09-11T00:07:52+00:00">2023-09-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-09 11:54:33" itemprop="dateModified" datetime="2023-10-09T11:54:33+00:00">2023-10-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/BIOS/" itemprop="url" rel="index"><span itemprop="name">BIOS</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/BIOS/DXE-Driver/" itemprop="url" rel="index"><span itemprop="name">DXE Driver</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这有一张 M.2 接口的 NVM Express SSD（Non-Volatile Memory Express，这是一种用于固态存储设备的协议和接口标准，一般主板通过 M.2 接口走 PCIe 总线来进行连接） 需要插在旧主板 Asus Z87-A 上使用，但是这张主板并没有 M.2 接口，UEFI BIOS 也没有 NVME DXE 驱动，所以在开机引导的时候无法识别 NVME SSD。</p>
+<p>让这张旧板使用 NVME SSD 跑系统的基本思路是，使用 M.2 转 PCIe 的转接卡来把硬盘接到主板上，然后将 NVMeExpressDxE 驱动刷进 Z87-A 最新的 UEFI BIOS 固件中，并更新主板的固件，使 BIOS 在选择引导设备的时候能够识别到 NVME SSD 设备。</p>
+<h2 id="编译-nvm-express-uefi-dxe-驱动">编译 NVM Express UEFI DXE 驱动</h2>
+<p>NVM Express 驱动的官方目录在 <a target="_blank" rel="noopener" href="https://nvmexpress.org/drivers/">NVM Express Drivers</a>，源码位置在 <a target="_blank" rel="noopener" href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg/Bus/Pci/NvmExpressDxe">NvmExpressDxe</a>，DXE 驱动使用一种叫 EBC（EFI Byte Code）的虚拟指令集，是跨平台的，可通过以下方式获得：</p>
+<ul>
+<li>通过 <a target="_blank" rel="noopener" href="https://github.com/tianocore/edk2">EDK II</a> 来编译</li>
+<li>直接下载 <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/12CrazyPaul21/12CrazyPaul21.github.io/master/source/data/nvme/NVMeExpressDxE.ffs">NVMeExpressDxE.ffs</a>，或压缩版 <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/12CrazyPaul21/12CrazyPaul21.github.io/master/source/data/nvme/NVMeExpressDxE_compressed.ffs">NVMeExpressDxE_compressed.ffs</a></li>
+<li>去其它存在 NVMeExpressDxE 驱动的主板固件中提取出来也可行</li>
+</ul>
+<h2 id="最新的-z87-a-uefi-bios-固件包">最新的 Z87-A UEFI BIOS 固件包</h2>
+<p>到 <a target="_blank" rel="noopener" href="https://www.asus.com.cn/supportonly/z87-a/helpdesk_bios/">Z87-A BIOS &amp; 固件</a> 下载 <code>Z87-A BIOS 2103</code>，这是官方最新版本的 .cap 固件包（AMI Aptio Capsule），包名为 <code>Z87-A-ASUS-2103.CAP</code></p>
+<h2 id="将-nvmeexpressdxe.ffs-模块插入到固件内">将 NVMeExpressDxE.ffs 模块插入到固件内</h2>
+<p>这里使用 UEFITool 来操作（<a target="_blank" rel="noopener" href="https://github.com/LongSoft/UEFITool/releases/tag/0.28.0">UEFITool 0.28.0</a>，注意带 NE 后缀的包不能修改该固件，0.28.0 已经是有修改能力的最新包了，具体可看该 <a target="_blank" rel="noopener" href="https://github.com/LongSoft/UEFITool/issues/67">issue</a>），不过这个工具在插入 ffs 的时候没有提供压缩功能，如果需要对模块进行压缩再插入的话可以使用 MMTool，或者直接使用压缩过的 ffs。</p>
+<h3 id="使用-uefitool-打开-cap-包">1. 使用 UEFITool 打开 cap 包</h3>
+<p><img src="../images/post/nvme/1.png" /></p>
+<p>打开后可以看到 cap 包的结构，可看作两个部分，分别是 Capsule Header 与 Image。Header 部分包含了有关 Capsule（这里是 AMI Aptio 类型的 Capsule）文件的元数据（版本信息、签名以及大小等信息），这用于在更新固件时对 Capsule 文件进行验证（比如完整性和数字签名是否合法）以及提取固件体。Image 部分则是实际写入固件 Flash 芯片的固件体，后续我们把 NVMeExpressDxE.ffs 插入固件体后，需要把这部分给 dump 出来，原因之后说明。</p>
+<p>从该固件体的结构可以看到，固件分成了三个 Region（UEFI 固件内存区域，可分为多个区域，比如这里的 Descriptor Region 包含了固件的元数据信息，ME Region 包含了 Intel ME 的固件，BIOS Region 则是实际的 UEFI BIOS 固件的区域），每个区域内可划分为一个或多个 FV（Firmware Volume，固件卷），通常会根据实际的分类与不同阶段的依赖，将文件放置在特定的卷中（比如 NVRAM Volume 包含了配置信息，DXE 驱动一般会集中放在一个或多个 FV 中，PEI Module 也类似），FV 内文件的组织方式是这样的，其内部有一个或多个 FFS Image（EFI Firmware File System，固件文件系统），FFS Image 包含一个或多个 EFI Section，而 EFI Section 内可以包含一个或多个文件（比如 PE32 Image、Raw File 等）</p>
+<h3 id="定位-nvmeexpressdxe.ffs-插入位置">2. 定位 NVMeExpressDxE.ffs 插入位置</h3>
+<p>使用 UEFITool 搜索 CSMCORE（该 DXE 提供 Legacy BIOS 兼容模式，使 BIOS 可使用 MBR 方式引导系统）所在的 FV，因为该 FV 通常就是大多数 DXE 驱动集合的卷，之所以使用 CSMCORE 来定位，是因为通常都是这么做的，如果找不到 CSMCORE 的话，也可以搜索其它常见的 DXE 驱动，或者直接手动找 DXE 非常多的 FV。找到 DXE 集合的 FV 后，就可以在该 FV 的末尾将 NVMeExpressDxE.ffs 插入了。</p>
+<p><img src="../images/post/nvme/2.png" /></p>
+<center>
+<font size="2">这里是将压缩过的 NVMeExpressDxE_compressed.ffs 插入了固件中</font>
+</center>
+<h3 id="导出固件">3. 导出固件</h3>
+<p>先 <code>CTRL + S</code> 保存一遍副本为 <code>Z87-A-ASUS-2103-NVME.CAP</code>，然后再将固件主体导出去，后缀名选择 <code>.rom</code> 或者 <code>.bin</code> 都没问题。之所以要导出固件主体，而不是直接使用 .cap 固件包（AMI Aptio Capsule）进行升级，是因为 Capsule 文件是经过数字签名的，直接向里面加入新模块无法通过更新固件时的校验，所以需要通过烧录器，直接把固件体烧录进存储 UEFI BIOS 固件的芯片内。</p>
+<p><img src="../images/post/nvme/3.png" /></p>
+<h2 id="将固件烧录进-flash-芯片">将固件烧录进 Flash 芯片</h2>
+<p>Z87-A 存放 UEFI BIOS 固件的 Flash 芯片使用型号的是 WINBOND 25Q64FVAIQ（其中 25 指的是 SPI NOR Flash 系列，Q64 说明芯片容量是 64 Mbit，约 8 MB的大小，后面的字母集包括了时钟频率等信息），位置在 PCIEX16_2 接口的附近，是使用 DIP 封装的直插式芯片，可以拔出来。</p>
+<p>该芯片可以使用 CH341A 编程器，来将之前导出的 <code>.rom / .bin</code> 固件体烧录进去，注意将芯片插进去之前要注意芯片的方向以及引脚的位置必须与 CH341A 编程器设定的匹配，最好看下编程器的说明书，如果芯片发热，应该立马拔出来，否则可能导致芯片被烧掉，另外如果不想拔芯片的话，也可以使用烧录夹来接引脚。至于 CH341A 编程器的烧录软件可以在买的时候问店家要。</p>
+<h2 id="插入转接卡">插入转接卡</h2>
+<p>我这里使用的是一张绿联的 M.2 NVMe 扩展卡，它是一张 PCIe 4.0 x16 类型的卡，Z87-A 主板的 PCIe 都是 3.0 的，不过由于 PCIe 是向下兼容的，所以也可以用，虽然不能发挥出这张卡跑 PCIe 4.0 的性能。将固态硬盘接上扩展卡后，插到主板 PCIe x16 的接口上。</p>
+<h2 id="引导-nvme-驱动器">引导 NVMe 驱动器</h2>
+<p>重启然后进入 BIOS 的 Advanced Mode，如果能在 <code>启动设备选择</code> 中看到 <code>PATA SS:</code> 之类的字眼就说明成功了，这时候可以按照一般的方式来使用该固态硬盘，将它用做系统盘。</p>
+<p>那么 UEFI BIOS 是在什么时候识别出 NVME 设备并为其加载驱动的呢？简单说，UEFI BIOS 在 PEI 阶段（Pre EFI Initialization，EFI 前期初始化）进行早期初始化时，会对硬件进行基本的初始化与识别，并将这些信息存储到一张 HOB（Hand-Off Block）列表中传递给 DXE 阶段（Driver Execution Environment，执行驱动环境）使用，这些信息可能包括内存映射、PCI 设备等信息，DXE 阶段可以根据这些信息来加载适当的 DXE 驱动程序，可参考 <a target="_blank" rel="noopener" href="https://tianocore-docs.github.io/edk2-ModuleWriteGuide/draft/7_pre-efi_initialization_modules/76_communicate_with_dxe_modules.html">Communicate with DXE Modules</a>。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://phantom27.xyz/2023/08/24/Docker-Trick%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="huzhiqin">
+      <meta itemprop="description" content="↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="♬ Phantom Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/08/24/Docker-Trick%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">Docker Trick记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-08-24 01:21:26" itemprop="dateCreated datePublished" datetime="2023-08-24T01:21:26+00:00">2023-08-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-09 11:54:33" itemprop="dateModified" datetime="2023-10-09T11:54:33+00:00">2023-10-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/Practice/" itemprop="url" rel="index"><span itemprop="name">Practice</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>这篇文章会随时更新</p>
+</blockquote>
+<h1 id="build">Build</h1>
+<h2 id="合理利用multi-stage">合理利用multi-stage</h2>
+<p>multi-stage可以带来：</p>
+<ul>
+<li>减少Image体积</li>
+<li>并行构建</li>
+<li>划分目标产出</li>
+</ul>
+<p>下面以<a target="_blank" rel="noopener" href="https://docs.docker.com/build/guide/multi-stage/">官方guide中的例子</a>来逐步看这几个特性</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># syntax=docker/dockerfile:1</span></span><br><span class="line"><span class="keyword">FROM</span> golang:<span class="number">1.20</span>-alpine</span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /src</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> go.mod go.sum .</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> go mod download</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/client ./cmd/client</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/server ./cmd/server</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [ <span class="string">&quot;/bin/server&quot;</span> ]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker build --tag=buildme .</span><br><span class="line">$ docker images buildme</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">buildme      latest    c021c8a7051f   5 seconds ago   150MB</span><br></pre></td></tr></table></figure>
+<p>以上是例子原始的dockerfile，这是一个Golang项目，它的产出 <code>/bin/client</code> 和 <code>/bin/server</code>，包含了客户端和服务端的目标可执行文件，入口点是 <code>/bin/server</code>，构造出来的镜像有 <code>150MB</code> ，由于这个镜像的最终产出只有client和server两个目标可执行文件，所以说这个镜像大小相对来说有些大了，包含了非必须的部分。</p>
+<h3 id="减少image体积">减少Image体积</h3>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># syntax=docker/dockerfile:1</span></span><br><span class="line">  <span class="keyword">FROM</span> golang:<span class="number">1.20</span>-alpine</span><br><span class="line">  <span class="keyword">WORKDIR</span><span class="language-bash"> /src</span></span><br><span class="line">  <span class="keyword">COPY</span><span class="language-bash"> go.mod go.sum .</span></span><br><span class="line">  <span class="keyword">RUN</span><span class="language-bash"> go mod download</span></span><br><span class="line">  <span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line">  <span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/client ./cmd/client</span></span><br><span class="line">  <span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/server ./cmd/server</span></span><br><span class="line">+</span><br><span class="line">+ <span class="keyword">FROM</span> scratch</span><br><span class="line">+ <span class="keyword">COPY</span><span class="language-bash"> --from=0 /bin/client /bin/server /bin/</span></span><br><span class="line">  <span class="keyword">ENTRYPOINT</span><span class="language-bash"> [ <span class="string">&quot;/bin/server&quot;</span> ]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker build --tag=buildme .</span><br><span class="line">$ docker images buildme</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">buildme      latest    436032454dd8   7 seconds ago   8.45MB</span><br></pre></td></tr></table></figure>
+<p>每一个 <code>FROM</code> 代表了一个stage，上面加入的 <code>FROM scratch</code> 将其分为了两个stage，第一个stage负责编译 <code>client</code> 和 <code>server</code> ，第二个stage将产出从第一个stage拷贝过来，最终构建的image会保留最后一个的stage。从 <code>docker images buildme</code> 的输出可以看到，image的体积从 <code>150MB</code> 降到了 <code>8.45MB</code>。</p>
+<h3 id="并行构建">并行构建</h3>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># syntax=docker/dockerfile:1</span></span><br><span class="line">- <span class="keyword">FROM</span> golang:<span class="number">1.20</span>-alpine</span><br><span class="line">+ <span class="keyword">FROM</span> golang:<span class="number">1.20</span>-alpine AS base</span><br><span class="line">  <span class="keyword">WORKDIR</span><span class="language-bash"> /src</span></span><br><span class="line">  <span class="keyword">COPY</span><span class="language-bash"> go.mod go.sum .</span></span><br><span class="line">  <span class="keyword">RUN</span><span class="language-bash"> go mod download</span></span><br><span class="line">  <span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line">+</span><br><span class="line">+ <span class="keyword">FROM</span> base AS build-client</span><br><span class="line">  <span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/client ./cmd/client</span></span><br><span class="line">+</span><br><span class="line">+ <span class="keyword">FROM</span> base AS build-server</span><br><span class="line">  <span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/server ./cmd/server</span></span><br><span class="line"></span><br><span class="line">+ <span class="keyword">FROM</span> scratch</span><br><span class="line">+ <span class="keyword">COPY</span><span class="language-bash"> --from=build-client /bin/client /bin/</span></span><br><span class="line">+ <span class="keyword">COPY</span><span class="language-bash"> --from=build-server /bin/server /bin/</span></span><br><span class="line">  <span class="keyword">ENTRYPOINT</span><span class="language-bash"> [ <span class="string">&quot;/bin/server&quot;</span> ]</span></span><br></pre></td></tr></table></figure>
+<p>以上dockerfile有四个stage，<strong>base</strong> stage负责处理项目的依赖，<strong>build-client</strong> 和 <strong>build-server</strong> 这两个stage从 <strong>base</strong> stage继承而来（可以理解为面向对象中的父子类关系），它们分别负责构建 <strong>client</strong> 和 <strong>server</strong>，最后一个stage将从 <strong>build-client</strong> 和 <strong>build-server</strong> stage把目标产出拷贝过来。构造该image时，可以发现构建的速度加快了，而且 <strong>build-client</strong> 和 <strong>build-server</strong> 这两个stage的构造指令是<strong>并行进行的</strong>，<strong>docker可以根据各个stage之间的依赖关系，让某些stage的构造并行执行</strong>。</p>
+<h3 id="划分目标产出">划分目标产出</h3>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># syntax=docker/dockerfile:1</span></span><br><span class="line">- <span class="keyword">FROM</span> golang:<span class="number">1.20</span>-alpine</span><br><span class="line">+ <span class="keyword">FROM</span> golang:<span class="number">1.20</span>-alpine AS base</span><br><span class="line">  <span class="keyword">WORKDIR</span><span class="language-bash"> /src</span></span><br><span class="line">  <span class="keyword">COPY</span><span class="language-bash"> go.mod go.sum .</span></span><br><span class="line">  <span class="keyword">RUN</span><span class="language-bash"> go mod download</span></span><br><span class="line">  <span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line">+</span><br><span class="line">+ <span class="keyword">FROM</span> base AS build-client</span><br><span class="line">  <span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/client ./cmd/client</span></span><br><span class="line">+</span><br><span class="line">+ <span class="keyword">FROM</span> base AS build-server</span><br><span class="line">  <span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/server ./cmd/server</span></span><br><span class="line"></span><br><span class="line">+ <span class="keyword">FROM</span> scratch AS client</span><br><span class="line">+ <span class="keyword">COPY</span><span class="language-bash"> --from=build-client /bin/client /bin/</span></span><br><span class="line">+ <span class="keyword">ENTRYPOINT</span><span class="language-bash"> [ <span class="string">&quot;/bin/client&quot;</span> ]</span></span><br><span class="line"></span><br><span class="line">+ <span class="keyword">FROM</span> scratch AS server</span><br><span class="line">+ <span class="keyword">COPY</span><span class="language-bash"> --from=build-server /bin/server /bin/</span></span><br><span class="line">  <span class="keyword">ENTRYPOINT</span><span class="language-bash"> [ <span class="string">&quot;/bin/server&quot;</span> ]</span></span><br></pre></td></tr></table></figure>
+<p>上面有五个stage，对于 <strong>base</strong>、<strong>build-client</strong> 和 <strong>build-server</strong> stage已经在上一节中讲过了，主要看 <strong>client</strong> 和 <strong>server</strong> stage。从代码可以看出，它们分别代表了客户端和服务端的产出，并且有各自的 <code>ENTRYPOINT</code> 。在构造image的时候，可以通过指定 <code>--target</code> 参数来指定目标的stage。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ docker build --tag=buildme-client --target=client .</span><br><span class="line">$ docker build --tag=buildme-server --target=server .</span><br><span class="line">$ docker images buildme </span><br><span class="line">REPOSITORY       TAG       IMAGE ID       CREATED          SIZE</span><br><span class="line">buildme-client   latest    659105f8e6d7   20 seconds ago   4.25MB</span><br><span class="line">buildme-server   latest    666d492d9f13   5 seconds ago    4.2MB</span><br></pre></td></tr></table></figure>
+<h2 id="利用cache-mount存储package-cache">利用Cache Mount存储package cache</h2>
+<p>对于一些仅需要在 <code>Build</code> 阶段使用的依赖，这里说的依赖指通过包管理器下载的编译工具、三方库、临时文件等，可以使用 <strong>Cache Mount</strong> 将这些依赖的指定目录挂载起来，这样的话当添加新依赖或者该 <code>Layer</code> 的指令需要重新执行时，可以直接使用缓存中的内容，而不需要重新处理已存在 <strong>Cache Mount</strong> 中的依赖，合理利用可以加快 <code>Image</code> 的构建速度。</p>
+<blockquote>
+<p>注意：<strong>Cache Mount</strong> 中的缓存只存在于 <code>Build</code> 阶段，当 <code>Image</code> 实例化为 <code>Container</code> 运行之后就不存在了，如果希望在运行阶段也可以使用的话，使用其他的方法，比如 <strong>Bind Mount</strong>。</p>
+</blockquote>
+<p>以下是一个使用 <strong>Cache Mount</strong> 的例子，同样来自<a target="_blank" rel="noopener" href="https://docs.docker.com/build/guide/mounts/">官方的guide</a></p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># syntax=docker/dockerfile:1</span></span><br><span class="line">  <span class="keyword">FROM</span> golang:<span class="number">1.20</span>-alpine</span><br><span class="line">  <span class="keyword">WORKDIR</span><span class="language-bash"> /src</span></span><br><span class="line">  <span class="keyword">COPY</span><span class="language-bash"> go.mod go.sum .</span></span><br><span class="line">- <span class="keyword">RUN</span><span class="language-bash"> go mod download</span></span><br><span class="line">+ <span class="keyword">RUN</span><span class="language-bash"> --mount=<span class="built_in">type</span>=cache,target=/go/pkg/mod/ \</span></span><br><span class="line"><span class="language-bash">+     go mod download -x</span></span><br><span class="line">  <span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line">  <span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/client ./cmd/client</span></span><br><span class="line">  <span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/server ./cmd/server</span></span><br><span class="line">  <span class="keyword">ENTRYPOINT</span><span class="language-bash"> [ <span class="string">&quot;/bin/server&quot;</span> ]</span></span><br></pre></td></tr></table></figure>
+<p>golang通过 <code>go get</code> 下载的 <code>mod</code> 默认位于 <code>$GOPATH/pkg/mod</code> 中（其中 <code>$GOPATH</code> 默认为 <code>/go</code>），上面将该目录使用 <strong>Cache Mount</strong> 挂载，要观察缓存是否生效的话，可以参考guide中以下的做法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 清理构建缓存</span></span><br><span class="line">$ docker builder prune -af</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 重新执行构建，并将构建过程打印出来</span></span><br><span class="line">$ docker build --progress=plain . 2&gt; log1.txt</span><br><span class="line">$ awk <span class="string">&#x27;/proxy.golang.org/&#x27;</span> log1.txt</span><br><span class="line"><span class="comment">#11 0.168 # get https://proxy.golang.org/github.com/charmbracelet/lipgloss/@v/v0.6.0.mod</span></span><br><span class="line"><span class="comment">#11 0.168 # get https://proxy.golang.org/github.com/aymanbagabas/go-osc52/@v/v1.0.3.mod</span></span><br><span class="line"><span class="comment">#11 0.168 # get https://proxy.golang.org/github.com/atotto/clipboard/@v/v0.1.4.mod</span></span><br><span class="line"><span class="comment">#11 0.168 # get https://proxy.golang.org/github.com/charmbracelet/bubbletea/@v/v0.23.1.mod</span></span><br><span class="line"><span class="comment">#11 0.169 # get https://proxy.golang.org/github.com/charmbracelet/bubbles/@v/v0.14.0.mod</span></span><br><span class="line"><span class="comment">#11 0.218 # get https://proxy.golang.org/github.com/charmbracelet/bubbles/@v/v0.14.0.mod: 200 OK (0.049s)</span></span><br><span class="line"><span class="comment">#11 0.218 # get https://proxy.golang.org/github.com/aymanbagabas/go-osc52/@v/v1.0.3.mod: 200 OK (0.049s)</span></span><br><span class="line"><span class="comment">#11 0.218 # get https://proxy.golang.org/github.com/containerd/console/@v/v1.0.3.mod</span></span><br><span class="line"><span class="comment">#11 0.218 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.0.mod</span></span><br><span class="line"><span class="comment">#11 0.219 # get https://proxy.golang.org/github.com/charmbracelet/bubbletea/@v/v0.23.1.mod: 200 OK (0.050s)</span></span><br><span class="line"><span class="comment">#11 0.219 # get https://proxy.golang.org/github.com/atotto/clipboard/@v/v0.1.4.mod: 200 OK (0.051s)</span></span><br><span class="line"><span class="comment">#11 0.219 # get https://proxy.golang.org/github.com/charmbracelet/lipgloss/@v/v0.6.0.mod: 200 OK (0.051s)</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 引入新的依赖包（以下命令将当前目录挂载进了容器并指定了workdir，所以在golang的容器内执行go get之后，新加入的依赖包的信息也会更新到宿主机的go.mod和go.sum中）</span></span><br><span class="line">$ docker run -v <span class="variable">$PWD</span>:<span class="variable">$PWD</span> -w <span class="variable">$PWD</span> golang:1.20-alpine \</span><br><span class="line">    go get github.com/go-chi/chi/v5@v5.0.8</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 重新执行构建（可以看到仅下载了新加入的chi包）</span></span><br><span class="line">$ docker build --progress=plain . 2&gt; log2.txt</span><br><span class="line">awk <span class="string">&#x27;/proxy.golang.org/&#x27;</span> log2.txt</span><br><span class="line"><span class="comment">#10 0.143 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.mod</span></span><br><span class="line"><span class="comment">#10 0.190 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.mod: 200 OK (0.047s)</span></span><br><span class="line"><span class="comment">#10 0.190 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.info</span></span><br><span class="line"><span class="comment">#10 0.199 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.info: 200 OK (0.008s)</span></span><br><span class="line"><span class="comment">#10 0.201 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.zip</span></span><br><span class="line"><span class="comment">#10 0.209 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.zip: 200 OK (0.008s)</span></span><br></pre></td></tr></table></figure>
+<h2 id="利用bind-mount减少构造时的文件拷贝">利用Bind Mount减少构造时的文件拷贝</h2>
+<p>对于仅在 <code>Build</code> 阶段使用，且已存在于宿主机的代码或配置等文件，可以通过 <code>Bind Mount</code> 来减少构建时文件拷贝的开销，这将直接使用宿主机上的文件。</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># syntax=docker/dockerfile:1</span></span><br><span class="line">  <span class="keyword">FROM</span> golang:<span class="number">1.20</span>-alpine</span><br><span class="line">  <span class="keyword">WORKDIR</span><span class="language-bash"> /src</span></span><br><span class="line">- <span class="keyword">COPY</span><span class="language-bash"> go.mod go.sum .</span></span><br><span class="line">- <span class="keyword">RUN</span><span class="language-bash"> go mod download</span></span><br><span class="line">+ <span class="keyword">RUN</span><span class="language-bash"> --mount=<span class="built_in">type</span>=<span class="built_in">bind</span>,<span class="built_in">source</span>=go.mod,target=go.mod \</span></span><br><span class="line"><span class="language-bash">      --mount=<span class="built_in">type</span>=<span class="built_in">bind</span>,<span class="built_in">source</span>=go.sum,target=go.sum \</span></span><br><span class="line"><span class="language-bash">      go mod download -x</span></span><br><span class="line">- <span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line"></span><br><span class="line">- <span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/client ./cmd/client</span></span><br><span class="line">+ <span class="keyword">RUN</span><span class="language-bash"> --mount=<span class="built_in">type</span>=<span class="built_in">bind</span>,target=. \</span></span><br><span class="line"><span class="language-bash">+     go build -o /bin/client ./cmd/client</span></span><br><span class="line"></span><br><span class="line">- <span class="keyword">RUN</span><span class="language-bash"> go build -o /bin/server ./cmd/server</span></span><br><span class="line">+ <span class="keyword">RUN</span><span class="language-bash"> --mount=<span class="built_in">type</span>=<span class="built_in">bind</span>,target=. \</span></span><br><span class="line"><span class="language-bash">      go build -o /bin/server ./cmd/server</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">ENTRYPOINT</span><span class="language-bash"> [ <span class="string">&quot;/bin/server&quot;</span> ]</span></span><br></pre></td></tr></table></figure>
+<h1 id="layer">Layer</h1>
+<h2 id="情况允许时最好将拷贝代码的指令放在处理依赖之前">情况允许时最好将拷贝代码的指令放在处理依赖之前</h2>
+<p>在Docker Image的构建过程中，一条或多条指令会被封装进一个Layer中（中间镜像层），理论上Layer的数目越少，构建的效率越高并且Image的体积会更小。另外对于当前指令的执行结果没有导致该Layer发生变化，那么可以使用Build Cache。否则包括当前Layer，后续的所有Layer都需要重新构建。</p>
+<p>在情况允许时最好将拷贝代码的指令放在处理依赖之前，根据以下例子说明这样做的好处：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> go mod download</span></span><br></pre></td></tr></table></figure>
+<p>以上是一个Golang项目的Dockerfile文件的部分内容，第一行是将项目代码拷贝进工作空间，第二行是处理项目的依赖。如果项目代码发生了变化，那么该Layer需要重新构建，不管项目的依赖有没有发生变化，之后的 <code>RUN go mod download</code> Layer都会重新执行，这样就产生了没有必要的开销。</p>
+<p>为了规避这个问题的一个比较好的做法就如标题所说，在编写Dockerfile时，<strong>把处理依赖放在拷贝代码之前执行</strong>。</p>
+<p>由于这是一个Golang项目，针对性的可以这样修改Dockerfile：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">COPY</span><span class="language-bash"> go.mod go.sum .</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> go mod download</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br></pre></td></tr></table></figure>
+<h1 id="时间">时间</h1>
+<h2 id="alpine发行版改为上海时区">alpine发行版改为上海时区</h2>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="language-bash"> apk --update add tzdata &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">	<span class="built_in">cp</span> /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">	<span class="built_in">echo</span> <span class="string">&#x27;Asia/Shanghai&#x27;</span> &gt; /etc/timezone</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据需要清理tzdata包和包缓存，安装tzdata包是为了拿里面得时区数据而已</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> apk del tzdata &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">	<span class="built_in">rm</span> -rf /var/cache/apk/*</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://phantom27.xyz/2023/08/19/hexo%E4%BB%A5%E6%A0%91%E7%BB%93%E6%9E%84%E6%89%93%E5%8D%B0category%E5%88%97%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="huzhiqin">
+      <meta itemprop="description" content="↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="♬ Phantom Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/08/19/hexo%E4%BB%A5%E6%A0%91%E7%BB%93%E6%9E%84%E6%89%93%E5%8D%B0category%E5%88%97%E8%A1%A8/" class="post-title-link" itemprop="url">hexo以树结构打印category列表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-08-19 18:21:52" itemprop="dateCreated datePublished" datetime="2023-08-19T18:21:52+00:00">2023-08-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-09 11:54:33" itemprop="dateModified" datetime="2023-10-09T11:54:33+00:00">2023-10-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/Category/" itemprop="url" rel="index"><span itemprop="name">Category</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>103</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><code>Hexo</code> 可以使用以下命令打印所有的 <code>category</code>以及其所关联的文章数目，但是并不支持以层级结构打印 <code>category</code> 之间的关系。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo list category</span><br></pre></td></tr></table></figure>
+<p>可以根据 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/api/">Hexo官方API文档</a>，编写脚本来扩展这个需求：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Hexo</span> = <span class="built_in">require</span>(<span class="string">&#x27;hexo&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">build_category_tree</span> = (<span class="params">categories, parent=<span class="string">&#x27;&#x27;</span></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;<span class="attr">filtered</span>: sub_categories, <span class="attr">excluded</span>: remain&#125; = categories.<span class="title function_">reduce</span>(</span><br><span class="line">        <span class="function">(<span class="params">result, category</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&#x27;parent&#x27;</span> <span class="keyword">in</span> category &amp;&amp; category[<span class="string">&#x27;parent&#x27;</span>] != parent) &#123;</span><br><span class="line">                result.<span class="property">excluded</span>.<span class="title function_">push</span>(category);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                result.<span class="property">filtered</span>.<span class="title function_">push</span>(category);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;<span class="attr">filtered</span>: [], <span class="attr">excluded</span>: []&#125;</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    sub_categories.<span class="title function_">sort</span>(<span class="function">(<span class="params">l, r</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (l.<span class="property">name</span> &lt; r.<span class="property">name</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (l.<span class="property">name</span> &gt; r.<span class="property">name</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sub_categories.<span class="title function_">map</span>(<span class="function"><span class="params">category</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="attr">name</span>: category.<span class="property">name</span>,</span><br><span class="line">            <span class="attr">subs</span>: <span class="title function_">build_category_tree</span>(remain, category.<span class="property">_id</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">show_category_tree</span> = (<span class="params">category_tree, prefix=<span class="string">&#x27;&#x27;</span></span>) =&gt; &#123;</span><br><span class="line">    category_tree.<span class="title function_">forEach</span>(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(prefix + <span class="string">&#x27;|-&#x27;</span> + item.<span class="property">name</span>);</span><br><span class="line">        <span class="title function_">show_category_tree</span>(item.<span class="property">subs</span>, prefix + <span class="string">&#x27;|  &#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">(<span class="keyword">async</span> <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> hexo = <span class="keyword">new</span> <span class="title class_">Hexo</span>(process.<span class="title function_">cwd</span>(), &#123;&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">await</span> hexo.<span class="title function_">init</span>();</span><br><span class="line">    <span class="keyword">await</span> hexo.<span class="title function_">load</span>();</span><br><span class="line"></span><br><span class="line">    <span class="title function_">show_category_tree</span>(<span class="title function_">build_category_tree</span>(hexo.<span class="property">locals</span>.<span class="title function_">get</span>(<span class="string">&#x27;categories&#x27;</span>).<span class="title function_">toArray</span>()));</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>该脚本打印的样式如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line">|-Algorithm</span><br><span class="line">|  |-Smooth</span><br><span class="line">|-C</span><br><span class="line">|  |-Attribute</span><br><span class="line">|  |-宏</span><br><span class="line">|  |  |-函数签名</span><br><span class="line">|  |-性能优化</span><br><span class="line">|-C++</span><br><span class="line">|  |-Attribute</span><br><span class="line">|  |-宏</span><br><span class="line">|  |  |-函数签名</span><br><span class="line">|  |-性能优化</span><br><span class="line">|  |-编码规范</span><br><span class="line">|  |-编码风格</span><br><span class="line">|-CI/CD</span><br><span class="line">|  |-Github Actions</span><br><span class="line">|-Chrome</span><br><span class="line">|  |-Plugin</span><br><span class="line">|-Clang-Format</span><br><span class="line">|  |-C++</span><br><span class="line">|-Database</span><br><span class="line">|  |-Mysql</span><br><span class="line">|  |  |-Table</span><br><span class="line">|-DirectX</span><br><span class="line">|  |-坐标系</span><br><span class="line">|-Docker</span><br><span class="line">|  |-Image</span><br><span class="line">|  |-Mirror</span><br><span class="line">|  |-Volume</span><br><span class="line">|  |  |-Bind Mount</span><br><span class="line">|-FFmpeg</span><br><span class="line">|  |-动画拼接</span><br><span class="line">|-Hack</span><br><span class="line">|  |-Game</span><br><span class="line">|  |  |-Mod</span><br><span class="line">|  |  |  |-Elden Ring</span><br><span class="line">|-Hexo</span><br><span class="line">|  |-Category</span><br><span class="line">|  |-Deploy</span><br><span class="line">|  |-Draft</span><br><span class="line">|  |-Markdown</span><br><span class="line">|  |  |-Footnote</span><br><span class="line">|  |-Page</span><br><span class="line">|-Hook</span><br><span class="line">|  |-frida</span><br><span class="line">|-Linux</span><br><span class="line">|  |-Command</span><br><span class="line">|  |  |-File System</span><br><span class="line">|  |  |-Service</span><br><span class="line">|  |-Kernel</span><br><span class="line">|  |  |-性能优化</span><br><span class="line">|  |-Proxy</span><br><span class="line">|  |-包管理工具</span><br><span class="line">|  |  |-yum</span><br><span class="line">|  |-发行版</span><br><span class="line">|  |  |-Alpine</span><br><span class="line">|  |  |  |-Mirror</span><br><span class="line">|  |-命令</span><br><span class="line">|  |  |-运维相关</span><br><span class="line">|  |-源码阅读</span><br><span class="line">|  |  |-源码目录结构</span><br><span class="line">|  |-网络</span><br><span class="line">|  |  |-防火墙</span><br><span class="line">|-Lua</span><br><span class="line">|  |-C++</span><br><span class="line">|  |-Plugin</span><br><span class="line">|-Mac OS</span><br><span class="line">|  |-包管理器</span><br><span class="line">|  |  |-brew</span><br><span class="line">|  |  |  |-FAQ</span><br><span class="line">|  |-服务</span><br><span class="line">|  |  |-ssh</span><br><span class="line">|-Node.js</span><br><span class="line">|  |-Npm</span><br><span class="line">|  |  |-Mirror</span><br><span class="line">|  |-框架</span><br><span class="line">|  |  |-Web</span><br><span class="line">|  |  |  |-express.js</span><br><span class="line">|  |  |  |  |-Session</span><br><span class="line">|-Objective-C</span><br><span class="line">|  |-GNUstep</span><br><span class="line">|  |  |-环境搭建</span><br><span class="line">|-Python</span><br><span class="line">|  |-List</span><br><span class="line">|  |-pyd</span><br><span class="line">|  |  |-boost::python</span><br><span class="line">|  |  |  |-callback</span><br><span class="line">|  |-依赖处理</span><br><span class="line">|  |-字符串处理</span><br><span class="line">|  |-异常处理</span><br><span class="line">|-Qt</span><br><span class="line">|  |-QtWebEngine</span><br><span class="line">|-Skia</span><br><span class="line">|  |-编译</span><br><span class="line">|-Visual Studio</span><br><span class="line">|  |-Command Window</span><br><span class="line">|  |-Python</span><br><span class="line">|  |  |-pyd</span><br><span class="line">|-Windows</span><br><span class="line">|  |-Explorer</span><br><span class="line">|  |-Network</span><br><span class="line">|  |  |-URL Protocol</span><br><span class="line">|  |-PE</span><br><span class="line">|  |-VBScript</span><br><span class="line">|  |  |-Shell</span><br><span class="line">|  |-文件共享</span><br><span class="line">|  |-网络</span><br><span class="line">|  |  |-代理</span><br><span class="line">|  |  |-屏蔽端口</span><br><span class="line">|  |  |-端口转发</span><br><span class="line">|-apt</span><br><span class="line">|-golang</span><br><span class="line">|  |-mirror</span><br><span class="line">|-shellcode</span><br><span class="line">|  |-shell</span><br><span class="line">|-windows</span><br><span class="line">|  |-安全</span><br><span class="line">|  |  |-勒索病毒</span><br><span class="line">|-微服务</span><br><span class="line">|  |-容错机制</span><br><span class="line">|-构建工具</span><br><span class="line">|  |-meson</span><br><span class="line">|  |  |-backend</span><br><span class="line">|  |  |  |-Visual Studio</span><br><span class="line">|  |  |-custom target</span><br><span class="line">|  |  |-setup</span><br><span class="line">|-版本控制</span><br><span class="line">|  |-Git</span><br><span class="line">|  |  |-Bug定位</span><br><span class="line">|  |  |-Commit</span><br><span class="line">|  |  |-Config</span><br><span class="line">|  |  |-Conflict</span><br><span class="line">|  |  |-Git Flow</span><br><span class="line">|  |  |-Merge</span><br><span class="line">|  |  |-Push</span><br><span class="line">|  |-版本号</span><br><span class="line">|-虚拟化</span><br><span class="line">|  |-网络配置</span><br><span class="line">|-软件工程</span><br><span class="line">|-软件破解</span><br><span class="line">|-运维</span><br><span class="line">|-逆向分析</span><br><span class="line">|-项目日志</span><br><span class="line">|  |-Link-Cooperation</span><br><span class="line">|  |  |-敏捷过程</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://phantom27.xyz/2023/08/10/brew%E5%BF%BD%E7%95%A5%E8%AF%81%E4%B9%A6%E6%97%A0%E6%95%88%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="huzhiqin">
+      <meta itemprop="description" content="↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="♬ Phantom Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/08/10/brew%E5%BF%BD%E7%95%A5%E8%AF%81%E4%B9%A6%E6%97%A0%E6%95%88%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">brew忽略证书无效问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-08-10 03:51:34" itemprop="dateCreated datePublished" datetime="2023-08-10T03:51:34+00:00">2023-08-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-09 11:54:33" itemprop="dateModified" datetime="2023-10-09T11:54:33+00:00">2023-10-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac-OS/" itemprop="url" rel="index"><span itemprop="name">Mac OS</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac-OS/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">包管理器</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac-OS/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/brew/" itemprop="url" rel="index"><span itemprop="name">brew</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac-OS/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/brew/FAQ/" itemprop="url" rel="index"><span itemprop="name">FAQ</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>45</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>如果 <code>brew</code> 在下包时出现如下证书无效问题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl: (60) SSL certificate problem: Invalid certificate chain</span><br></pre></td></tr></table></figure>
+<p>可以通过指定 <code>--insecure</code> 临时忽略该问题：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># HOMEBREW_CURLRC=1可以让brew命令在执行curl时忽略证书验证</span><br><span class="line">echo insecure &gt;&gt; ~/.curlrc</span><br><span class="line">export HOMEBREW_CURLRC=1</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="huzhiqin"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">huzhiqin</p>
+  <div class="site-description" itemprop="description">↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">152</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">223</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/12CrazyPaul21" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;12CrazyPaul21" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:604916833@qq.com" title="E-Mail → mailto:604916833@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+  <div class="motion-element">
+    <a target="_blank" class="social-link" href="/atom.xml" style="color: burlywood;">
+      <span class="icon">
+        <i class="fa fa-rss"></i>
+      </span>
+      <span class="label">RSS</span>
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huzhiqin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
