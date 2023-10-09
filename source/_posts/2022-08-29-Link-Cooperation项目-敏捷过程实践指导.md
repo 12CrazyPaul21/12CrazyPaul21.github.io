@@ -106,7 +106,7 @@ OKR可以精炼为一句话：**我将会完成【O】，使用的衡量指标�
 
 OKR 和敏捷有非常多的文化底蕴是一致的，比如：价值驱动，透明公开，持续适应，学习试错等。但如下图所示，我们也要意识到从根本上来说，他们的基因是不同的：
 
-![](../images/post/link_cooperation_agile/different_between_okr_and_agile.webp)
+![](/images/post/link_cooperation_agile/different_between_okr_and_agile.webp)
 
 <center><font size="2"><a href="https://www.infoq.cn/article/OFx8xxEVXtsIpYXldsqA">该图来自：《深入浅出了解 OKR（十）：OKR 在敏捷转型中的实践》 by 大叔杨</a></font></center>
 在很多行为方式上，OKR与敏捷（比如Scrum），也有非常多相似性，把它们结合使用的时候，可以**互相借鉴行为上的做法**。比如，在给Backlog进行优先级排序的时候，可以借鉴到OKR中，对OKR的目标进行优先级划分。
@@ -240,7 +240,7 @@ KISS即Keep It Simple, Stupid！**尽量保持简单**，保持代码d额可读�
 
 - 共同重用原则（CRP，Common Reuse Principle）：尽量**优先考虑**使用组合或者聚合等**关联关系来实现多态性和代码复用**，其次才考虑使用继承关系来实现。一个包中的所有类应该是共同复用的，如果重用了包中的一个类，那么就要重用保重的所有类
 
-  ![](../images/post/link_cooperation_agile/rep_ccp_crp.png)
+  ![](/images/post/link_cooperation_agile/rep_ccp_crp.png)
 
 <center><font size="2"><a href="https://blog.csdn.net/hello_ejb3/article/details/124003535">该图来自：《聊聊软件开发的REP、CCP、CRP原则》</a></font></center>
 其它原则：
@@ -339,7 +339,7 @@ Cynefin框架包括以下五个域：
 - **繁杂（Complicated）**
 - **无序（Disorder）**
 
-![](../images/post/link_cooperation_agile/cynefin_framework.webp)
+![](/images/post/link_cooperation_agile/cynefin_framework.webp)
 
 软件开发和支持活动的很多方面都不可能只是与某一个Cynefin域相吻合。软件开发工作内容丰富，各方面又有重叠，所以各个活动可能属于不同域。因此，虽然大多数软件开发工作都处于复杂域或繁杂域，但如果冒然说软件开发活动是一个复杂域，是不太准确的，特别是，如果我们定义的软件开发活动包含从创新产品开发、现有产品维护到运营与支持等各种工作，情况就更是这样了。
 
@@ -524,7 +524,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 > Notes：Kanban过程的**任务卡片**一个可视化记录故事的很好选择
 
-![](../images/post/link_cooperation_agile/scrum_card.png)
+![](/images/post/link_cooperation_agile/scrum_card.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
 卡片不是为了捕获需求的所有组成信息而设的。实际上，我们故意使用空间有限的小卡片，目的就是让用户故事尽可能简洁。卡片上应该只用寥寥数语来点名需求的精髓或目的，它存在的意义是提醒利益干系人、产品负责人及开发团队进行更深入的讨论。
@@ -539,7 +539,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 用户故事还要包含**确认信息**，它体现为**满意条件的形式**，是**接收标准**。利用它们，开发团队可以更好地理解要构建和测试什么，产品负责人可以**确认用户故事的实现是否符合预期**。
 
-![](../images/post/link_cooperation_agile/scrum_confirmation.png)
+![](/images/post/link_cooperation_agile/scrum_confirmation.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
 这些满足条件也可以看作是高一级的接收测试。当然，开发故事的时候，肯定不会只运行这几个测试。实际上，虽然跟用户故事挂钩的接收测试只有几个，但团队还有数量比它多得多的具体技术层面的测试，是产品负责人不知道的。
@@ -552,7 +552,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 可以编写**不同抽象层级的用户故事**来捕获客户及用户需求：
 
-![](../images/post/link_cooperation_agile/scrum_userstory_level.png)
+![](/images/post/link_cooperation_agile/scrum_userstory_level.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
 - **史诗（Epic）**：最大的故事**以月为单位**，约为一两个到好几个月的大小，可跨越一整个或多个版本，可以被称为“**史诗级的故事**”
@@ -575,7 +575,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 非功能性需求代表了**系统级约束**，所有非功能性需求都是团队**应该纳入完成定义的主要目标**，应尽可能把非功能性需求**纳入完成定义**。如果一直到开发工作后期才开始测试非功能性需求，就会延误获取系统性能关键特征之快速反馈的最佳时机。
 
-![](../images/post/link_cooperation_agile/scrum_non_functional_requirement_story.png)
+![](/images/post/link_cooperation_agile/scrum_non_functional_requirement_story.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
 ### 知识获取型故事
@@ -584,7 +584,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 可以把用户故事用作探索工作的占位符：
 
-![](../images/post/link_cooperation_agile/scrum_get_tech_story.png)
+![](/images/post/link_cooperation_agile/scrum_get_tech_story.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
 ### 收集故事
@@ -594,7 +594,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 - 用户故事写作研讨会
 - 绘制故事地图
 
-![](../images/post/link_cooperation_agile/scrum_userstory_map.png)
+![](/images/post/link_cooperation_agile/scrum_userstory_map.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》 - 故事地图例子</font></center>
 ## 产品列表
@@ -618,7 +618,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 - 做过**估算**的（Estimated）
 - **排列优先顺序**的（Prioritized）
 
-![](../images/post/link_cooperation_agile/scrum_pbi_priority_order.png)
+![](/images/post/link_cooperation_agile/scrum_pbi_priority_order.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》 - PBI排列优先级例子</font></center>
 ### 梳理
@@ -651,7 +651,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 **就绪的定义（Definition of Ready，DoR）**，一个包含条件的检查列表，在冲刺规划过程中，认为一个产品列表已经就绪可以放入一个冲刺之前，这个检查列表中的条件**必须满足**。
 
-![](../images/post/link_cooperation_agile/scrum_dor.png)
+![](/images/post/link_cooperation_agile/scrum_dor.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
 梳理产品列表时，应当确保列表顶部的条目已就绪，可以放入冲刺中让开发团队有信心做相关的工作并在冲刺结束时完成。为“就绪”确定一个**有说服力的定义**，将极大提升Scrum团队成功实现冲刺目标的几率。
@@ -666,7 +666,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 产品列表的梳理活动必须支持持续版本规划活动，版本可以看作是穿过一条产品列表的线。**版本线**上方的所有PBI都预计在这个版本中完成，线下方的条目则不再这个版本中。
 
-![](../images/post/link_cooperation_agile/scrum_version_line.png)
+![](/images/post/link_cooperation_agile/scrum_version_line.png)
 
 不过每个版本用两条线来划分产品列表很有用，这两条线把产品列表分成三段：“**必须有的**”、“**最好有的**”和“**不会有的**”。
 
@@ -676,7 +676,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 在做梳理活动以达到良好的冲刺工作流时，这个方法有帮助：把产品列表视为管道中的需求，它们流入冲刺（准备就绪），由团队设计、构建并测试。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_workflow.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_workflow.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
 ### 产品列表有哪些，应该有多少？
@@ -689,7 +689,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 瀑布模型，也叫预测型生命周期模型、完全计划驱动型生命周期模型，如下图所示，一般瀑布模型将开发流程**自上而下分**为以下阶段：
 
-![](../images/post/link_cooperation_agile/waterfall_life_cycle_phases.png)
+![](/images/post/link_cooperation_agile/waterfall_life_cycle_phases.png)
 
 <center><font size="2"><a href="https://kruschecompany.com/waterfall-software-development-methodology/">该图来自：《What is the Waterfall software development methodology and is it still relevant?》</a></font></center>
 - 可行性分析与计划
@@ -709,7 +709,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 经典的瀑布模型的**线性过程过于理想化**，**迭代瀑布模型**可被认为是对其进行的必要修改，使其可实际用于软件开发项目，迭代瀑布模型提供了从每个阶段到其前一阶段的**反馈路径**，这是与经典瀑布模型的主要区别。软件过程不是一个简单的线性模型，它包括对开发活动的多个反复，每一个阶段产生的文档在后续阶段都可能被修改以反映发生了变化，当某一个阶段出现了不可控的问题的时候，就会导致返工，返回到上一个阶段，甚至会延迟下一个阶段。现实中的瀑布模型流程可能像下图这样：
 
-![](../images/post/link_cooperation_agile/waterfall.png)
+![](/images/post/link_cooperation_agile/waterfall.png)
 
 改进意见 : **沿用瀑布模型的线性思想，在每个阶段进行迭代操作**。
 
@@ -758,13 +758,13 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 它的流程可以参考下面三张图：
 
-![](../images/post/link_cooperation_agile/rapid_prototype_one.webp)
+![](/images/post/link_cooperation_agile/rapid_prototype_one.webp)
 
 <center><font size="2"><a href="https://www.jianshu.com/p/39b6d8a10e0a">该图来自：《码歌老薛聊聊软件开发模型(瀑布模型、快速原型、螺旋以及敏捷开发模式)》</a></font></center>
-![](../images/post/link_cooperation_agile/rapid_prototype_two.png)
+![](/images/post/link_cooperation_agile/rapid_prototype_two.png)
 
 <center><font size="2"><a href="https://www.rocheindustry.com/guide-to-rapid-prototyping/">该图来自：《THE COMPLETE GUIDE TO RAPID PROTOTYPING FOR PRODUCT DEVELOPMENT》</a></font></center>
-![](../images/post/link_cooperation_agile/rapid_prototype_three.jpg)
+![](/images/post/link_cooperation_agile/rapid_prototype_three.jpg)
 
 <center><font size="2"><a href="https://universityinnovation.org/wiki/Resource:Rapid_Prototyping">该图来自：《Rapid Prototyping》</a></font></center>
 流程：
@@ -819,7 +819,7 @@ Ron Jeffries给出了一个简单有效的方法来帮助理解用户故事，�
 
 它的具体原理是：螺旋模型是快速原型模型**以进化的开发方式为中心**，在每个项目阶段使用瀑布模型法，螺旋模型的流程图如下所示：
 
-![](../images/post/link_cooperation_agile/spiral_model.png)
+![](/images/post/link_cooperation_agile/spiral_model.png)
 
 该模型的**每一个象限都代表了一个活动**，每一个周期都包括：
 
@@ -944,7 +944,7 @@ BVT好处在于，**节约测试的时间成本，减少不必要的测试轮数
 
 **V模型**是**从瀑布模型演化而来**的，V的**左边表示传统的瀑布开发模型**，**右边表示对应的测试阶段** 。它明确地将测试分为不同的级别或阶段，每个阶段都与开发的各阶段相对应。V 模型的测试策略包括**低层测试**和**高层测试**，**低层测试**是为了**源代码的正确性**，**高层测试**是为了整个系统满足**用户的需求**。
 
-![](../images/post/link_cooperation_agile/v_model.png)
+![](/images/post/link_cooperation_agile/v_model.png)
 
 <center><font size="2"><a href="https://blog.csdn.net/MXB_1220/article/details/124845092">该图来自：《软件测试模型有哪些？》</a></font></center>
 #### 特点
@@ -973,7 +973,7 @@ V模式是一种传统软件开发模型，一般适用于一些传统信息系�
 
 W模型提出了**测试活动与研发活动并行**的概念，**强调测试伴随着整个软件开发周期**，并且在生产流程演进过程中，增加了验证与确认活动。而且**测试的对象不仅仅是程序，需求、功能和设计同样要测试**。
 
-![](../images/post/link_cooperation_agile/w_model.png)
+![](/images/post/link_cooperation_agile/w_model.png)
 
 <center><font size="2"><a href="https://blog.csdn.net/MXB_1220/article/details/124845092">该图来自：《软件测试模型有哪些？》</a></font></center>
 #### 优点
@@ -1000,7 +1000,7 @@ Marick 也质疑**单元测试和集成测试的区别**，很多软件开发团
 
 #### 模型说明
 
-![](../images/post/link_cooperation_agile/x_model.png)
+![](/images/post/link_cooperation_agile/x_model.png)
 
 <center><font size="2"><a href="https://blog.csdn.net/MXB_1220/article/details/124845092">该图来自：《软件测试模型有哪些？》</a></font></center>
 X模型**左边**表明针对单独的程序片段n进行独立的编码和测试活动，右边是功能的集成测试，以此为基本过程，不断迭代，通过集成活动最终成为可执行程序，然后再对这些可执行程序进行测试。通过集成测试的成品可以进行封装并提交给系统测试环节或直接给用户，也可以作为更大规模和范围内集成的一部分。多条并行的曲线表示变更可以在各个部分发生。
@@ -1018,7 +1018,7 @@ X 模型提倡公司**根据自身的实际情况确定是否要进行单元测�
 
 ### H模型
 
-![](../images/post/link_cooperation_agile/h_model.png)
+![](/images/post/link_cooperation_agile/h_model.png)
 
 <center><font size="2"><a href="https://blog.csdn.net/MXB_1220/article/details/124845092">该图来自：《软件测试模型有哪些？》</a></font></center>
 **真正的测试级别之间不存在严格的次序关系**，各阶段间可以反复触发、迭代、增量。为了解决 V 模型和 W 模型存在的问题，有专家提出了 H 模型。
@@ -1113,7 +1113,7 @@ H模型中还有一个“**其他流程**”的测试，这个观点强调了测
 
 敏捷测试矩阵由Brain Marick提出，如下图所示：
 
-![](../images/post/link_cooperation_agile/agile_testing_quadrants.png)
+![](/images/post/link_cooperation_agile/agile_testing_quadrants.png)
 
 敏捷测试矩阵包含四个维度：**面向技术**、**面向开发团队**、**面向业务**、**面向评价产品**。由这四个维度划分出**四个象限**，代表了不同类型的测试有不同的目的与方向，**敏捷测试中的涉及的所有测试类型都归集到这四个象限中**。
 
@@ -1188,15 +1188,15 @@ Scrum基于迭代开发和增量开发，这两个术语经常被用作一个概
 
 **迭代开发（Iterative Development）**承认我们在把事情做对之前有可能做错，在把事情做好之前有可能做坏。迭代是一种**有计划的修改策略**，通过多次开发来改善正在构建的特性，逐步得出一个完善的解决方案。例如，对于一个知之甚少的产品，开始时可以先通过**创建原型**以获得重要知识，接着在每次迭代时**根据上一个版本的反馈**，决定下一个版本需要对那些部分进行改进或者丢弃某些特性，创建一个更好一点的修订版本。在产品开发中，迭代开发是改进产品的一种非常好的方法，它最大的**缺点**是在遇到不确定因素时，很难事先确定（计划）需要改进多少次。示意图如下（来自：[Scrum: what's the difference between incremental and iterative development?](https://www.zentao.pm/agile-knowledge-share/Scrum-what-the-difference-between-incremental-and-iterative-development-845.html )）：
 
-![](../images/post/link_cooperation_agile/incremental_model_diagram.png)
+![](/images/post/link_cooperation_agile/incremental_model_diagram.png)
 
 **增量开发（Incremental Development）**则是把产品**分解成更小的特性**，**先构建一部分**，在每次增量过程中了解它们在目标使用环境的具体情形，然后根据更多的理解来做出调整，**构建更多的特性，直到最后组成项目的整体**。它最大的**缺点**是逐步构建的过程中，有迷失全局的风险（见木不见林）。示意图如下（来自：[Scrum: what's the difference between incremental and iterative development?](https://www.zentao.pm/agile-knowledge-share/Scrum-what-the-difference-between-incremental-and-iterative-development-845.html )）：
 
-![](../images/post/link_cooperation_agile/iterative_model_diagram.png)
+![](/images/post/link_cooperation_agile/iterative_model_diagram.png)
 
 下面是一张给迭代与增量做对比，非常形象的一张图，同样来自：[Scrum: what's the difference between incremental and iterative development?](https://www.zentao.pm/agile-knowledge-share/Scrum-what-the-difference-between-incremental-and-iterative-development-845.html )
 
-![](../images/post/link_cooperation_agile/iterative_and_incremental_mona_lisa_diagram.png)
+![](/images/post/link_cooperation_agile/iterative_and_incremental_mona_lisa_diagram.png)
 
 ### 敏捷中的迭代和增量
 
@@ -1204,7 +1204,7 @@ Scrum**结合迭代和增量这两种开发方式的优点**，消除了单独�
 
 冲刺采用**蜂拥式（all-at-once）**的开发方法，在每个冲刺都执行所有的必要活动，创建可工作的产品增量（产品的一部分而不是全部），**每个冲刺完成一部分分析、设计、构建、集成和测试工作**。这样的好处是可以快速验证我们在开发产品特性时所作的假设。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_with_iterative_and_incremental.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_with_iterative_and_incremental.png)
 
 在Scrum中，并不是每次做一个阶段的工作，而是每次做一个特性，这样一来，在冲刺结束时就可以创建一个有价值的产品增量（产品的部分特性但不是全部）。
 
@@ -1392,7 +1392,7 @@ Scrum**结合迭代和增量这两种开发方式的优点**，消除了单独�
 
 一个软件的开发流程可以看作是一段自来水管道，特性需求从一个端进入，经过改进的软件从另一端涌出。在管道内部，存在着各种各样的工事，有的是非正式的临时工序，有的是正式的阶段性流程，而整个管道的吞吐量就代表着团队的工作效率，如果任务不流动就造成了阻塞，从而产生了瓶颈。
 
-![](../images/post/link_cooperation_agile/kanban_swimlane.png)
+![](/images/post/link_cooperation_agile/kanban_swimlane.png)
 
 Kanban会**在泳道上，放置各种任务卡片**，完整的看板包含了5个泳道：
 
@@ -1416,7 +1416,7 @@ Kanban会**在泳道上，放置各种任务卡片**，完整的看板包含了5
 
 任务卡片在各个泳道中的流动就是燃尽图的动态表现，通过看板，我们能够很直观的发现项目瓶颈，使项目进度可视化。
 
-![](../images/post/link_cooperation_agile/kanban_taskcard.png)
+![](/images/post/link_cooperation_agile/kanban_taskcard.png)
 
 > Notes：任务卡片通常采用用户故事的形式
 
@@ -1465,7 +1465,7 @@ Scrum是一个用于组织和管理工作的框架，它建立在一套价值观
 
 > Scrum的实践体现在**具体角色**、**活动**、**敏捷工件**以及**相关规则**中
 
-![](../images/post/link_cooperation_agile/scrum_framework_chinese.png)
+![](/images/post/link_cooperation_agile/scrum_framework_chinese.png)
 
 ## Scrum角色
 
@@ -1624,7 +1624,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 如下图所示，SoS作为一种协调多个团队之间工作的方法，其实**是一种**类似Scrum团队在冲刺时每日例会的**会议**。只不过每日例会时只包含团队内的成员，而SoS是由各个团队的代表组成用来协调工作的。各个团队的参会者应当是**当时团队的最佳代言人**，另外SoS的会议时间长度最好**不要超过15分钟**。
 
-![](../images/post/link_cooperation_agile/scrum_of_scrums.png)
+![](/images/post/link_cooperation_agile/scrum_of_scrums.png)
 
 #### 版本火车（Agile Release Train，ART）
 
@@ -1632,7 +1632,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 如下图（来自：Scrum精髓：敏捷转型指南），参与版本火车的团队所有冲刺持续期都一样长，并且所有冲刺的步调都一致，在完成几个固定数量的冲刺后，就可以得到[^PSI]。
 
-![](../images/post/link_cooperation_agile/agile_release_train.png)
+![](/images/post/link_cooperation_agile/agile_release_train.png)
 
 另外，我认为在只有一个团队，然后一个大解决方案存在多个项目的时候，也可以参考版本火车的做法。
 
@@ -1658,7 +1658,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 如下图，Scrum在开发产品时，需要在多个层级上制定计划。其中每层规划会根据**输入**工件进行规划活动，然后**输出**规划成果。基本上高层规划的输出可能会作为低层规划的输入，不过这不是绝对的。比如冲刺规划，本轮冲刺的成果可能会作为下次冲刺规划的输入，这就发生在同一层级的规划上。又比如，产品级规划的输出正是组合规划的重要输入。
 
-![](../images/post/link_cooperation_agile/scrum_multi_level_planning.png)
+![](/images/post/link_cooperation_agile/scrum_multi_level_planning.png)
 
 #### 战略规划（Strategy Planning）
 
@@ -1670,7 +1670,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 > 团队需要保持专注、责任感，同时兼顾多个产品很难做到保证质量和专注度，所以最好不要同时超过两个产品。
 
-![](../images/post/link_cooperation_agile/scrum_portfolio_planning_illustrates.png)
+![](/images/post/link_cooperation_agile/scrum_portfolio_planning_illustrates.png)
 
 ##### 输入
 
@@ -1721,7 +1721,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
       - 终止：停止开发，结束这个产品
     - 决策流程示意图
 
-    ![](../images/post/link_cooperation_agile/scrum_wip_marginal_benefit_flow.png)
+    ![](/images/post/link_cooperation_agile/scrum_wip_marginal_benefit_flow.png)
 
 #### 产品规划（Product Planning）
 
@@ -1737,7 +1737,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 > - 在构想阶段可以考虑执行一次**知识获取冲刺**，以获取必要的知识
 > - 在开发产品或服务时，愿景往往表述为利益干系人**如何得到商业价值**
 
-![](../images/post/link_cooperation_agile/scrum_product_planning_illustrates.png)
+![](/images/post/link_cooperation_agile/scrum_product_planning_illustrates.png)
 
 ##### 输入
 
@@ -1786,7 +1786,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 > 可以在PBI列表上用线，规划出不同的版本，并与产品路线图关联起来
 
-![](../images/post/link_cooperation_agile/scrum_release_planning_illustrates.png)
+![](/images/post/link_cooperation_agile/scrum_release_planning_illustrates.png)
 
 ##### 版本发布节奏
 
@@ -1816,7 +1816,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 让**版本发布可视化**的一个简单方法是**在产品列表中画线**，线上方的所有条目是这个版本计划要做的，线下方的所有条目是这个版本不计划做的。在对产品有更深入的了解后，可以在产品列表中上下移动这条线。
 
-![](../images/post/link_cooperation_agile/scrum_version_line.png)
+![](/images/post/link_cooperation_agile/scrum_version_line.png)
 
 ##### 输入
 
@@ -1865,7 +1865,7 @@ Scrum的关键价值在于团队，正如敏捷宣言的核心价值之一是“
 
 **使近期PBI[^PBI]快速、尽早映射（或插入）特定的冲刺中**是很有帮助的。在进行**冲刺映射**之前，需要产品列表[^PBI]具有这三个特征：**详略得当的**、**估算合理**以及**排定优先顺序的**。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_map.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_map.png)
 
 ##### 版本进展沟通手段
 
@@ -1883,9 +1883,9 @@ Scrum敏捷开发在最长一个月的迭代或周期中安排工作，这些迭
 
 冲刺活动流程与相关工件如下面两张图所示：
 
-![](../images/post/link_cooperation_agile/scrum_sprint_time_box.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_time_box.png)
 
-![](../images/post/link_cooperation_agile/scrum_framework_chinese.png)
+![](/images/post/link_cooperation_agile/scrum_framework_chinese.png)
 
 ### Scrum冲刺活动与PDCA循环
 
@@ -1904,7 +1904,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 >
 > 但有条规则，如果该任务**体量比较小**可以在本次冲刺完成，那么可以加入Sprint Backlog（Sprint Todo）列表中，否则的话应该加入Product Backlog。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_planning_illustrates.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_planning_illustrates.png)
 
 #### 输入
 
@@ -1929,7 +1929,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 如果团队发现选区的条目太多或太少，或者选取的条目由于种种原因限制而实际不能在一个冲刺里一起开发，则可以**调整预期**或**重新细化冲刺目标**，以满足现有生产能力和相关约束。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_planning_two_level.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_planning_two_level.png)
 
 ##### 一次性冲刺规划
 
@@ -1937,7 +1937,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 使用这种方式时，开发团队先确定自己有多少生产能力可以用于完成工作。基于可用的生产能力，冲刺目标可能需要细化。接着，团队选择一个PBI[^PBI]，然后表示有信心在当前冲刺做完它。**重复这个过程**，直到团队没有余力再做更多工作，这时最终敲定承诺，结束冲刺规划活动。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_planning_one_level.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_planning_one_level.png)
 
 #### 活动
 
@@ -1990,7 +1990,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 冲刺执行的理想原则是**见机行事**，充分利用团队的技能，**逐步明确任务规划**，而不是试着事先列出一个完整而详细的工作计划。在冲刺执行期，团队为了适应环境变化，**可以持续进行任务规划**。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_execution.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_execution.png)
 
 #### 工作流程管理
 
@@ -2002,7 +2002,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 **蜂拥式**在每个冲刺都执行所有的必要活动，创建可工作的产品增量（产品的一部分而不是全部），**每个冲刺完成一部分分析、设计、构建、集成和测试工作**。这样的好处是可以快速验证我们在开发产品特性时所作的假设。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_with_iterative_and_incremental.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_with_iterative_and_incremental.png)
 
 另外**不能**把**瀑布式思维**应用于冲刺级别，这是一种为**危险的方式**，把冲刺执行当做一个**迷你瀑布项目**，如果使用这种方式，我们一开始就会同时做所有PBI，首先分析这次冲刺要做的所有条目，然后按顺序完成设计、编码和测试。这十分危险，到最后可能每个特性只完成了90%，而没有任何一个特性完成到100%。
 
@@ -2050,19 +2050,19 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 对于任务版，另一种敏捷方法“**看板（Kanban）**”，它使用**详细信息来可视化工作流的不同阶段**，可以配合使用
 
-![](../images/post/link_cooperation_agile/scrum_task_board.png)
+![](/images/post/link_cooperation_agile/scrum_task_board.png)
 
 ##### 冲刺燃起图（Sprint Burnup Chart）
 
 燃起图[^BurnupChart]直观地展现了时间与已完成的工作间的关系，让团队成员可以看见其工作成果，这算是一种激励。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_burnup_chart.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_burnup_chart.png)
 
 ##### 冲刺燃尽图（Sprint Burndown Chart）
 
 **燃尽图[^BurndownChart]也叫燃烧图**，Scrum提倡使用它来直观的展现项目总体进度，它展示了**时间与项目剩余总体工作量间的关系**。让人清晰直观的感受到随着时间的推移，项目所剩的工作量逐天减少。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_burndown_chart.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_burndown_chart.png)
 
 ### 冲刺评审（Sprint Review）
 
@@ -2078,7 +2078,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 执行冲刺评审的常见方法是：总结或概要说明冲刺目标中哪些完成了、哪些没有完成；演示潜在可发布产品增量[^PSI]；讨论产品当前状态；调整产品未来方向。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_review.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_review.png)
 
 #### 准备工作
 
@@ -2112,7 +2112,7 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 > 收敛一下雄心壮志，脚踏实地进行小步改进，不能野心勃勃
 
-![](../images/post/link_cooperation_agile/scrum_sprint_restrospective.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_restrospective.png)
 
 #### 准备工作
 
@@ -2191,9 +2191,9 @@ Scrum的冲刺可以理解为是基于**PDCA**循环衍生出来的，即P（Pla
 
 下面是一个规划扑克，扑克牌的例子：
 
-![](../images/post/link_cooperation_agile/scrum_planning_poker_1.png)
+![](/images/post/link_cooperation_agile/scrum_planning_poker_1.png)
 
-![](../images/post/link_cooperation_agile/scrum_planning_poker_2.png)
+![](/images/post/link_cooperation_agile/scrum_planning_poker_2.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
 #### 冲刺速率
@@ -2291,7 +2291,7 @@ Scrum有一条重要的规则：**一旦制定冲刺目标，在冲刺执行开�
 
 为了确定开发出的东西是潜在可发布的，Scrum团队必须有一个明确定义的，大家一致同一的“**完成的定义（Definition of Done，DoD）[^DoD]**”。从概念上看，完成的定义是，在宣布工作潜在可发布之前，要求团队**成功完成**的**各项工作检查**，如下图的样例：
 
-![](../images/post/link_cooperation_agile/scrum_sprint_complete_sample.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_complete_sample.png)
 
 <center><font size="2">该图来自：《Scrum精髓：敏捷转型指南》</font></center>
 ##### 什么是完成的定义？
@@ -2356,7 +2356,7 @@ DevOps也可以看作**是敏捷开发的一种演化**，**弥补敏捷过程�
 
 在一些 DevOps 模式下，**质保和安全团队**也会与开发和运营团队更紧密地结合在一起，贯穿应用程序的整个生命周期。当安全是所有 DevOps 团队成员的工作重心时，被称为“**DevSecOps**”。
 
-![](../images/post/link_cooperation_agile/devops.png)
+![](/images/post/link_cooperation_agile/devops.png)
 
 ### DevOps提出的初衷
 
@@ -2390,11 +2390,11 @@ DevOps可划分三类部门：
 - 运维部门（IT Operations）
 - 质量保障部门（Quality Assurance）
 
-![](../images/post/link_cooperation_agile/devops_teams.png)
+![](/images/post/link_cooperation_agile/devops_teams.png)
 
 ### 生命周期
 
-![](../images/post/link_cooperation_agile/devops_lifecycle.png)
+![](/images/post/link_cooperation_agile/devops_lifecycle.png)
 
 <center><font size="2"><a href="https://azure.microsoft.com/zh-cn/resources/cloud-computing-dictionary/what-is-devops/">该图来自：《什么是 DevOps？》 by Microsoft Azure</a></font></center>
 #### 规划（Plan）
@@ -2436,7 +2436,7 @@ DevOps 团队寻求在不牺牲质量、稳定性和生产效率的情况下快�
 
 对比前面所说的瀑布式开发和敏捷开发，我们可以明显看出，DevOps贯穿了软件全生命周期，而不仅限于开发阶段，如下图对比所示：
 
-![](../images/post/link_cooperation_agile/devops_lifecycle_compare.png)
+![](/images/post/link_cooperation_agile/devops_lifecycle_compare.png)
 
 ### CAMS价值体系
 
@@ -2494,15 +2494,15 @@ DevOps团队通过短周期发布软件保持敏捷。因为进度是渐进式�
 
 #### 工具
 
-![](../images/post/link_cooperation_agile/devops_tools_one.jpg)
+![](/images/post/link_cooperation_agile/devops_tools_one.jpg)
 
 <center><font size="2"><a href="https://www.shalb.com/blog/what-is-devops-and-where-is-it-applied/">该图来自：《What is DevOps and where is it applied?》</a></font></center>
-![](../images/post/link_cooperation_agile/devops_tools_two.png)
+![](/images/post/link_cooperation_agile/devops_tools_two.png)
 
 <center><font size="2"><a href="https://hoangdinhquang.me/a-note-on-devops-terminology/">该图来自：《A note on DevOps terminologies》</a></font></center>
 ### DevOps的的知识体系图
 
-![](../images/post/link_cooperation_agile/devops_knowledge_architecture.png)
+![](/images/post/link_cooperation_agile/devops_knowledge_architecture.png)
 
 <center><font size="2"><a href="https://www.cnblogs.com/yinzhengjie2020/p/12437420.html">该图来自：《DevOps 简介》 by 尹正杰</a></font></center>
 ### 延伸阅读推荐
@@ -2840,7 +2840,7 @@ void shutdown()
 
 **蜂拥式**在每个冲刺都执行所有的必要活动，创建可工作的产品增量（产品的一部分而不是全部），**每个冲刺完成一部分分析、设计、构建、集成和测试工作**。这样的好处是可以快速验证我们在开发产品特性时所作的假设。
 
-![](../images/post/link_cooperation_agile/scrum_sprint_with_iterative_and_incremental.png)
+![](/images/post/link_cooperation_agile/scrum_sprint_with_iterative_and_incremental.png)
 
 另外我们**不能**把**瀑布式思维**应用于冲刺级别，这是一种为**危险的方式**，把冲刺执行当做一个**迷你瀑布项目**，如果使用这种方式，我们一开始就会同时做所有PBI，首先分析这次冲刺要做的所有条目，然后按顺序完成设计、编码和测试。这十分危险，到最后可能每个特性只完成了90%，而没有任何一个特性完成到100%。
 
@@ -3013,10 +3013,10 @@ void shutdown()
 - 集群管理
 - 等...
 
-![](../images/post/link_cooperation_agile/devops_tools_one.jpg)
+![](/images/post/link_cooperation_agile/devops_tools_one.jpg)
 
 <center><font size="2"><a href="https://www.shalb.com/blog/what-is-devops-and-where-is-it-applied/">该图来自：《What is DevOps and where is it applied?》</a></font></center>
-![](../images/post/link_cooperation_agile/devops_tools_two.png)
+![](/images/post/link_cooperation_agile/devops_tools_two.png)
 
 <center><font size="2"><a href="https://hoangdinhquang.me/a-note-on-devops-terminology/">该图来自：《A note on DevOps terminologies》</a></font></center>
 ### 工件
