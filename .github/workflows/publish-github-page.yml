@@ -55,7 +55,7 @@ jobs:
           folder: ./public
 
   deploy:
-    needs: buildx
+    needs: build
     permissions:
       pages: write
       id-token: write
