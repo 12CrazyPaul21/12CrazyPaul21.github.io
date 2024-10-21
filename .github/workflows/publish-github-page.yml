@@ -7,11 +7,14 @@ on:
     branches: [master]
 
 jobs:
-  deployment:
+  build:
     runs-on: ubuntu-20.04
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAGE_PUBLISH_TOKEN }}
+          submodules: recursive
 
       - name: Use Node.js
         uses: actions/setup-node@v2
@@ -42,5 +45,20 @@ jobs:
           hexo clean
           hexo generate
 
-      - name: Deploy hexo static page
-        run: hexo deploy
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
