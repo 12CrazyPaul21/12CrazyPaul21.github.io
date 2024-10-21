@@ -54,6 +54,9 @@ jobs:
           branch: gh-pages
           folder: ./public
 
+      - name: dd
+        run: hexo deploy
+
   deploy:
     needs: build
     permissions:
