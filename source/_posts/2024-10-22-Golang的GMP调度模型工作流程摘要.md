@@ -8,7 +8,9 @@ tags:
 categories:
   - - golang
     - goroutine
+date: 2024-10-22 00:09:50
 ---
+
 
 golang 提供轻量的**协作式与非协作式抢占调度**的用户级线程，也就是 golang coroutine（golang 协程），简称 **goroutine**，可以通过关键字 `go` 像下面这样很方便的启动 goroutine
 
