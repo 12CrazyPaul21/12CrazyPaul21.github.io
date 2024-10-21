@@ -46,8 +46,15 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+
+      - name: depoly
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: ./public
+
   deploy:
-    needs: build
+    needs: buildx
     permissions:
       pages: write
       id-token: write
