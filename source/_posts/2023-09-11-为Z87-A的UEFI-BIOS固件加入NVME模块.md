@@ -38,7 +38,7 @@ NVM Express 驱动的官方目录在 [NVM Express Drivers](https://nvmexpress.or
 
 ### 1. 使用 UEFITool 打开 cap 包
 
-![](../images/post/nvme/1.png)
+![](/images/post/nvme/1.png)
 
 打开后可以看到 cap 包的结构，可看作两个部分，分别是 Capsule Header 与 Image。Header 部分包含了有关 Capsule（这里是 AMI Aptio 类型的 Capsule）文件的元数据（版本信息、签名以及大小等信息），这用于在更新固件时对 Capsule 文件进行验证（比如完整性和数字签名是否合法）以及提取固件体。Image 部分则是实际写入固件 Flash 芯片的固件体，后续我们把 NVMeExpressDxE.ffs 插入固件体后，需要把这部分给 dump 出来，原因之后说明。
 
@@ -48,7 +48,7 @@ NVM Express 驱动的官方目录在 [NVM Express Drivers](https://nvmexpress.or
 
 使用 UEFITool 搜索 CSMCORE（该 DXE 提供 Legacy BIOS 兼容模式，使 BIOS 可使用 MBR 方式引导系统）所在的 FV，因为该 FV 通常就是大多数 DXE 驱动集合的卷，之所以使用 CSMCORE 来定位，是因为通常都是这么做的，如果找不到 CSMCORE 的话，也可以搜索其它常见的 DXE 驱动，或者直接手动找 DXE 非常多的 FV。找到 DXE 集合的 FV 后，就可以在该 FV 的末尾将 NVMeExpressDxE.ffs 插入了。
 
-![](../images/post/nvme/2.png)
+![](/images/post/nvme/2.png)
 
 <center><font size="2">这里是将压缩过的 NVMeExpressDxE_compressed.ffs 插入了固件中</font></center>
 
@@ -56,7 +56,7 @@ NVM Express 驱动的官方目录在 [NVM Express Drivers](https://nvmexpress.or
 
 先 `CTRL + S` 保存一遍副本为 `Z87-A-ASUS-2103-NVME.CAP`，然后再将固件主体导出去，后缀名选择 `.rom` 或者 `.bin` 都没问题。之所以要导出固件主体，而不是直接使用 .cap 固件包（AMI Aptio Capsule）进行升级，是因为 Capsule 文件是经过数字签名的，直接向里面加入新模块无法通过更新固件时的校验，所以需要通过烧录器，直接把固件体烧录进存储 UEFI BIOS 固件的芯片内。
 
-![](../images/post/nvme/3.png)
+![](/images/post/nvme/3.png)
 
 
 

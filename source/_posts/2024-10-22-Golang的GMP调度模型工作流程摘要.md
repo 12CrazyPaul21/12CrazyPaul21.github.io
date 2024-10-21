@@ -3469,10 +3469,10 @@ go tool trace test.trace
 ## GMP 模型关系图
 
 
-![GMP](../images/post/gmp/GMP_Model.png)
+![GMP](/images/post/gmp/GMP_Model.png)
 <center><font size="2">GMP 模型</font></center>
 
-![GMP Schedule Points](../images/post/gmp/GMP_schedule_points.png)
+![GMP Schedule Points](/images/post/gmp/GMP_schedule_points.png)
 <center><font size="2">调度触发时机（schedule points）</font></center>
 
 ## GMP 调度机制总结
