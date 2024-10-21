@@ -1,46 +1,48 @@
-name: Publish Github Page
+name: Pages
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches:
+      - main # default branch
 
 jobs:
-  deployment:
-    runs-on: ubuntu-20.04
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Git checkout
-        uses: actions/checkout@v2
-
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
         with:
-          node-version: '12.x'
-      
-      - name: Pandoc
-        uses: docker://pandoc/core:2.9
-
-      - name: Config environment
-        env:
-          PAGE_PUBLISH_TOKEN: ${{ secrets.PAGE_PUBLISH_TOKEN }}
-          PUBLISH_NAME: 'bot'
-          PUBLISH_MAIL: '604916833@qq.com'
-        run: |
-          git config --global user.name $PUBLISH_NAME
-          git config --global user.email $PUBLISH_MAIL
-          sed -i "s/PAGE_PUBLISH_TOKEN/$PAGE_PUBLISH_TOKEN/g" ./_config.yml
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get install pandoc -y
-          npm install hexo-cli -g
-          npm install
-
-      - name: Generate hexo static page
-        run: |
-          hexo clean
-          hexo generate
-
-      - name: Deploy hexo static page
-        run: hexo deploy
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # If your repository depends on submodule, please see: https://github.com/actions/checkout
+          submodules: recursive
+      - name: Use Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+      - name: Cache NPM dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
