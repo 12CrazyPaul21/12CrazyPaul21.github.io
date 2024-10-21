@@ -30,6 +30,7 @@ jobs:
           git config --global user.name $PUBLISH_NAME
           git config --global user.email $PUBLISH_MAIL
           sed -i "s/PAGE_PUBLISH_TOKEN/$GITHUB_TOKEN/g" ./_config.yml
+          cat ./_config.yml
 
       - name: Install dependencies
         run: |
