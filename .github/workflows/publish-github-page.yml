@@ -23,7 +23,7 @@ jobs:
 
       - name: Config environment
         env:
-          PAGE_PUBLISH_TOKEN: ${{ secrets.PAGE_PUBLISH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAGE_PUBLISH_TOKEN }}
           PUBLISH_NAME: 'bot'
           PUBLISH_MAIL: '604916833@qq.com'
         run: |
