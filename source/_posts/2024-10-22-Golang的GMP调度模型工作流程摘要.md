@@ -80,9 +80,9 @@ goroutine 是 golang **调度或执行的最小单元实体**，当一个 gorout
 file: src/runtime/runtime2.go
 
 const (
-    //
+	//
 	// G status
-    //
+	//
 
 	_Gidle = iota // 0
 	_Grunnable // 1
@@ -127,36 +127,36 @@ type gobuf struct {
 
 // 仅列出部分成员
 type g struct {
-    // 栈信息
+	// 栈信息
 	stack       stack   // offset known to runtime/cgo
 	stackguard0 uintptr // offset known to liblink
 	stackguard1 uintptr // offset known to liblink
-    // ...
+	// ...
 
-    // 关联的M
+	// 关联的M
 	m         *m      // current m; offset known to arm liblink
-    // 调度器相关的上下文，包括pc、sp寄存器等信息
-    sched     gobuf
-    // ...
+	// 调度器相关的上下文，包括pc、sp寄存器等信息
+	sched     gobuf
+	// ...
 
-    // goroutine 的入口参数
-    param        unsafe.Pointer
-    // goroutine 当前状态
-    atomicstatus atomic.Uint32
-    stackLock    uint32 // sigprof/scang lock; TODO: fold in to atomicstatus
-    // goroutine id
+	// goroutine 的入口参数
+	param        unsafe.Pointer
+	// goroutine 当前状态
+	atomicstatus atomic.Uint32
+	stackLock    uint32 // sigprof/scang lock; TODO: fold in to atomicstatus
+	// goroutine id
 	goid         uint64
-    // ...
+	// ...
 
-    // 抢占相关
+	// 抢占相关
 	preempt       bool // preemption signal, duplicates stackguard0 = stackpreempt
 	preemptStop   bool // transition to _Gpreempted on preemption; otherwise, just deschedule
 	preemptShrink bool // shrink stack at synchronous safe point
-    // ...
+	// ...
     
-    // goroutine 入口地址，实际没啥用，实际调度使用的是sched中记录的pc
+	// goroutine 入口地址，实际没啥用，实际调度使用的是sched中记录的pc
 	startpc        uintptr         // pc of goroutine function
-    // ...
+	// ...
 }
 ```
 
@@ -196,7 +196,7 @@ func newproc(fn *funcval) {
 
 		pp := getg().m.p.ptr()
 
-        // 插入到可运行队列中，具体逻辑后面讨论
+		// 插入到可运行队列中，具体逻辑后面讨论
 		runqput(pp, newg, true)
 
 		if mainStarted {
@@ -239,15 +239,15 @@ func newproc1(fn *funcval, callergp *g, callerpc uintptr) *g {
 	newg.sched.sp = sp
 	newg.stktopsp = sp
 
-    // 这里设定新goroutine执行完毕返回的点是goexit
+	// 这里设定新goroutine执行完毕返回的点是goexit
 	newg.sched.pc = abi.FuncPCABI0(goexit) + sys.PCQuantum // +PCQuantum so that previous instruction is in same function
 	newg.sched.g = guintptr(unsafe.Pointer(newg))
-    // 将goroutine入口地址更新到进newg.sched中
-    // 实际调度使用的就是g.sched.pc
+	// 将goroutine入口地址更新到进newg.sched中
+	// 实际调度使用的就是g.sched.pc
 	gostartcallfn(&newg.sched, fn)
 	newg.gopc = callerpc
 	newg.ancestors = saveAncestors(callergp)
-    // 记录goroutine的入口地址，仅用于记录
+	// 记录goroutine的入口地址，仅用于记录
 	newg.startpc = fn.fn
 	// ...
 
@@ -279,16 +279,16 @@ file: src/runtime/sys_x86.go
 func gostartcall(buf *gobuf, fn, ctxt unsafe.Pointer) {
 	sp := buf.sp
     
-    // 需要特别注意的是
-    // 这里将buf先前记录的pc指针放进了栈
-    // 当新pc指向的函数执行完毕，返回的就是先前记录的pc
-    // 对于newproc而言，这个返回点就是goexit
+	// 需要特别注意的是
+	// 这里将buf先前记录的pc指针放进了栈
+	// 当新pc指向的函数执行完毕，返回的就是先前记录的pc
+	// 对于newproc而言，这个返回点就是goexit
 	sp -= goarch.PtrSize
 	*(*uintptr)(unsafe.Pointer(sp)) = buf.pc
 
-    buf.sp = sp
+	buf.sp = sp
     
-    // 登记入口函数地址
+	// 登记入口函数地址
 	buf.pc = uintptr(fn)
 	buf.ctxt = ctxt
 }
@@ -352,7 +352,7 @@ G0 的实例化与栈分配在 `malg` 中，具体的实现跟文章的下一节
 file: src/runtime/proc.go
 
 func newm(fn func(), pp *p, id int64) {
-    // ...
+	// ...
 	mp := allocm(pp, fn, id)
 	// ...
 }
@@ -374,9 +374,9 @@ func mStackIsSystemAllocated() bool {
 }
 
 func allocm(pp *p, fn func(), id int64) *m {
-    // ...
+	// ...
 
-    // 调用malg实例化一个G
+	// 调用malg实例化一个G
 	// In case of cgo or Solaris or illumos or Darwin, pthread_create will make us a stack.
 	// Windows and Plan 9 will layout sched stack on OS stack.
 	if iscgo || mStackIsSystemAllocated() {
@@ -410,16 +410,16 @@ func newproc(fn *funcval) {
 func newproc1(fn *funcval, callergp *g, callerpc uintptr) *g {
 	// ...
 
-    // 先尝试从空闲列表获取
+	// 先尝试从空闲列表获取
 	newg := gfget(pp)
 	if newg == nil {
-        // 创建一个用户栈大小为_StackMin的G
+		// 创建一个用户栈大小为_StackMin的G
 		newg = malg(_StackMin)
 		casgstatus(newg, _Gidle, _Gdead)
 		allgadd(newg) // publishes with a g->status of Gdead so GC scanner doesn't look at uninitialized stack.
 	}
     
-    // ...
+	// ...
 }
 ```
 
@@ -478,7 +478,7 @@ func stackalloc(n uint32) stack {
 		print("stackalloc ", n, "\n")
 	}
 
-    // 判断是否使用系统调用分配代替在堆（heap）中分配
+	// 判断是否使用系统调用分配代替在堆（heap）中分配
 	if debug.efence != 0 || stackFromSystem != 0 {
 		n = uint32(alignUp(uintptr(n), physPageSize))
 		v := sysAlloc(uintptr(n), &memstats.stacks_sys)
@@ -501,7 +501,7 @@ func stackalloc(n uint32) stack {
 		}
 		var x gclinkptr
 		if stackNoCache != 0 || thisg.m.p == 0 || thisg.m.preemptoff != "" {
-            // 对于P0直接使用stackpool
+			// 对于P0直接使用stackpool
 			// thisg.m.p == 0 can happen in the guts of exitsyscall
 			// or procresize. Just get a stack from the global pool.
 			// Also don't touch stackcache during gc
@@ -688,7 +688,7 @@ func goexit0(gp *g) {
 		}
 	}
     
-    // 进入下一轮调度
+	// 进入下一轮调度
 	schedule()
 }
 ```
@@ -724,7 +724,7 @@ func getgFromTLS(s *ssagen.State, r int16) {
 
 func ssaGenValue(s *ssagen.State, v *ssa.Value) {
     switch v.Op {
-        // ...
+		// ...
 	case ssa.OpAMD64LoweredGetG:
 		// ...
         r := v.Reg()
@@ -732,7 +732,7 @@ func ssaGenValue(s *ssagen.State, v *ssa.Value) {
 	case ssa.OpAMD64CALLstatic, ssa.OpAMD64CALLtail:
 		// ...
 		getgFromTLS(s, x86.REG_R14)
-        // ...
+		// ...
     }
 }
 ```
@@ -749,9 +749,9 @@ golang 程序中 P 的最大数目默认与 CPU 核心数相同，也可以通�
 file: src/runtime/runtime2.go
 
 const (
-    //
+	//
 	// P status
-    //
+	//
 
 	_Pidle = iota
 	_Prunning
@@ -763,21 +763,21 @@ const (
 type p struct {
 	id          int32
 	status      uint32 // one of pidle/prunning/...
-    // ...
+	// ...
 
-    // 每次调度累积
-    schedtick   uint32     // incremented on every scheduler call
-    // 每次syscall累积
+	// 每次调度累积
+	schedtick   uint32     // incremented on every scheduler call
+	// 每次syscall累积
 	syscalltick uint32     // incremented on every system call
-    // 上次sysmon检查时候的tick信息
+	// 上次sysmon检查时候的tick信息
 	sysmontick  sysmontick // last tick observed by sysmon
-    // 关联的M
+	// 关联的M
 	m           muintptr   // back-link to associated m (nil if idle)
-    // 每个P独立的线程栈缓存池
+	// 每个P独立的线程栈缓存池
 	mcache      *mcache
 	// ...
 
-    // LRQ 队列，为一个数组，数量上限为256
+	// LRQ 队列，为一个数组，数量上限为256
 	// Queue of runnable goroutines. Accessed without lock.
 	runqhead uint32
 	runqtail uint32
@@ -785,7 +785,7 @@ type p struct {
 	runnext guintptr
 	// ...
 
-    // 指示是否应该抢占，尽快进入到调度器中，不管是否有G还在运行当中
+	// 指示是否应该抢占，尽快进入到调度器中，不管是否有G还在运行当中
 	// preempt is set to indicate that this P should be enter the
 	// scheduler ASAP (regardless of what G is running on it).
 	preempt bool
@@ -813,7 +813,7 @@ file: src/runtime/proc.go
 
 var (
 	// ..
-    // 与关联P0的mcache
+	// 与关联P0的mcache
 	mcache0      *mcache
 	// ...
 )
@@ -831,7 +831,7 @@ func (pp *p) init(id int32) {
 			if mcache0 == nil {
 				throw("missing mcache?")
 			}
-            // P0的mcache是一个全局变量
+			// P0的mcache是一个全局变量
 			// Use the bootstrap mcache0. Only one P will get
 			// mcache0: the one with ID 0.
 			pp.mcache = mcache0
@@ -861,7 +861,7 @@ func (pp *p) destroy() {
 func procresize(nprocs int32) *p {
 	//...
 
-    // 更新runtime.allp
+	// 更新runtime.allp
 	// Grow allp if necessary.
 	if nprocs > int32(len(allp)) {
 		// Synchronize with retake, which could be running
@@ -924,7 +924,7 @@ type m struct {
 
 	// Fields not known to debuggers.
 	procid        uint64            // for debuggers, but offset not hard-coded
-    // ...
+	// ...
 
 	mstartfn      func()
 	curg          *g       // current running goroutine
@@ -948,28 +948,28 @@ type m struct {
 file: src/runtime/proc.go
 
 func newm(fn func(), pp *p, id int64) {
-    // ...
+	// ...
 
 	mp := allocm(pp, fn, id)
 	mp.nextp.set(pp)
 	// ...
 
 	newm1(mp)
-    // ...
+	// ...
 }
 
 func allocm(pp *p, fn func(), id int64) *m {
-    // ...
+	// ...
 
 	mp := new(m)
-    // m启动入口
+	// m启动入口
 	mp.mstartfn = fn
     
-    // 为m分配id并将mp登记到runtime.allm中、初始化gsingal等
-    // gsignal也是一个goroutine，也有自己的栈
+	// 为m分配id并将mp登记到runtime.allm中、初始化gsingal等
+	// gsignal也是一个goroutine，也有自己的栈
 	mcommoninit(mp, id)
 
-    // 创建g0
+	// 创建g0
 	// In case of cgo or Solaris or illumos or Darwin, pthread_create will make us a stack.
 	// Windows and Plan 9 will layout sched stack on OS stack.
 	if iscgo || mStackIsSystemAllocated() {
@@ -978,7 +978,7 @@ func allocm(pp *p, fn func(), id int64) *m {
 		mp.g0 = malg(8192 * sys.StackGuardMultiplier)
 	}
 	mp.g0.m = mp
-    // ...
+	// ...
 
 	return mp
 }
@@ -986,7 +986,7 @@ func allocm(pp *p, fn func(), id int64) *m {
 func newm1(mp *m) {
 	// ...
 	execLock.rlock() // Prevent process clone.
-    // newosproc与操作系统原生调用相关，创建一个系统线程
+	// newosproc与操作系统原生调用相关，创建一个系统线程
 	newosproc(mp)
 	execLock.runlock()
 }
@@ -1007,17 +1007,17 @@ const (
 )
 
 func newosproc(mp *m) {
-    // 获取栈顶
+	// 获取栈顶
 	stk := unsafe.Pointer(mp.g0.stack.hi)
 	// ...
 
-    // 线程入口点: mstart
+	// 线程入口点: mstart
 	// Disable signals during clone, so that the new thread starts
 	// with signals disabled. It will enable them in minit.
 	var oset sigset
 	sigprocmask(_SIG_SETMASK, &sigset_all, &oset)
 	ret := retryOnEAGAIN(func() int32 {
-        // 执行56号syscall(系统调用)创建线程，即sys_clone
+		// 执行56号syscall(系统调用)创建线程，即sys_clone
 		r := clone(cloneFlags, stk, unsafe.Pointer(mp), unsafe.Pointer(mp.g0), unsafe.Pointer(abi.FuncPCABI0(mstart)))
 		if r >= 0 {
 			return 0
@@ -1025,7 +1025,7 @@ func newosproc(mp *m) {
 		return -r
 	})
 	sigprocmask(_SIG_SETMASK, &oset, nil)
-    // ...
+	// ...
 }
 ```
 
@@ -3433,26 +3433,26 @@ import (
 )
 
 func main() {
-  runtime.GOMAXPROCS(1)
+	runtime.GOMAXPROCS(1)
 
-  file, _ := os.Create("test.trace")
-  defer file.Close()
+	file, _ := os.Create("test.trace")
+	defer file.Close()
 
-  trace.Start(file)
-  defer trace.Stop()
+	trace.Start(file)
+	defer trace.Stop()
 
-  var wg sync.WaitGroup
+	var wg sync.WaitGroup
 
-  for i := 0; i < 2; i++ {
-    wg.Add(1)
-    go func() {
-      defer wg.Done()
-      for j := 0; j < 1000; j++ {
-      }
-    }()
-  }
+	for i := 0; i < 2; i++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			for j := 0; j < 1000; j++ {
+			}
+		}()
+	}
 
-  wg.Wait()
+	wg.Wait()
 }
 ```
 
@@ -3472,7 +3472,7 @@ go tool trace test.trace
 ![GMP](/images/post/gmp/GMP_Model.png)
 <center><font size="2">GMP 模型</font></center>
 
-![GMP Schedule Points](/images/post/gmp/GMP_schedule_points.png)
+![GMP Schedule Point](/images/post/gmp/GMP_schedule_points.png)
 <center><font size="2">调度触发时机（schedule points）</font></center>
 
 ## GMP 调度机制总结

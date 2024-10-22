@@ -7,7 +7,7 @@ tags:
 date: 2024-10-22 01:41:02
 ---
 
-对于像人体模型之类的复杂三维模型来说，可利用坐标系分层思想所带来的灵活性去简化一些问题，比如说，在为人形角色设计一个$“$手肘带动整条手臂一起转动$”$的动画时，对于整个角色来说，这是一个局部动画，如果直接以人物的单层物体坐标系来设计，会非常复杂，也很难直观地描述和进行这种变换，但如果利用分层的骨架系统就很轻易地操纵模型的变形。
+对于像人体模型之类的复杂三维模型来说，可利用坐标系分层思想所带来的灵活性去简化一些问题，比如说，在为人形角色设计一个“手肘带动整条手臂一起转动”的动画时，对于整个角色来说，这是一个局部动画，如果直接以人物的单层物体坐标系来设计，会非常复杂，也很难直观地描述和进行这种变换，但如果利用分层的骨架系统就很轻易地操纵模型的变形。
 
 从广义上来说，在**计算机图形学（CG，computer graphics）**中，**绑定（rigging）**指的是给不同物体建立关联的行为，比如说，存在父子关系的两个物体对象，如果移动或旋转了父对象，那么子对象也会跟着一起移动或旋转。
 
@@ -17,7 +17,7 @@ date: 2024-10-22 01:41:02
 
 **骨骼动画（skeletal animation）**就建立在这种思想的基础上，为模型绑定虚拟的骨架，使模型不同部分的网格与骨架中的骨骼建立联系，而关节的旋转会带动起骨骼转动，因此可以通过操纵关节来带动模型发生形变，这是一种更灵活且复杂的关系，比如说可以为关节施加约束来限定其旋转角度。
 
-> 骨骼动画中的$“$**rigging**$”$，虽然也是绑定的意思，但通常指的是为模型装配一幅合适的骨架。
+> 骨骼动画中的“​**rigging**”，虽然也是绑定的意思，但通常指的是为模型装配一幅合适的骨架。
 
 ## 骨架
 
@@ -25,7 +25,7 @@ date: 2024-10-22 01:41:02
 
 ![naming-bones-in-the-human-rig](/images/post/skinning/naming-bones-in-the-human-rig.jpg)
 
-<center><font size="2">《人物角色骨骼命名示例》</br>from: <a href="https://cgtyphoon.com/rigging/bones-naming-in-the-human-character-rig/">Bones naming in the human character rig</a></font></center>
+<center><font size="2">《人物角色骨骼命名示例》<br/>from: <a href="https://cgtyphoon.com/rigging/bones-naming-in-the-human-character-rig/">Bones naming in the human character rig</a></font></center>
 
 骨架上的所有**关节**都可看作是一个**节点（node）**，而**骨骼**确定了两个相邻关节之间所保持的距离，不过这已经蕴含在了关节节点在空间的**相对距离**上。
 
@@ -39,7 +39,7 @@ date: 2024-10-22 01:41:02
 
 每个**关节节点**都可看作拥有一个以自身为原点的**局部坐标系**，即**关节坐标系（joint coordinate）**，而所有**子关节**都可看作**位于其父关节的局部空间**中，可用**相对于父关节**的**位移**、**旋转**以及**缩放**去描述一个**子关节坐标系**，子关节可沿着父关节往根关节的方向逐层映射，直到全局坐标系。
 
-相对于父关节的平移和缩放可以比较容易让人理解，但**相对旋转**会有点让人困惑，我们可以将变换拆开来看，根据约定，我们通常会采用 **TRS** 的顺序来将这三个变换的矩阵组合起来一起进行变换（有时会根据实际变换的顺序来将这种方法称为 $SRT$ ），即 $M_t \times M_r \times M_s$，不过在使用该组合矩阵给向量执行变换的时候，由于向量一般是从右边开始结合的，因此变换顺序并不是先平移再旋转后缩放，而是**先缩放再旋转后平移**，这个顺序的先后非常重要，主要是因为像**旋转和缩放**这样的变换通常都是**相对于当前坐标系$“$原点$”$进行**的，顺序不一样会导致变换的结果不同。
+相对于父关节的平移和缩放可以比较容易让人理解，但**相对旋转**会有点让人困惑，我们可以将变换拆开来看，根据约定，我们通常会采用 **TRS** 的顺序来将这三个变换的矩阵组合起来一起进行变换（有时会根据实际变换的顺序来将这种方法称为 $SRT$ ），即 $M_t \times M_r \times M_s$，不过在使用该组合矩阵给向量执行变换的时候，由于向量一般是从右边开始结合的，因此变换顺序并不是先平移再旋转后缩放，而是**先缩放再旋转后平移**，这个顺序的先后非常重要，主要是因为像**旋转和缩放**这样的变换通常都是**相对于当前坐标系“原点”进行**的，顺序不一样会导致变换的结果不同。
 
 子关节坐标系的建立过程可分为以下四步：
 
@@ -84,11 +84,11 @@ date: 2024-10-22 01:41:02
 
 ![ik_grabbing](/images/post/skinning/ik_grabbing.png)
 
-<center><font size="2">《反向运动》</br>note：图中的下半部分演示的是够不着的情况</font></center>
+<center><font size="2">《反向运动》<br/>note：图中的下半部分演示的是够不着的情况</font></center>
 
 ## 骨骼动画
 
-> 我们先来看下早期的**关节动画（joint animation）**，这**不是采用骨架带动模型变形的实现方式**，所以严格来说**并不是一种骨骼动画**，其会将整个模型拆分成**多个网格实体**，这些网格会以类似于骨架的分层架构关联起来，并利用$“$rigging$”$的做法，使父节点带动子节点变换，这虽然能够做到类似骨骼动画的联动，但这种实现有非常大的缺点，因为其每块网格是彼此分离的，无论关节动画使网格如何位移、旋转，**网格都仅是整体在做刚体变换，而不会变形**，那么在两个网格的**连接处就无法闭合**，从而**产生裂缝**。
+> 我们先来看下早期的**关节动画（joint animation）**，这**不是采用骨架带动模型变形的实现方式**，所以严格来说**并不是一种骨骼动画**，其会将整个模型拆分成**多个网格实体**，这些网格会以类似于骨架的分层架构关联起来，并利用“rigging”的做法，使父节点带动子节点变换，这虽然能够做到类似骨骼动画的联动，但这种实现有非常大的缺点，因为其每块网格是彼此分离的，无论关节动画使网格如何位移、旋转，**网格都仅是整体在做刚体变换，而不会变形**，那么在两个网格的**连接处就无法闭合**，从而**产生裂缝**。
 >
 > ![joint_animation](/images/post/skinning/joint_animation.webp)
 >
@@ -130,7 +130,7 @@ date: 2024-10-22 01:41:02
 >
 > 虽然在设计时可能会对骨架进行可视化，以表明其与模型的关系，但这都是虚拟的，即使绑定了骨架，模型的内部仍然是空心的，并没有实际的骨架用于支撑网格，也没有所谓的肌肉来牵拉骨骼转动。
 >
-> 实际上，每根骨骼（或关节）相当于描述了一个局部空间，这个空间通过相对其父节点的平移和旋转来定义，那么调整关节的旋转状态其实就是让骨骼转动了起来，这其实就是一开始所提到的$“$**rigging**$”$思想。
+> 实际上，每根骨骼（或关节）相当于描述了一个局部空间，这个空间通过相对其父节点的平移和旋转来定义，那么调整关节的旋转状态其实就是让骨骼转动了起来，这其实就是一开始所提到的“**rigging**”思想。
 >
 > 当骨架与模型处于绑定姿势的时候，其实就已经确认了网格内的所有顶点在其所关联的骨骼空间中的相对位置，而无论骨骼如何转动，所有顶点都会继续保持这种相对关系，因此顶点会跟随着其关联的骨骼一起进行变换，而为了能够得到更平滑的效果，柔性蒙皮中的一些顶点可关联多根骨骼并通过权重的分配进行混合，此时顶点与某根骨骼的相对关系可能就不是固定的，而是受到多根骨骼影响。
 
@@ -144,13 +144,13 @@ date: 2024-10-22 01:41:02
 
 > ![t_pose_a_pose](/images/post/skinning/t_pose_a_pose.png)
 >
-> <center><font size="2">《T-pose 与 A-pose》</br>3d model from: <a href="https://3dviewer.net/index.html#model=assets/models/Y_Bot.fbx">ONLINE 3D VIEWER</a></font></center>
+> <center><font size="2">《T-pose 与 A-pose》<br/>3d model from: <a href="https://3dviewer.net/index.html#model=assets/models/Y_Bot.fbx">ONLINE 3D VIEWER</a></font></center>
 >
 > 对于像人体这样的双足模型，通常会采用 **T 形姿势（T-pose）**或 **A 形姿势（A-pose）**作为绑定姿势，这两种姿势都左右对称且相对中性，可更接近大多数的人体姿势。
 >
 > 虽然人的肩关节可纵向外展的角度范围接近 $180°$，但日常的活动范围基本都在 $90°$ 之间，也就是立正时的角度到 T-pose 所抬起的角度之间。
 >
-> 当采用 T-pose 作为绑定姿势时，假设骨架要从这个$“$初始姿势$”$变换到$“$立正姿势$”$，由于 T-pose 的整条手臂被抬起且完全伸展，那对于立正姿势来说，此时肩膀和肘部将处于相对极端的位置，想要变换到立正姿势就需要做出比较大的形变，因为距离初始姿势越远，所需变换就会越大。而采用 A-pose 的话，肩关节的初始角度一般是 $45°$ 左右，这对于大部分动作姿势来说，算是一个比较中间的位置，需要做的变形程度也都比较平均。
+> 当采用 T-pose 作为绑定姿势时，假设骨架要从这个“初始姿势”变换到“立正姿势”，由于 T-pose 的整条手臂被抬起且完全伸展，那对于立正姿势来说，此时肩膀和肘部将处于相对极端的位置，想要变换到立正姿势就需要做出比较大的形变，因为距离初始姿势越远，所需变换就会越大。而采用 A-pose 的话，肩关节的初始角度一般是 $45°$ 左右，这对于大部分动作姿势来说，算是一个比较中间的位置，需要做的变形程度也都比较平均。
 >
 > 从模型纹理的角度上看，采用 T-pose 的模型在肩关节附近的部分网格可能会被挤压的很厉害，当手臂放下时会舒张开来，此时纹理会被拉伸，如果设计不合理，就有可能会使模型肩部的纹理存在失真的可能，而 A-pose 可以减少这种现象。
 >
@@ -253,7 +253,7 @@ struct smooth_vertex {
 
 从上图可以发现，刚性蒙皮网格的关节在旋转之后，两根骨骼的关节连接处所发生的形变，表现出了不自然的弯曲。
 
-这是因为在刚性蒙皮的实现中，**每个顶点都只能包含在一个顶点组内**，而**骨骼与顶点组是一一对应的关系**，也就是说顶点组内的所有顶点仅受到一根骨骼的影响，因此骨骼所关联的顶点组整体就像是一个$“$**刚体**$”$一样，无论关节如何旋转、平移，**顶点组**整体都只会发生**刚体变换（rigid transformation）**，而不会发生**形变（deformation）**，具体来说就是，组内的这些顶点会彼此保持固定的相对位置，也都与关节保持固定的相对位置，虽然从整个模型空间来看，旋转会使这些相对位置发生变化，但如果从关节的局部空间来看的话，它们依旧保持不变，因为整个顶点组也会随着骨骼一起旋转，这就是为什么刚性蒙皮会被称为$“$刚体$”$原因。
+这是因为在刚性蒙皮的实现中，**每个顶点都只能包含在一个顶点组内**，而**骨骼与顶点组是一一对应的关系**，也就是说顶点组内的所有顶点仅受到一根骨骼的影响，因此骨骼所关联的顶点组整体就像是一个“**刚体**”一样，无论关节如何旋转、平移，**顶点组**整体都只会发生**刚体变换（rigid transformation）**，而不会发生**形变（deformation）**，具体来说就是，组内的这些顶点会彼此保持固定的相对位置，也都与关节保持固定的相对位置，虽然从整个模型空间来看，旋转会使这些相对位置发生变化，但如果从关节的局部空间来看的话，它们依旧保持不变，因为整个顶点组也会随着骨骼一起旋转，这就是为什么刚性蒙皮会被称为“刚体”原因。
 
 但是，网格在整体上也确实是发生了**形变**的，从上图中的黄色**表面（surface）**可以确认这一点，这是因为表面是由顶点来确认的，而这块表面用到的四个顶点中， `bone0` 以及 `bone1` 的顶点组各占了两个，虽然顶点组内部保持固定的相对关系，但是顶点组与顶点组之间不需要维持这种关系，那么在两根骨骼的关节连接处自然就会存在形变，并且也会闭合起来，因为不同的顶点组仍处于同一个网格中，顶点组仅是逻辑上的划分，而不像关节动画那样会拆分成多个网格实体。
 
@@ -292,15 +292,15 @@ struct smooth_vertex {
 
 ![sculpt-paint_weight-paint_introduction_color-code](/images/post/skinning/sculpt-paint_weight-paint_introduction_color-code.png)
 
-<center><font size="2">《blender中的颜色光谱及其各自对应的权重》</br>from: <a href="https://docs.blender.org/manual/en/latest/sculpt_paint/weight_paint/introduction.html">weight paint - blender</a></font></center>
+<center><font size="2">《blender中的颜色光谱及其各自对应的权重》<br/>from: <a href="https://docs.blender.org/manual/en/latest/sculpt_paint/weight_paint/introduction.html">weight paint - blender</a></font></center>
 
 下面从一个在 `blender` 中给角色刷权重的例子，来看刷权重一般是怎样进行以及可视化的。
 
-<div style="display:block;"><center><img src=".\paint_weight_0.png" alt="paint_weight_0" style="zoom:80%;" /><img src=".\paint_weight_1.png" alt="paint_weight_1" style="zoom:80%;" /></center></div>
+<div style="display:block;"><center><img src="/images/post/skinning/paint_weight_0.png" alt="paint_weight_0" style="zoom:80%;" /><img src="/images/post/skinning/paint_weight_1.png" alt="paint_weight_1" style="zoom:80%;" /></center></div>
 
-左图表明了此时$“$上臂$”$的顶点组 `LeftArm` 仅受到 `bone:LeftArm` 关节的影响，因为这里选中了 `bone:LeftArm` 骨骼，并显示出 `LeftArm` 顶点组中的所有顶点对于这根骨骼的权重是完全红色的，即权重值为 $1.0$。
+左图表明了此时“上臂”的顶点组 `LeftArm` 仅受到 `bone:LeftArm` 关节的影响，因为这里选中了 `bone:LeftArm` 骨骼，并显示出 `LeftArm` 顶点组中的所有顶点对于这根骨骼的权重是完全红色的，即权重值为 $1.0$。
 
-右图与左图的情况类似，$“$前臂$”$的顶点组 `LeftForeArm` 中的所有顶点仅受到 `bone:LeftForeArm` 关节的影响。
+右图与左图的情况类似，“前臂”的顶点组 `LeftForeArm` 中的所有顶点仅受到 `bone:LeftForeArm` 关节的影响。
 
 左右两幅图还表明了，`bone:LeftArm` 关节仅会影响 `LeftArm` 顶点组，`bone:LeftForeArm` 关节仅会影响 `LeftForeArm` 顶点组，而都不会影响模型的其它部位，因为从图中可看出其它位置的颜色都是蓝色的，即权重值为 $0.0$。
 
@@ -324,7 +324,7 @@ struct smooth_vertex {
 
 ### 蒙皮信息
 
-虽然已经讨论了刚性蒙皮和柔性蒙皮各自需要携带怎样的**蒙皮信息（skinning data）**，但没有讨论这些信息是怎么得出来的，通常不会等到应用阶段再去实时地计算，因为这种信息的计算量会比较大而且很难做到精确，一般应该在设计阶段处理好蒙皮信息，可将这个过程称为**蒙皮**。<font size="2" color="gray">PS：$“$蒙皮$”$这个词可用于各种场景，比如在应用阶段生成蒙皮网格或执行蒙皮变换的时候也都可以叫做蒙皮。</font>
+虽然已经讨论了刚性蒙皮和柔性蒙皮各自需要携带怎样的**蒙皮信息（skinning data）**，但没有讨论这些信息是怎么得出来的，通常不会等到应用阶段再去实时地计算，因为这种信息的计算量会比较大而且很难做到精确，一般应该在设计阶段处理好蒙皮信息，可将这个过程称为**蒙皮**。<font size="2" color="gray">PS：“蒙皮”这个词可用于各种场景，比如在应用阶段生成蒙皮网格或执行蒙皮变换的时候也都可以叫做蒙皮。</font>
 
 在应用阶段，顶点在底层通过**骨骼编号（或数组）**来**与一根或多根骨骼进行关联**的，但这种做法并不适合设计阶段，因为顶点的数量非常多，一个个顶点去操作的话会非常复杂，而无论是刚性蒙皮还是柔性蒙皮，**每根骨骼都关联着一个专属的顶点组**，因此**蒙皮信息可以从顶点组的角度来看待**。
 
@@ -351,7 +351,7 @@ struct smooth_vertex {
 
   <center><font size="2">《maya使用“closest distance”方法为一个顶点分配五个关节蒙皮权重》</font></center>
 
-- **骨架层次中的最近距离（closest in hierarchy）**：在$“$最近距离$”$的基础上，**不能忽略骨架的层次结构**，也就是说，在确认下一个对顶点影响最大的关节时，将从最近关节在骨架层次结构的亲属（父关节或子关节）中寻找，而不仅仅是考虑哪个关节最近
+- **骨架层次中的最近距离（closest in hierarchy）**：在“最近距离”的基础上，**不能忽略骨架的层次结构**，也就是说，在确认下一个对顶点影响最大的关节时，将从最近关节在骨架层次结构的亲属（父关节或子关节）中寻找，而不仅仅是考虑哪个关节最近
 
   ![maya_closest_in_hierarchy](/images/post/skinning/maya_closest_in_hierarchy.png)
 
@@ -365,15 +365,15 @@ struct smooth_vertex {
   >
   > ![voxels](/images/post/skinning/voxels.png)
   >
-  > <center><font size="2">《以不同分辨率体素化后的角色网格》</br>from: <a href="https://help.autodesk.com/view/MAYAUL/2024/CHS/?guid=GUID-5EFDB81B-E332-4D6C-B1BB-0B989AD2F2C7">“测地线体素”(Geodesic Voxel)绑定 - maya</a></font></center>
+  > <center><font size="2">《以不同分辨率体素化后的角色网格》<br/>from: <a href="https://help.autodesk.com/view/MAYAUL/2024/CHS/?guid=GUID-5EFDB81B-E332-4D6C-B1BB-0B989AD2F2C7">“测地线体素”(Geodesic Voxel)绑定 - maya</a></font></center>
   >
   > 体素也叫做**体积像素（volume pixel）**，用于描述三维对象占用的容量或空间，这个概念有点类似于二维图像中的最小单位——**像素（pixel）**，可把体素理解为像素的三维对应物，因此体素也可以叫做**立体像素（three-dimensional pixel）**，而**体素化**可看作是对模型进行了简化，从而得到均匀的网格，这么做可以降低给三维网格计算测地距离时的复杂度。
   >
-  > 蒙皮的计算将在体素结构中进行，其实思路也是基于对象与关节间的距离，而主要的差异是，这种方法并不是采取**平直空间（flat space）**中$“$点与点之间，直线距离最短$”$的距离测量方式，而是采用**弯曲空间（curved space）**的**测地线（geodesic）**测量，即沿曲面的最短距离，三维网格中的**测地线距离（geodesic distance）**就是**两个顶点沿着网格表面的最短路径的距离**，如下图所示：
+  > 蒙皮的计算将在体素结构中进行，其实思路也是基于对象与关节间的距离，而主要的差异是，这种方法并不是采取**平直空间（flat space）**中“点与点之间，直线距离最短”的距离测量方式，而是采用**弯曲空间（curved space）**的**测地线（geodesic）**测量，即沿曲面的最短距离，三维网格中的**测地线距离（geodesic distance）**就是**两个顶点沿着网格表面的最短路径的距离**，如下图所示：
   >
   > <img src="/images/post/skinning/3d_mesh_geodesic_distance.jpg" alt="3d_mesh_geodesic_distance" style="zoom: 50%;" />
   >
-  > <center><font size="2">《三维网格的测地距离》</br>from: <a href="http://lemonc.me/average-geodesic-distance.html">几何特征系列：Average Geodesic Distance（平均测地距离）</a></font></center>
+  > <center><font size="2">《三维网格的测地距离》<br/>from: <a href="http://lemonc.me/average-geodesic-distance.html">几何特征系列：Average Geodesic Distance（平均测地距离）</a></font></center>
   >
   > 测地线体素绑定的优势是可以消除一些顶点间的**串扰（crosstalk）**，如下面的对比：
   >
@@ -383,11 +383,11 @@ struct smooth_vertex {
   >
   > ![geodesic_voxel_no_crosstalk](/images/post/skinning/geodesic_voxel_no_crosstalk.webp)
   >
-  > <center><font size="2">《采用“geodesic voxel”蒙皮后，串扰明显减少了》</br>from: <a href="http://www.chrisevans3d.com/pub_blog/geodesic-voxel-binding-maya-2015/">Geodesic Voxel Binding in Maya 2015</a></font></center>
+  > <center><font size="2">《采用“geodesic voxel”蒙皮后，串扰明显减少了》<br/>from: <a href="http://www.chrisevans3d.com/pub_blog/geodesic-voxel-binding-maya-2015/">Geodesic Voxel Binding in Maya 2015</a></font></center>
   >
-  > 不过要使这种方式能够正常工作，需要确保所有关节被封闭在网格体积的$“$内部$”$，否则无法正确计算测地线距离。
+  > 不过要使这种方式能够正常工作，需要确保所有关节被封闭在网格体积的“内部”，否则无法正确计算测地线距离。
 
-`maya` 中的这些绑定方法，各有优缺点，比如$“$closest distance$”$方法可能会导致不良的几何变形，而$“$closest in hierarchy$”$方法可能会导致无法分配某些关节，对于不同的模型、不同的部位可能适用于不同的方法，因此可以根据需求在模型的不同部分上使用对应的方法，比如，躯干可能使用$“$closest distance$”$绑定会更好，而手臂则使用$“$closest in hierarchy$”$绑定。
+`maya` 中的这些绑定方法，各有优缺点，比如“closest distance”方法可能会导致不良的几何变形，而“closest in hierarchy”方法可能会导致无法分配某些关节，对于不同的模型、不同的部位可能适用于不同的方法，因此可以根据需求在模型的不同部分上使用对应的方法，比如，躯干可能使用“closest distance”绑定会更好，而手臂则使用“closest in hierarchy”绑定。
 
 ### 自动蒙皮的基本思路
 
@@ -500,7 +500,7 @@ struct smooth_vertex {
 
 上图中，虽然紫色顶点到绿色关节和蓝色关节的距离是相同的，但从轮廓上来看，这个模型就像是两根指头，所以显然是蓝色关节对紫色顶点的影响最大，而绿色关节应该几乎不会影响到紫色顶点。
 
-我们上面的柔性蒙皮从平直空间坐标系来测量顶点与关节的距离，即$“$点与点之间，直线距离最短$”$，一种更好的方法是参考 `maya` 中的$“$测地线体素绑定$”$，即**测量顶点与关节之间的测地线距离**，其实就是沿着模型网格的表面进行测量，这种方法需要先将网格暂时体素化以降低复杂度。
+我们上面的柔性蒙皮从平直空间坐标系来测量顶点与关节的距离，即“点与点之间，直线距离最短”，一种更好的方法是参考 `maya` 中的“测地线体素绑定”，即**测量顶点与关节之间的测地线距离**，其实就是沿着模型网格的表面进行测量，这种方法需要先将网格暂时体素化以降低复杂度。
 
 ![automatic_skinning_9](/images/post/skinning/automatic_skinning_9.png)
 
@@ -532,7 +532,7 @@ $$
 
 也就是说，如果我们所关注的对象是与骨骼相关联的顶点的话，骨骼的长度以及尾端关节的位置其实都不重要了，可以直接将**头部关节空间**看作是整根骨骼的局部空间，即**骨骼空间（bone space）**，将头部关节的关节矩阵称为**骨骼矩阵（bone matrix）**，并用头部关节来代表这根骨骼，这也是为啥骨骼和关节这两个术语经常被互换使用的原因，通常所说的**骨骼**，其实指的就是其**头部关节所蕴含的矩阵变换**。
 
-**<font color=red>note!!!：</font>**为了避免混淆，这里先为**骨骼**定义两个用于描述其所包含的**局部变换的矩阵名称**：
+**<font color="red">note!!!：</font>**为了避免混淆，这里先为**骨骼**定义两个用于描述其所包含的**局部变换的矩阵名称**：
 
 |                           矩阵                            |                 命名                  |                           别名                           | 描述                                                         |
 | :-------------------------------------------------------: | :-----------------------------------: | :------------------------------------------------------: | ------------------------------------------------------------ |
@@ -541,7 +541,7 @@ $$
 
 ## 骨骼变换
 
-现在需要考虑的是，怎么利用骨骼矩阵来控制关节的旋转状态，以及怎样带动与之关联的顶点，以下会结合一系列的**伪代码**和**图例**来逐步达成这个目标。
+现在需要考虑的是，怎么利用骨骼矩阵来控制关节的旋转状态，以及怎样带动与之关联的顶点，以下会结合一系列的伪代码和图例来逐步达成这个目标。
 
 ```c
 struct bone {
@@ -560,7 +560,7 @@ struct bone {
 
 ![bind_pose_bone_local_trans](/images/post/skinning/bind_pose_bone_local_trans.png)
 
-<center><font size="2">《演示如何将点映射到父关节局部空间中》</br>note：示例中的骨架处于绑定姿势</font></center>
+<center><font size="2">《演示如何将点映射到父关节局部空间中》<br/>note：示例中的骨架处于绑定姿势</font></center>
 
 如上图所示，每个关节的**局部绑定矩阵**所提供的变换，可以将位于其骨骼空间中的顶点，**映射到父关节的骨骼空间中**，不过**局部绑定矩阵仅适用于骨架的绑定姿势**，这是一种固定不变的局部变换，另外，除了根关节外，其它所有关节并不能直接通过该矩阵映射到模型坐标系中。
 
@@ -608,7 +608,7 @@ $$
 
 ![calc_combined_matrix](/images/post/skinning/calc_combined_matrix.png)
 
-<center><font size="2">《计算每根骨骼的组合变换矩阵》</br>note：这对绑定姿势和非绑定姿势都适用</font></center>
+<center><font size="2">《计算每根骨骼的组合变换矩阵》<br/>note：这对绑定姿势和非绑定姿势都适用</font></center>
 
 虽然采用递归的方式非常简洁，但在骨架拥有非常多关节的时候，递归会使调用栈非常深，如果将**骨骼编号**按照骨骼在**深度优先遍历（DFS，depth first search）**或**广度(层次)优先遍历（BFS，breath first search）**时的顺序来排列的话，就不需要使用递归，可直接用**顺序遍历（in-order traversal）**的方式来计算，因为此时父关节的编号必定小于子关节，在计算子关节组合变换矩阵的时候，不用担心其父关节的还没计算好，不过这种做法还需要知道每根骨骼的**父关节编号**，所以真正实现的时候，需要维护的信息比递归方式多。
 
@@ -719,7 +719,7 @@ combined_bone_transform_in_order(skeleton);
 
 <img src="/images/post/skinning/model_head_vertex_group.png" alt="model_head_vertex_group"  />
 
-<center><font size="2">头部网格的顶点根据头部骨骼分为了一组，但这些顶点都是采用模型坐标系存储的</br>note：这个模型示例，使用了面来表示，并没有直接显示顶点</font></center>
+<center><font size="2">头部网格的顶点根据头部骨骼分为了一组，但这些顶点都是采用模型坐标系存储的<br/>note：这个模型示例，使用了面来表示，并没有直接显示顶点</font></center>
 
 之所以这么做，主要是为了灵活性，如果顶点采用了骨骼空间的局部坐标值来存储，意味着模型与骨架之间存在着耦合关系，会导致可移植性较差，模型想要套用别的骨架就需要先转换，反过来，骨架也一样不能直接被其它模型使用。
 
@@ -982,7 +982,7 @@ $$
 \end{align}
 $$
 
-**<font color=red>note!!!：</font>**在**刚性蒙皮**的实现中，每个顶点只会受到一根骨骼的影响，因此可直接应用以上方法完成变换，但对于**柔性蒙皮**来说，由于其每个顶点都可关联多根骨骼的实现方式，所以得先用以上方式为顶点用所关联的每根骨骼分别计算变换，然后将所有结果进行加权混合，这部分内容到后续再讨论。
+**<font color="red">note!!!：</font>**在**刚性蒙皮**的实现中，每个顶点只会受到一根骨骼的影响，因此可直接应用以上方法完成变换，但对于**柔性蒙皮**来说，由于其每个顶点都可关联多根骨骼的实现方式，所以得先用以上方式为顶点用所关联的每根骨骼分别计算变换，然后将所有结果进行加权混合，这部分内容到后续再讨论。
 
 ## 蒙皮动画
 
@@ -1191,7 +1191,7 @@ $$
 \end{align}
 $$
 
-<iframe class="nostatic applet table-responsive responsive" frameborder="0"  marginheight="0" marginwidth="0" sandbox="allow-scripts allow-presentation" scrolling="no" src="https://webglfundamentals.org/webgl/webgl-skinning.html" style="margin: auto; display: block; border: none; overflow: hidden; width: 415px;" height="320" width="415"></iframe>
+<iframe class="nostatic applet table-responsive responsive" frameborder="0"  marginheight="0" marginwidth="0" sandbox="allow-scripts allow-presentation" scrolling="no" src="https://webglfundamentals.org/webgl/webgl-skinning.html" style="margin: auto; display: block; border: none; overflow: hidden; width: 400px;" height="300" width="400"></iframe>
 
 <center><font size="2">example from: <a href="https://webglfundamentals.org/webgl/lessons/webgl-skinning.html">WebGL Skinning</a></font></center>
 
@@ -1232,19 +1232,19 @@ void main() {
 
 ![Intro_to_Sprite_Anims_cover](/images/post/skinning/Intro_to_Sprite_Anims_cover.png)
 
-<center><font size="2">《精灵图动画（sprite animation）》</br>from: <a href="https://learn.unity.com/tutorial/introduction-to-sprite-animations-1#">Introduction to Sprite Animations</a></font></center>
+<center><font size="2">《精灵图动画（sprite animation）》<br/>from: <a href="https://learn.unity.com/tutorial/introduction-to-sprite-animations-1#">Introduction to Sprite Animations</a></font></center>
 
 ![grease-pencil_properties_onion-skinning_example](/images/post/skinning/grease-pencil_properties_onion-skinning_example.png)
 
-<center><font size="2">《洋葱皮（onion skinning）》</br>from: <a href="https://docs.blender.org/manual/de/2.93/grease_pencil/properties/onion_skinning.html">Onion Skinning</a></font></center>
+<center><font size="2">《洋葱皮（onion skinning）》<br/>from: <a href="https://docs.blender.org/manual/de/2.93/grease_pencil/properties/onion_skinning.html">Onion Skinning</a></font></center>
 
 ![franky_morphs](/images/post/skinning/franky_morphs.jpg)
 
-<center><font size="2">《变形目标动画（morph target animation）》</br>from: <a href="https://imagecomputing.net/old_storage/old_website2/teaching/2019_2020/semester_1/EPITA/class/01_animation_descriptive/html/content/079_multi_target_blending_and_blend_shapes/index.html">Multi-target blending and blend shapes</a></font></center>
+<center><font size="2">《变形目标动画（morph target animation）》<br/>from: <a href="https://imagecomputing.net/old_storage/old_website2/teaching/2019_2020/semester_1/EPITA/class/01_animation_descriptive/html/content/079_multi_target_blending_and_blend_shapes/index.html">Multi-target blending and blend shapes</a></font></center>
 
 <img src="/images/post/skinning/skel2d25.webp" alt="skel2d25" style="zoom: 80%;" />
 
-<center><font size="2">《2D蒙皮动画（2D skinned animation）》</br>from: <a href="https://imagecomputing.net/old_storage/old_website2/teaching/2019_2020/semester_1/EPITA/class/01_animation_descriptive/html/content/079_multi_target_blending_and_blend_shapes/index.html">Multi-target blending and blend shapes</a></font></center>
+<center><font size="2">《2D蒙皮动画（2D skinned animation）》<br/>from: <a href="https://imagecomputing.net/old_storage/old_website2/teaching/2019_2020/semester_1/EPITA/class/01_animation_descriptive/html/content/079_multi_target_blending_and_blend_shapes/index.html">Multi-target blending and blend shapes</a></font></center>
 
 ## 推荐阅读
 
