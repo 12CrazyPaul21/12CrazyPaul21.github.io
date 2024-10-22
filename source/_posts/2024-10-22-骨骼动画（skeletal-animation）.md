@@ -1,12 +1,11 @@
 ---
 title: 骨骼动画（skeletal animation）
+mathjax: true
 tags:
   - skeletal animation
   - skinning animation
 date: 2024-10-22 01:41:02
 ---
-
-
 
 对于像人体模型之类的复杂三维模型来说，可利用坐标系分层思想所带来的灵活性去简化一些问题，比如说，在为人形角色设计一个$“$手肘带动整条手臂一起转动$”$的动画时，对于整个角色来说，这是一个局部动画，如果直接以人物的单层物体坐标系来设计，会非常复杂，也很难直观地描述和进行这种变换，但如果利用分层的骨架系统就很轻易地操纵模型的变形。
 
@@ -1188,7 +1187,7 @@ void main() {
 这里只考虑 `LBS` 的做法，这是多数实现的默认做法，其实就是每根骨骼都执行骨骼变换，然后将每个结果根据权重进行线性混合：
 $$
 \begin{align}
-{\large V_{\Large skinned}} &= \sum_{i=0}^{n}{{\large M_{\Large skin}}[boneIds[i]] \times {\large {V}_{\Large model}} \times weights[i]}
+{\large V_{\Large skinned}} &= \sum_{i=0}^{n}{M_{\Large skin}[boneIds[i]] \times {\large {V}_{\Large model}} \times weights[i]}
 \end{align}
 $$
 
