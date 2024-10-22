@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"phantom27.xyz","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="↑↑↓↓←←→→abab提供机制而不是策略!!!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="♬ Phantom Blog">
+<meta property="og:url" content="https://phantom27.xyz/page/5/index.html">
+<meta property="og:site_name" content="♬ Phantom Blog">
+<meta property="og:description" content="↑↑↓↓←←→→abab提供机制而不是策略!!!">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="huzhiqin">
+<meta property="article:tag" content="music,development,software,blog,hacker,cracker,reverse,network,音乐,软件开发,逆向">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://phantom27.xyz/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>♬ Phantom Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="♬ Phantom Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">♬ Phantom Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">梦幻空花 ~ 何劳把捉</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/12CrazyPaul21" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://phantom27.xyz/2023/06/08/Windows%E7%8E%AF%E5%A2%83%E7%BC%96%E8%AF%91%E9%9D%99%E6%80%81Skia/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="huzhiqin">
+      <meta itemprop="description" content="↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="♬ Phantom Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/08/Windows%E7%8E%AF%E5%A2%83%E7%BC%96%E8%AF%91%E9%9D%99%E6%80%81Skia/" class="post-title-link" itemprop="url">Windows环境编译静态Skia</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-06-08 13:45:32" itemprop="dateCreated datePublished" datetime="2023-06-08T13:45:32+08:00">2023-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-10-22 19:12:56" itemprop="dateModified" datetime="2024-10-22T19:12:56+08:00">2024-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Skia/" itemprop="url" rel="index"><span itemprop="name">Skia</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Skia/%E7%BC%96%E8%AF%91/" itemprop="url" rel="index"><span itemprop="name">编译</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>249</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="相关本地依赖">相关本地依赖</h2>
+<ul>
+<li>Visual Studio</li>
+<li>python3</li>
+<li>ninja</li>
+<li>git</li>
+</ul>
+<blockquote>
+<p>把python3.exe所在的目录加进PATH环境变量中</p>
+</blockquote>
+<h2 id="初始化第三方依赖">初始化第三方依赖</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置代理</span></span><br><span class="line"><span class="variable">$env</span>:http_proxy=<span class="string">&#x27;http://127.0.0.1:23457&#x27;</span></span><br><span class="line"><span class="variable">$env</span>:https_proxy=<span class="string">&#x27;http://127.0.0.1:23457&#x27;</span></span><br><span class="line"></span><br><span class="line">python.exe .\tools\git-sync-deps</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Notes：有的依赖比较大，如果网络不好可尝试手动处理避免重复尝试下载</p>
+</blockquote>
+<h2 id="configure">configure</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># debug模式，并启用opengl</span></span><br><span class="line">bin/gn gen out/build --args=<span class="string">&quot;is_debug=true skia_use_gl=true&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果提示以下错误</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ERROR at //gn/BUILDCONFIG.gn:138:14: Script returned non-zero <span class="built_in">exit</span> code.</span><br><span class="line">    win_vc = exec_script(<span class="string">&quot;//gn/find_msvc.py&quot;</span>, [], <span class="string">&quot;trim string&quot;</span>)</span><br><span class="line">             ^----------</span><br><span class="line">Current <span class="built_in">dir</span>: E:/hzq/thirdparty/skia-main/out/build/</span><br><span class="line">Command: C:/Users/A297/AppData/Local/Microsoft/WindowsApps/python3.exe E:/thirdparty/skia-main/gn/find_msvc.py</span><br><span class="line">Returned 9009.</span><br></pre></td></tr></table></figure>
+<p>可以把 <code>C:/Users/A297/AppData/Local/Microsoft/WindowsApps</code> 路径从 <code>PATH</code> 环境变量去掉，并把使用的 <code>python.exe</code> 拷贝一份重命名为 <code>python3.exe</code> 然后重试</p>
+<h2 id="build">build</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ninja -C out/build</span><br></pre></td></tr></table></figure>
+<h2 id="demo">demo</h2>
+<p>配置 <code>include</code> 和 <code>lib</code> 目录</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;tools/fiddle/examples.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;tools/fiddle/fiddle_main.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib, <span class="string">&quot;skia.lib&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib, <span class="string">&quot;skshaper.lib&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib, <span class="string">&quot;skparagraph.lib&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib, <span class="string">&quot;skottie.lib&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib, <span class="string">&quot;sksg.lib&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib, <span class="string">&quot;opengl32.lib&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">static</span> SkCanvas* <span class="title">prepare_canvas</span><span class="params">(SkCanvas* canvas)</span> </span>&#123;</span><br><span class="line">    canvas-&gt;<span class="built_in">clear</span>(SK_ColorLTGRAY);</span><br><span class="line">    <span class="keyword">return</span> canvas;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">REG_FIDDLE</span>(Canvas_drawLine_2, <span class="number">256</span>, <span class="number">256</span>, <span class="literal">false</span>, <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">draw</span><span class="params">(SkCanvas * canvas)</span> </span>&#123;</span><br><span class="line">        SkPaint paint;</span><br><span class="line">        paint.<span class="built_in">setAntiAlias</span>(<span class="literal">true</span>);</span><br><span class="line">        paint.<span class="built_in">setColor</span>(<span class="number">0xFF9a67be</span>);</span><br><span class="line">        paint.<span class="built_in">setStrokeWidth</span>(<span class="number">1</span>);</span><br><span class="line">        canvas-&gt;<span class="built_in">drawLine</span>(&#123; <span class="number">50</span>, <span class="number">120</span> &#125;, &#123; <span class="number">32</span>, <span class="number">160</span> &#125;, paint);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">draw_window</span><span class="params">(HWND hWnd, HDC hdc)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    RECT rc;</span><br><span class="line">    <span class="built_in">GetClientRect</span>(hWnd, &amp;rc);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> width = rc.right - rc.left;</span><br><span class="line">    <span class="type">int</span> height = rc.bottom - rc.top;</span><br><span class="line"></span><br><span class="line">    sk_sp&lt;SkColorSpace&gt; colorSpace = SkColorSpace::<span class="built_in">MakeSRGBLinear</span>();</span><br><span class="line">    SkImageInfo info = SkImageInfo::<span class="built_in">Make</span>(width, height, kN32_SkColorType,</span><br><span class="line">        kPremul_SkAlphaType, colorSpace);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> rasterSurface = SkSurfaces::<span class="built_in">Raster</span>(info);</span><br><span class="line">    <span class="keyword">if</span> (rasterSurface) &#123;</span><br><span class="line">        SkCanvas* canvas = rasterSurface-&gt;<span class="built_in">getCanvas</span>();</span><br><span class="line"></span><br><span class="line">        example_Canvas_drawLine_2::<span class="built_in">draw</span>(<span class="built_in">prepare_canvas</span>(canvas));</span><br><span class="line">        canvas-&gt;<span class="built_in">flush</span>();</span><br><span class="line"></span><br><span class="line">        SkPixmap pixmap;</span><br><span class="line">        <span class="keyword">if</span> (rasterSurface-&gt;<span class="built_in">peekPixels</span>(&amp;pixmap)) &#123;</span><br><span class="line">            BITMAPINFO bmi;</span><br><span class="line">            <span class="built_in">memset</span>(&amp;bmi, <span class="number">0</span>, <span class="built_in">sizeof</span>(bmi));</span><br><span class="line">            bmi.bmiHeader.biSize = <span class="built_in">sizeof</span>(BITMAPINFOHEADER);</span><br><span class="line">            bmi.bmiHeader.biWidth = pixmap.<span class="built_in">width</span>();</span><br><span class="line">            bmi.bmiHeader.biHeight = -pixmap.<span class="built_in">height</span>();</span><br><span class="line">            bmi.bmiHeader.biPlanes = <span class="number">1</span>;</span><br><span class="line">            bmi.bmiHeader.biBitCount = <span class="number">32</span>;</span><br><span class="line">            bmi.bmiHeader.biCompression = BI_RGB;</span><br><span class="line">            <span class="built_in">SetDIBitsToDevice</span>(hdc, <span class="number">0</span>, <span class="number">0</span>, pixmap.<span class="built_in">width</span>(), pixmap.<span class="built_in">height</span>(), <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, pixmap.<span class="built_in">height</span>(),</span><br><span class="line">                pixmap.<span class="built_in">addr</span>(), &amp;bmi, DIB_RGB_COLORS);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">register_window_class</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* class_name, WNDPROC wndproc)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    WNDCLASSEXA wc;</span><br><span class="line">    std::<span class="built_in">memset</span>(&amp;wc, <span class="number">0</span>, <span class="built_in">sizeof</span>(wc));</span><br><span class="line"></span><br><span class="line">    wc.style = CS_VREDRAW | CS_HREDRAW;</span><br><span class="line">    wc.lpfnWndProc = wndproc;</span><br><span class="line">    wc.cbClsExtra = <span class="number">0</span>;</span><br><span class="line">    wc.cbWndExtra = <span class="number">0</span>;</span><br><span class="line">    wc.hInstance = <span class="built_in">GetModuleHandleA</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    wc.hIcon = <span class="literal">NULL</span>;</span><br><span class="line">    wc.hIconSm = <span class="literal">NULL</span>;</span><br><span class="line">    wc.hCursor = <span class="built_in">LoadCursor</span>(<span class="literal">NULL</span>, IDC_ARROW);</span><br><span class="line">    wc.hbrBackground = <span class="built_in">reinterpret_cast</span>&lt;HBRUSH&gt;(<span class="built_in">GetStockObject</span>(WHITE_BRUSH));</span><br><span class="line">    wc.lpszMenuName = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    wc.lpszClassName = class_name;</span><br><span class="line">    wc.cbSize = <span class="built_in">sizeof</span>(wc);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> !!<span class="built_in">RegisterClassExA</span>(&amp;wc);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">HWND <span class="title">create_window</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* class_name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    HWND hWnd = <span class="built_in">CreateWindowA</span>(</span><br><span class="line">        class_name,</span><br><span class="line">        <span class="string">&quot; &quot;</span>,</span><br><span class="line">        WS_OVERLAPPEDWINDOW,</span><br><span class="line">        CW_USEDEFAULT,</span><br><span class="line">        CW_USEDEFAULT,</span><br><span class="line">        CW_USEDEFAULT,</span><br><span class="line">        CW_USEDEFAULT,</span><br><span class="line">        <span class="literal">NULL</span>,</span><br><span class="line">        <span class="literal">NULL</span>,</span><br><span class="line">        <span class="built_in">GetModuleHandle</span>(<span class="literal">NULL</span>),</span><br><span class="line">        (LPVOID)<span class="literal">nullptr</span></span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="built_in">ShowWindow</span>(hWnd, SW_NORMAL);</span><br><span class="line">    <span class="built_in">UpdateWindow</span>(hWnd);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> hWnd;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LRESULT CALLBACK <span class="title">internal_window_callback</span><span class="params">(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    HDC hdc;</span><br><span class="line">    PAINTSTRUCT ps;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (uMsg) &#123;</span><br><span class="line">    <span class="keyword">case</span> WM_PAINT:</span><br><span class="line">        hdc = <span class="built_in">BeginPaint</span>(hWnd, &amp;ps);</span><br><span class="line">        <span class="built_in">draw_window</span>(hWnd, hdc);</span><br><span class="line">        <span class="built_in">EndPaint</span>(hWnd, &amp;ps);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">case</span> WM_DESTROY:</span><br><span class="line">        <span class="built_in">PostQuitMessage</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">DefWindowProc</span>(hWnd, uMsg, wParam, lParam);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">get_message_loop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MSG msg;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">GetMessage</span>(&amp;msg, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="number">0</span>)) &#123;</span><br><span class="line">        <span class="built_in">TranslateMessage</span>(&amp;msg);</span><br><span class="line">        <span class="built_in">DispatchMessage</span>(&amp;msg);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (<span class="type">int</span>)msg.wParam;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">srand</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">register_window_class</span>(<span class="string">&quot;__skia_demo_window_class__&quot;</span>, internal_window_callback);</span><br><span class="line">    <span class="built_in">create_window</span>(<span class="string">&quot;__skia_demo_window_class__&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">get_message_loop</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://phantom27.xyz/2023/06/08/%E8%A7%A3%E6%9E%90%E9%85%B7%E7%8B%97%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E7%9A%84krc%E6%AD%8C%E8%AF%8D%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="huzhiqin">
+      <meta itemprop="description" content="↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="♬ Phantom Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/08/%E8%A7%A3%E6%9E%90%E9%85%B7%E7%8B%97%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E7%9A%84krc%E6%AD%8C%E8%AF%8D%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">解析酷狗二进制编码的krc歌词文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-06-08 10:46:12" itemprop="dateCreated datePublished" datetime="2023-06-08T10:46:12+08:00">2023-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-10-22 19:12:56" itemprop="dateModified" datetime="2024-10-22T19:12:56+08:00">2024-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">逆向分析</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>41</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="解开明文算法">解开明文算法</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实际krc是用zlib将歌词压缩之后与enc_key执行了简单的异或加密</span></span><br><span class="line"><span class="comment"># 解析的过程就是解密后解压</span></span><br><span class="line"><span class="comment"># 但是解开明文之后歌词的字符编码通常是UTF-8-BOM | UTF-8-SIG</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decompress_krc</span>(<span class="params">krc_binary_bytes</span>):</span><br><span class="line">    enc_key = <span class="built_in">bytearray</span>([<span class="number">64</span>, <span class="number">71</span>, <span class="number">97</span>, <span class="number">119</span>, <span class="number">94</span>, <span class="number">50</span>, <span class="number">116</span>, <span class="number">71</span>, <span class="number">81</span>, <span class="number">54</span>, <span class="number">49</span>, <span class="number">45</span>, <span class="number">206</span>, <span class="number">210</span>, <span class="number">110</span>, <span class="number">105</span>])</span><br><span class="line"></span><br><span class="line">    content_bytes = krc_binary_bytes[<span class="number">4</span>:]</span><br><span class="line">    compressed_bytes = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(content_bytes)):</span><br><span class="line">        compressed_bytes.append(content_bytes[i] ^ enc_key[i % <span class="number">16</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> zlib.decompress(<span class="built_in">bytearray</span>(compressed_bytes))</span><br></pre></td></tr></table></figure>
+<h2 id="一个把krc解析出明文文件并打印出来的例子">一个把krc解析出明文文件并打印出来的例子</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decompress_krc</span>(<span class="params">krc_bytes</span>):</span><br><span class="line">    enc_key = <span class="built_in">bytearray</span>([<span class="number">64</span>, <span class="number">71</span>, <span class="number">97</span>, <span class="number">119</span>, <span class="number">94</span>, <span class="number">50</span>, <span class="number">116</span>, <span class="number">71</span>, <span class="number">81</span>, <span class="number">54</span>, <span class="number">49</span>, <span class="number">45</span>, <span class="number">206</span>, <span class="number">210</span>, <span class="number">110</span>, <span class="number">105</span>])</span><br><span class="line"></span><br><span class="line">    content_bytes = krc_bytes[<span class="number">4</span>:]</span><br><span class="line">    compressed_bytes = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(content_bytes)):</span><br><span class="line">        compressed_bytes.append(content_bytes[i] ^ enc_key[i % <span class="number">16</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> zlib.decompress(<span class="built_in">bytearray</span>(compressed_bytes))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) != <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;usage : parse_krc &lt;krc path&gt;&#x27;</span>)</span><br><span class="line">    sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">filename = sys.argv[<span class="number">1</span>]</span><br><span class="line">target_filename = os.path.splitext(filename)[<span class="number">0</span>] + <span class="string">&#x27;_plaintext.krc&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    plaintext_bytes = decompress_krc(<span class="built_in">bytearray</span>(f.read()))</span><br><span class="line"></span><br><span class="line">    fp = <span class="built_in">open</span>(target_filename, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line">    fp.write(plaintext_bytes)</span><br><span class="line">    fp.close()</span><br><span class="line"></span><br><span class="line">    plaintext = plaintext_bytes.decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(plaintext)</span><br></pre></td></tr></table></figure>
+<h2 id="识别二进制或纯文本krc例子">识别二进制或纯文本krc例子</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">_is_utf8_char</span>(<span class="params">buffer, idx</span>):</span><br><span class="line">    buffer_len = <span class="built_in">len</span>(buffer)</span><br><span class="line">    <span class="keyword">if</span> buffer_len == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_scan_remain</span>(<span class="params">_s</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(idx + <span class="number">1</span>, <span class="built_in">min</span>(buffer_len, idx + _s)):</span><br><span class="line">            <span class="keyword">if</span> (buffer[i] &amp; <span class="number">0xC0</span>) != <span class="number">0x80</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> _s</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (buffer[idx] &amp; <span class="number">0x80</span>) == <span class="number">0x00</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> (buffer[idx] &amp; <span class="number">0xE0</span>) == <span class="number">0xC0</span>:</span><br><span class="line">        <span class="keyword">return</span> _scan_remain(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">elif</span> (buffer[idx] &amp; <span class="number">0xF0</span>) == <span class="number">0xE0</span>:</span><br><span class="line">        <span class="keyword">return</span> _scan_remain(<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">elif</span> (buffer[idx] &amp; <span class="number">0xF8</span>) == <span class="number">0xF0</span>:</span><br><span class="line">        <span class="keyword">return</span> _scan_remain(<span class="number">4</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_scan_utf8_buffer</span>(<span class="params">buffer</span>):</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    length = <span class="number">0</span></span><br><span class="line">    max_length = <span class="number">20</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(buffer):</span><br><span class="line">        flag = _is_utf8_char(buffer, i)</span><br><span class="line">        <span class="keyword">if</span> flag == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        length += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> length &gt;= max_length:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        i += flag</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;song.krc&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">if</span> f.peek()[:<span class="number">3</span>] == <span class="string">b&#x27;krc&#x27;</span> <span class="keyword">and</span> <span class="keyword">not</span> _scan_utf8_buffer(f.peek()[<span class="number">3</span>:]):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;binary&#x27;</span>)</span><br><span class="line">        <span class="comment"># 解密 &amp; 解压...</span></span><br><span class="line">        <span class="comment"># raw_bytes = ...      </span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;text&#x27;</span>)</span><br><span class="line">        raw_bytes = f.read()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># plaintext = raw_bytes.decode(&#x27;utf-8&#x27;)</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://phantom27.xyz/2023/06/08/%E9%85%8D%E7%BD%AE%E4%B8%B4%E6%97%B6http%E5%92%8Chttps%E4%BB%A3%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="huzhiqin">
+      <meta itemprop="description" content="↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="♬ Phantom Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/08/%E9%85%8D%E7%BD%AE%E4%B8%B4%E6%97%B6http%E5%92%8Chttps%E4%BB%A3%E7%90%86/" class="post-title-link" itemprop="url">配置临时http和https代理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-06-08 09:34:38" itemprop="dateCreated datePublished" datetime="2023-06-08T09:34:38+08:00">2023-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-10-22 19:12:56" itemprop="dateModified" datetime="2024-10-22T19:12:56+08:00">2024-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/Proxy/" itemprop="url" rel="index"><span itemprop="name">Proxy</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/%E7%BD%91%E7%BB%9C/%E4%BB%A3%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">代理</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>106</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bash</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&#x27;http://127.0.0.1:23457&#x27;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&#x27;http://127.0.0.1:23457&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># powershell</span></span><br><span class="line"><span class="variable">$env</span>:http_proxy=<span class="string">&#x27;http://127.0.0.1:23457&#x27;</span></span><br><span class="line"><span class="variable">$env</span>:https_proxy=<span class="string">&#x27;http://127.0.0.1:23457&#x27;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对于http_proxy和https_proxy环境变量无效，并且不提供指定proxy参数的命令，可以使用<strong>proxychains</strong>工具。</p>
+<p><strong>proxychains</strong>需要配置<strong>/etc/proxychains4.conf</strong>文件</p>
+</blockquote>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/proxychains4.conf配置例子</span></span><br><span class="line"><span class="comment"># ...省略</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 避免环回地址走代理，如果有其它地址需要排除的也可以用类似的写法</span></span><br><span class="line">localnet 127.0.0.0/255.0.0.0</span><br><span class="line">localnet ::1/128</span><br><span class="line"></span><br><span class="line"><span class="section">[ProxyList]</span></span><br><span class="line"><span class="comment"># socks4  proxy.example.com 1080</span></span><br><span class="line"><span class="comment"># socks5  proxy.example.com 9050</span></span><br><span class="line">http    proxy.example.com 8080</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://phantom27.xyz/2023/06/01/%E6%9F%A5%E7%9C%8BMySql%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%9F%90%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%80%E6%9C%89%E8%A1%A8%E6%A0%BC%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="huzhiqin">
+      <meta itemprop="description" content="↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="♬ Phantom Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/01/%E6%9F%A5%E7%9C%8BMySql%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%9F%90%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%80%E6%9C%89%E8%A1%A8%E6%A0%BC%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF/" class="post-title-link" itemprop="url">查看MySql数据库中某个数据库所有表格的所有字段信息</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-06-01 17:15:31" itemprop="dateCreated datePublished" datetime="2023-06-01T17:15:31+08:00">2023-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-10-22 19:12:56" itemprop="dateModified" datetime="2024-10-22T19:12:56+08:00">2024-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/Mysql/" itemprop="url" rel="index"><span itemprop="name">Mysql</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/Mysql/Table/" itemprop="url" rel="index"><span itemprop="name">Table</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>14</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT table_name, column_name, data_type, column_type, is_nullable, column_key</span><br><span class="line">FROM information_schema.columns</span><br><span class="line">WHERE table_schema = &#x27;&lt;数据库名字&gt;&#x27;</span><br></pre></td></tr></table></figure>
+<p>对column_name过滤</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT table_name, column_name, data_type, column_type, is_nullable, column_key FROM information_schema.columns WHERE table_schema = &#x27;&lt;数据库名字&gt;&#x27; AND column_name LIKE &#x27;%mobile%&#x27;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="huzhiqin"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">huzhiqin</p>
+  <div class="site-description" itemprop="description">↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">153</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">237</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/12CrazyPaul21" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;12CrazyPaul21" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:604916833@qq.com" title="E-Mail → mailto:604916833@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+  <div class="motion-element">
+    <a target="_blank" class="social-link" href="/atom.xml" style="color: burlywood;">
+      <span class="icon">
+        <i class="fa fa-rss"></i>
+      </span>
+      <span class="label">RSS</span>
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huzhiqin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

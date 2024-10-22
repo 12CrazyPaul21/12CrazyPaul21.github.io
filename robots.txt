@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /images
+Sitemap: https://phantom27.xyz/sitemap.xml
+Sitemap: https://phantom27.xyz/sitemap.txt
+Sitemap: https://phantom27.xyz/baidusitemap.xml

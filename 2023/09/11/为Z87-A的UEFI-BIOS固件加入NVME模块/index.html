@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"phantom27.xyz","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这有一张 M.2 接口的 NVM Express SSD（Non-Volatile Memory Express，这是一种用于固态存储设备的协议和接口标准，一般主板通过 M.2 接口走 PCIe 总线来进行连接） 需要插在旧主板 Asus Z87-A 上使用，但是这张主板并没有 M.2 接口，UEFI BIOS 也没有 NVME DXE 驱动，所以在开机引导的时候无法识别 NVME SSD。 让这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为 Z87-A 的 UEFI BIOS 固件加入 NVME 模块">
+<meta property="og:url" content="https://phantom27.xyz/2023/09/11/%E4%B8%BAZ87-A%E7%9A%84UEFI-BIOS%E5%9B%BA%E4%BB%B6%E5%8A%A0%E5%85%A5NVME%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:site_name" content="♬ Phantom Blog">
+<meta property="og:description" content="这有一张 M.2 接口的 NVM Express SSD（Non-Volatile Memory Express，这是一种用于固态存储设备的协议和接口标准，一般主板通过 M.2 接口走 PCIe 总线来进行连接） 需要插在旧主板 Asus Z87-A 上使用，但是这张主板并没有 M.2 接口，UEFI BIOS 也没有 NVME DXE 驱动，所以在开机引导的时候无法识别 NVME SSD。 让这">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://phantom27.xyz/images/post/nvme/1.png">
+<meta property="og:image" content="https://phantom27.xyz/images/post/nvme/2.png">
+<meta property="og:image" content="https://phantom27.xyz/images/post/nvme/3.png">
+<meta property="article:published_time" content="2023-09-10T16:07:52.000Z">
+<meta property="article:modified_time" content="2024-10-22T11:12:56.719Z">
+<meta property="article:author" content="huzhiqin">
+<meta property="article:tag" content="UEFI BIOS">
+<meta property="article:tag" content="DXE Driver">
+<meta property="article:tag" content="NVME">
+<meta property="article:tag" content="烧录">
+<meta property="article:tag" content="Program">
+<meta property="article:tag" content="BURNER">
+<meta property="article:tag" content="UEFI Rootkit">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://phantom27.xyz/images/post/nvme/1.png">
+
+<link rel="canonical" href="https://phantom27.xyz/2023/09/11/%E4%B8%BAZ87-A%E7%9A%84UEFI-BIOS%E5%9B%BA%E4%BB%B6%E5%8A%A0%E5%85%A5NVME%E6%A8%A1%E5%9D%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>为 Z87-A 的 UEFI BIOS 固件加入 NVME 模块 | ♬ Phantom Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="♬ Phantom Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">♬ Phantom Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">梦幻空花 ~ 何劳把捉</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/12CrazyPaul21" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://phantom27.xyz/2023/09/11/%E4%B8%BAZ87-A%E7%9A%84UEFI-BIOS%E5%9B%BA%E4%BB%B6%E5%8A%A0%E5%85%A5NVME%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="huzhiqin">
+      <meta itemprop="description" content="↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="♬ Phantom Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          为 Z87-A 的 UEFI BIOS 固件加入 NVME 模块
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-09-11 00:07:52" itemprop="dateCreated datePublished" datetime="2023-09-11T00:07:52+08:00">2023-09-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-10-22 19:12:56" itemprop="dateModified" datetime="2024-10-22T19:12:56+08:00">2024-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/BIOS/" itemprop="url" rel="index"><span itemprop="name">BIOS</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/BIOS/DXE-Driver/" itemprop="url" rel="index"><span itemprop="name">DXE Driver</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这有一张 M.2 接口的 NVM Express SSD（Non-Volatile Memory Express，这是一种用于固态存储设备的协议和接口标准，一般主板通过 M.2 接口走 PCIe 总线来进行连接） 需要插在旧主板 Asus Z87-A 上使用，但是这张主板并没有 M.2 接口，UEFI BIOS 也没有 NVME DXE 驱动，所以在开机引导的时候无法识别 NVME SSD。</p>
+<p>让这张旧板使用 NVME SSD 跑系统的基本思路是，使用 M.2 转 PCIe 的转接卡来把硬盘接到主板上，然后将 NVMeExpressDxE 驱动刷进 Z87-A 最新的 UEFI BIOS 固件中，并更新主板的固件，使 BIOS 在选择引导设备的时候能够识别到 NVME SSD 设备。</p>
+<h2 id="编译-nvm-express-uefi-dxe-驱动">编译 NVM Express UEFI DXE 驱动</h2>
+<p>NVM Express 驱动的官方目录在 <a target="_blank" rel="noopener" href="https://nvmexpress.org/drivers/">NVM Express Drivers</a>，源码位置在 <a target="_blank" rel="noopener" href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg/Bus/Pci/NvmExpressDxe">NvmExpressDxe</a>，DXE 驱动使用一种叫 EBC（EFI Byte Code）的虚拟指令集，是跨平台的，可通过以下方式获得：</p>
+<ul>
+<li>通过 <a target="_blank" rel="noopener" href="https://github.com/tianocore/edk2">EDK II</a> 来编译</li>
+<li>直接下载 <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/12CrazyPaul21/12CrazyPaul21.github.io/master/source/data/nvme/NVMeExpressDxE.ffs">NVMeExpressDxE.ffs</a>，或压缩版 <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/12CrazyPaul21/12CrazyPaul21.github.io/master/source/data/nvme/NVMeExpressDxE_compressed.ffs">NVMeExpressDxE_compressed.ffs</a></li>
+<li>去其它存在 NVMeExpressDxE 驱动的主板固件中提取出来也可行</li>
+</ul>
+<h2 id="最新的-z87-a-uefi-bios-固件包">最新的 Z87-A UEFI BIOS 固件包</h2>
+<p>到 <a target="_blank" rel="noopener" href="https://www.asus.com.cn/supportonly/z87-a/helpdesk_bios/">Z87-A BIOS &amp; 固件</a> 下载 <code>Z87-A BIOS 2103</code>，这是官方最新版本的 .cap 固件包（AMI Aptio Capsule），包名为 <code>Z87-A-ASUS-2103.CAP</code></p>
+<h2 id="将-nvmeexpressdxe.ffs-模块插入到固件内">将 NVMeExpressDxE.ffs 模块插入到固件内</h2>
+<p>这里使用 UEFITool 来操作（<a target="_blank" rel="noopener" href="https://github.com/LongSoft/UEFITool/releases/tag/0.28.0">UEFITool 0.28.0</a>，注意带 NE 后缀的包不能修改该固件，0.28.0 已经是有修改能力的最新包了，具体可看该 <a target="_blank" rel="noopener" href="https://github.com/LongSoft/UEFITool/issues/67">issue</a>），不过这个工具在插入 ffs 的时候没有提供压缩功能，如果需要对模块进行压缩再插入的话可以使用 MMTool，或者直接使用压缩过的 ffs。</p>
+<h3 id="使用-uefitool-打开-cap-包">1. 使用 UEFITool 打开 cap 包</h3>
+<p><img src="/images/post/nvme/1.png" /></p>
+<p>打开后可以看到 cap 包的结构，可看作两个部分，分别是 Capsule Header 与 Image。Header 部分包含了有关 Capsule（这里是 AMI Aptio 类型的 Capsule）文件的元数据（版本信息、签名以及大小等信息），这用于在更新固件时对 Capsule 文件进行验证（比如完整性和数字签名是否合法）以及提取固件体。Image 部分则是实际写入固件 Flash 芯片的固件体，后续我们把 NVMeExpressDxE.ffs 插入固件体后，需要把这部分给 dump 出来，原因之后说明。</p>
+<p>从该固件体的结构可以看到，固件分成了三个 Region（UEFI 固件内存区域，可分为多个区域，比如这里的 Descriptor Region 包含了固件的元数据信息，ME Region 包含了 Intel ME 的固件，BIOS Region 则是实际的 UEFI BIOS 固件的区域），每个区域内可划分为一个或多个 FV（Firmware Volume，固件卷），通常会根据实际的分类与不同阶段的依赖，将文件放置在特定的卷中（比如 NVRAM Volume 包含了配置信息，DXE 驱动一般会集中放在一个或多个 FV 中，PEI Module 也类似），FV 内文件的组织方式是这样的，其内部有一个或多个 FFS Image（EFI Firmware File System，固件文件系统），FFS Image 包含一个或多个 EFI Section，而 EFI Section 内可以包含一个或多个文件（比如 PE32 Image、Raw File 等）</p>
+<h3 id="定位-nvmeexpressdxe.ffs-插入位置">2. 定位 NVMeExpressDxE.ffs 插入位置</h3>
+<p>使用 UEFITool 搜索 CSMCORE（该 DXE 提供 Legacy BIOS 兼容模式，使 BIOS 可使用 MBR 方式引导系统）所在的 FV，因为该 FV 通常就是大多数 DXE 驱动集合的卷，之所以使用 CSMCORE 来定位，是因为通常都是这么做的，如果找不到 CSMCORE 的话，也可以搜索其它常见的 DXE 驱动，或者直接手动找 DXE 非常多的 FV。找到 DXE 集合的 FV 后，就可以在该 FV 的末尾将 NVMeExpressDxE.ffs 插入了。</p>
+<p><img src="/images/post/nvme/2.png" /></p>
+<center>
+<font size="2">这里是将压缩过的 NVMeExpressDxE_compressed.ffs 插入了固件中</font>
+</center>
+<h3 id="导出固件">3. 导出固件</h3>
+<p>先 <code>CTRL + S</code> 保存一遍副本为 <code>Z87-A-ASUS-2103-NVME.CAP</code>，然后再将固件主体导出去，后缀名选择 <code>.rom</code> 或者 <code>.bin</code> 都没问题。之所以要导出固件主体，而不是直接使用 .cap 固件包（AMI Aptio Capsule）进行升级，是因为 Capsule 文件是经过数字签名的，直接向里面加入新模块无法通过更新固件时的校验，所以需要通过烧录器，直接把固件体烧录进存储 UEFI BIOS 固件的芯片内。</p>
+<p><img src="/images/post/nvme/3.png" /></p>
+<h2 id="将固件烧录进-flash-芯片">将固件烧录进 Flash 芯片</h2>
+<p>Z87-A 存放 UEFI BIOS 固件的 Flash 芯片使用型号的是 WINBOND 25Q64FVAIQ（其中 25 指的是 SPI NOR Flash 系列，Q64 说明芯片容量是 64 Mbit，约 8 MB的大小，后面的字母集包括了时钟频率等信息），位置在 PCIEX16_2 接口的附近，是使用 DIP 封装的直插式芯片，可以拔出来。</p>
+<p>该芯片可以使用 CH341A 编程器，来将之前导出的 <code>.rom / .bin</code> 固件体烧录进去，注意将芯片插进去之前要注意芯片的方向以及引脚的位置必须与 CH341A 编程器设定的匹配，最好看下编程器的说明书，如果芯片发热，应该立马拔出来，否则可能导致芯片被烧掉，另外如果不想拔芯片的话，也可以使用烧录夹来接引脚。至于 CH341A 编程器的烧录软件可以在买的时候问店家要。</p>
+<h2 id="插入转接卡">插入转接卡</h2>
+<p>我这里使用的是一张绿联的 M.2 NVMe 扩展卡，它是一张 PCIe 4.0 x16 类型的卡，Z87-A 主板的 PCIe 都是 3.0 的，不过由于 PCIe 是向下兼容的，所以也可以用，虽然不能发挥出这张卡跑 PCIe 4.0 的性能。将固态硬盘接上扩展卡后，插到主板 PCIe x16 的接口上。</p>
+<h2 id="引导-nvme-驱动器">引导 NVMe 驱动器</h2>
+<p>重启然后进入 BIOS 的 Advanced Mode，如果能在 <code>启动设备选择</code> 中看到 <code>PATA SS:</code> 之类的字眼就说明成功了，这时候可以按照一般的方式来使用该固态硬盘，将它用做系统盘。</p>
+<p>那么 UEFI BIOS 是在什么时候识别出 NVME 设备并为其加载驱动的呢？简单说，UEFI BIOS 在 PEI 阶段（Pre EFI Initialization，EFI 前期初始化）进行早期初始化时，会对硬件进行基本的初始化与识别，并将这些信息存储到一张 HOB（Hand-Off Block）列表中传递给 DXE 阶段（Driver Execution Environment，执行驱动环境）使用，这些信息可能包括内存映射、PCI 设备等信息，DXE 阶段可以根据这些信息来加载适当的 DXE 驱动程序，可参考 <a target="_blank" rel="noopener" href="https://tianocore-docs.github.io/edk2-ModuleWriteGuide/draft/7_pre-efi_initialization_modules/76_communicate_with_dxe_modules.html">Communicate with DXE Modules</a>。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>请我喝瓶肥仔快乐水?</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="huzhiqin 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/UEFI-BIOS/" rel="tag"># UEFI BIOS</a>
+              <a href="/tags/DXE-Driver/" rel="tag"># DXE Driver</a>
+              <a href="/tags/NVME/" rel="tag"># NVME</a>
+              <a href="/tags/%E7%83%A7%E5%BD%95/" rel="tag"># 烧录</a>
+              <a href="/tags/Program/" rel="tag"># Program</a>
+              <a href="/tags/BURNER/" rel="tag"># BURNER</a>
+              <a href="/tags/UEFI-Rootkit/" rel="tag"># UEFI Rootkit</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/08/24/Docker-Trick%E8%AE%B0%E5%BD%95/" rel="prev" title="Docker Trick记录">
+      <i class="fa fa-chevron-left"></i> Docker Trick记录
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/10/22/Golang%E7%9A%84GMP%E8%B0%83%E5%BA%A6%E6%A8%A1%E5%9E%8B%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E6%91%98%E8%A6%81/" rel="next" title="Golang的GMP调度模型工作流程摘要">
+      Golang的GMP调度模型工作流程摘要 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91-nvm-express-uefi-dxe-%E9%A9%B1%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">编译 NVM Express UEFI DXE 驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E6%96%B0%E7%9A%84-z87-a-uefi-bios-%E5%9B%BA%E4%BB%B6%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">最新的 Z87-A UEFI BIOS 固件包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86-nvmeexpressdxe.ffs-%E6%A8%A1%E5%9D%97%E6%8F%92%E5%85%A5%E5%88%B0%E5%9B%BA%E4%BB%B6%E5%86%85"><span class="nav-number">3.</span> <span class="nav-text">将 NVMeExpressDxE.ffs 模块插入到固件内</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-uefitool-%E6%89%93%E5%BC%80-cap-%E5%8C%85"><span class="nav-number">3.1.</span> <span class="nav-text">1. 使用 UEFITool 打开 cap 包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D-nvmeexpressdxe.ffs-%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE"><span class="nav-number">3.2.</span> <span class="nav-text">2. 定位 NVMeExpressDxE.ffs 插入位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E5%9B%BA%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text">3. 导出固件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E5%9B%BA%E4%BB%B6%E7%83%A7%E5%BD%95%E8%BF%9B-flash-%E8%8A%AF%E7%89%87"><span class="nav-number">4.</span> <span class="nav-text">将固件烧录进 Flash 芯片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%BD%AC%E6%8E%A5%E5%8D%A1"><span class="nav-number">5.</span> <span class="nav-text">插入转接卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC-nvme-%E9%A9%B1%E5%8A%A8%E5%99%A8"><span class="nav-number">6.</span> <span class="nav-text">引导 NVMe 驱动器</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="huzhiqin"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">huzhiqin</p>
+  <div class="site-description" itemprop="description">↑↑↓↓←←→→abab<br/>提供机制而不是策略!!!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">153</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">237</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/12CrazyPaul21" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;12CrazyPaul21" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:604916833@qq.com" title="E-Mail → mailto:604916833@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+  <div class="motion-element">
+    <a target="_blank" class="social-link" href="/atom.xml" style="color: burlywood;">
+      <span class="icon">
+        <i class="fa fa-rss"></i>
+      </span>
+      <span class="label">RSS</span>
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huzhiqin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
