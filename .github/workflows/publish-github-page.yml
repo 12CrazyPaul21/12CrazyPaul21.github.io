@@ -54,6 +54,11 @@ jobs:
           branch: gh-pages
           folder: ./public
 
+      - name: Hook
+        env:
+          PAGE_UPDATE_TOKEN: ${{ secrets.PAGE_UPDATE_TOKEN }}
+        run: curl -L https://api.phantom27.xyz/cgi/blog/update?token=$PAGE_UPDATE_TOKEN
+
 #  deploy:
 #    needs: build
 #    permissions:
