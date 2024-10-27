@@ -107,6 +107,12 @@ include:
 exclude:
 ignore:
 
+excerpt:
+  depth: 10
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: true
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -119,6 +125,19 @@ theme_config:
 
 plugins:
   - hexo-footnote
+
+html_minifier:
+  exclude:
+  collapseBooleanAttributes: true
+  collapseWhitespace: true
+  # Ignore '<!-- more -->' https://hexo.io/docs/tag-plugins#Post-Excerpt
+  ignoreCustomComments: [ !!js/regexp /^\s*more/]
+  removeComments: true
+  removeEmptyAttributes: true
+  removeScriptTypeAttributes: true
+  removeStyleLinkTypeAttributes: true
+  minifyJS: true
+  minifyCSS: true
 
 footnote:
   location_target_class: location-target
