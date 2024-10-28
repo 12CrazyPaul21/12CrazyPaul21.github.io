@@ -193,9 +193,15 @@
           <!--noindex-->
           {%- if theme.read_more_btn %}
             <div class="post-button">
-              <a class="btn" href="{{ url_for(post.path) }}#more" rel="contents">
-                {{ __('post.read_more') }} &raquo;
-              </a>
+              {%- if theme.read_more_btn_mark %}}
+                <a class="btn" href="{{ url_for(post.path) }}#more" rel="contents">
+                  {{ __('post.read_more') }} &raquo;
+                </a>
+              {% else %}
+                <a class="btn" href="{{ url_for(post.path) }}" rel="contents">
+                  {{ __('post.read_more') }} &raquo;
+                </a>
+              {%- endif %}
             </div>
           {%- endif %}
           <!--/noindex-->
