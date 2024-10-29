@@ -130,6 +130,11 @@ theme_config:
 plugins:
   - hexo-footnote
 
+reading_count:
+  enable: true
+  increase_url: https://api.phantom27.xyz/blog/increase_post_pv
+  fetch_url: https://api.phantom27.xyz/blog/fetch_post_pv
+
 html_minifier:
   exclude:
   collapseBooleanAttributes: true
