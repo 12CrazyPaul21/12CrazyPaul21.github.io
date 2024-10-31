@@ -135,12 +135,12 @@ reading_count:
   increase_url: https://api.phantom27.xyz/blog/increase_post_pv
   fetch_url: https://api.phantom27.xyz/blog/fetch_post_pv
 
-lazyload:
-  enable: true
-  onlypost: false # optional
-  loadingImg: # optional eg ./images/loading.gif
-  isSPA: false # optional
-  preloadRatio: 3 # optional, default is 1
+# lazyload:
+#   enable: true
+#   onlypost: false # optional
+#   loadingImg: # optional eg ./images/loading.gif
+#   isSPA: false # optional
+#   preloadRatio: 3 # optional, default is 1
 
 html_minifier:
   exclude:

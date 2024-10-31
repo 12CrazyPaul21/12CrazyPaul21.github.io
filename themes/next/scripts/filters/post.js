@@ -7,7 +7,17 @@ hexo.extend.filter.register('after_post_render', data => {
   const theme = hexo.theme.config;
   if (!theme.exturl && !theme.lazyload) return;
   if (theme.lazyload) {
-    data.content = data.content.replace(/(<img[^>]*) src=/img, '$1 data-src=');
+    if (theme.lazyload_image) {
+      data.content = data.content.replace(/<img[^>]+src=['"]([^'"]+)['"]/img, (tag, url) => {
+        if (/^data:image.*/.test(url)) {
+          return str;
+        }
+
+        return tag.replace(/src=/img, 'src="' + theme.lazyload_image + '" data-src=');
+      });
+    } else {
+      data.content = data.content.replace(/(<img[^>]*) src=/img, '$1 data-src=');
+    }
   }
   if (theme.exturl) {
     const url = require('url');
