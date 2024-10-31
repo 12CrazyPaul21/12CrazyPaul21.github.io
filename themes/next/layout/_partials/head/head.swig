@@ -56,6 +56,17 @@
   {%- set pace_js_uri = theme.vendors.pace or next_vendors('pace/pace.min.js') %}
   <link rel="stylesheet" href="{{ pace_css_uri }}">
   <script src="{{ pace_js_uri }}"></script>
+  <style>
+    .pace {
+      height: 0px;
+    }
+    .pace .pace-progress {
+      height: 6px;
+    }
+    .pace .pace-activity {
+      height: 6px;
+    }
+  </style>
 {%- endif %}
 
 {{ next_config() }}
