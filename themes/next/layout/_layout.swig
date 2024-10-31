@@ -47,14 +47,14 @@
   {{ partial('_third-party/index.swig', {}, {cache: theme.cache.enable}) }}
 
   {%- if theme.pjax %}
-    <div id="pjax">
+    {# <div id="pjax"> #}
   {%- endif %}
   {% include '_third-party/math/index.swig' %}
   {% include '_third-party/quicklink.swig' %}
 
   {{- next_inject('bodyEnd') }}
   {%- if theme.pjax %}
-    </div>
+    {# </div> #}
   {%- endif %}
 </body>
 </html>
