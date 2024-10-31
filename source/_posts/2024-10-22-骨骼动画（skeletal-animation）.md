@@ -4,6 +4,9 @@ mathjax: true
 tags:
   - skeletal animation
   - skinning animation
+categories:
+  - - 渲染
+    - 动画
 date: 2024-10-22 01:41:02
 ---
 
