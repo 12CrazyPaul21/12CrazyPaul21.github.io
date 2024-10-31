@@ -105,6 +105,22 @@ scheme: Muse
 # Dark Mode
 darkmode: false
 
+darkmode_js:
+  enable: true
+  bottom: '80px' # default: '32px'
+  right: '25px' # default: 'unset'
+  left: 'unset'
+  time: '0.5s' # default: '0.3s'
+  mixColor: 'transparent' # default: '#fff'
+  backgroundColor: 'transparent' # default: '#fff'
+  buttonColorDark: '#222'
+  buttonColorLight: '#fff'
+  isActivated: false # default false
+  saveInCookies: true # default: true
+  label: '<i class="darkmode-lab-light fas fa-sun"></i><i class="darkmode-lab-dark fas fa-moon"></i>'
+  autoMatchOsTheme: true # default: true
+  libUrl: # Set custom library cdn url for Darkmode.js
+
 
 # ---------------------------------------------------------------
 # Menu Settings

@@ -69,4 +69,33 @@
   </style>
 {%- endif %}
 
+{%- if theme.darkmode_js.enable %}
+  <style>
+    button.darkmode-toggle {
+      width: 32px;
+      height: 32px;
+    }
+    @media (max-width: 991px) {
+      button.darkmode-toggle {
+        width: 32px;
+        height: 32px;
+        right: 16px;
+      }
+    }
+    .darkmode-lab-dark {
+      display: none;
+      color: #222;
+    }
+    .darkmode-lab-light {
+      color: white;
+    }
+    .darkmode-toggle--white > i.darkmode-lab-dark {
+      display: inherit;
+    }
+    .darkmode-toggle--white > i.darkmode-lab-light {
+      display: none;
+    }
+  </style>
+{%- endif %}
+
 {{ next_config() }}
