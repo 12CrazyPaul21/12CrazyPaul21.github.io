@@ -173,7 +173,7 @@ symbols_count_time:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:12CrazyPaul21/12CrazyPaul21.github.io.git
+  repo: https://github.com/12CrazyPaul21/12CrazyPaul21.github.io.git
   branch: gh-pages
 
 since: 2022
