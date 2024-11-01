@@ -60,6 +60,8 @@ math:
   engine: 'mathjax'
   mathjax:
     enable: true
+  katex:
+    css: /lib/katex/katex.min.css
 
 mathjax:
   tags: all # or 'ams' or 'all'
@@ -134,6 +136,7 @@ reading_count:
   enable: true
   increase_url: https://api.phantom27.xyz/blog/increase_post_pv
   fetch_url: https://api.phantom27.xyz/blog/fetch_post_pv
+  axios: /lib/axios/axios.min.js
 
 # lazyload:
 #   enable: true
