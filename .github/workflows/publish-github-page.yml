@@ -54,20 +54,20 @@ jobs:
           hexo clean
           hexo generate
 
-      - name: Deploy hexo static page
-        run: hexo deploy
+      # - name: Deploy hexo static page
+      #   run: hexo deploy
 
 #      - name: Upload Pages artifact
 #        uses: actions/upload-pages-artifact@v3
 #        with:
 #          path: ./public
 
-      # - name: Deploy hexo static page
-      #   uses: JamesIves/github-pages-deploy-action@v4
-      #   with:
-      #     token: ${{ secrets.PAGE_PUBLISH_TOKEN }}
-      #     branch: gh-pages
-      #     folder: ./public
+      - name: Deploy hexo static page
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.PAGE_PUBLISH_TOKEN }}
+          branch: gh-pages
+          folder: ./public
 
 #  deploy:
 #    needs: build
