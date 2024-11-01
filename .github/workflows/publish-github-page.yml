@@ -19,11 +19,6 @@ jobs:
     needs: hook
     runs-on: ubuntu-20.04
     steps:
-      - name: Hook
-        env:
-          PAGE_UPDATE_TOKEN: ${{ secrets.PAGE_UPDATE_TOKEN }}
-        run: curl -L https://api.phantom27.xyz/cgi/blog/update?token=$PAGE_UPDATE_TOKEN
-
       - name: Git checkout
         uses: actions/checkout@v2
 
