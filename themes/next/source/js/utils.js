@@ -376,7 +376,9 @@ NexT.utils = {
       display = CONFIG.sidebar.display === 'always' || (CONFIG.sidebar.display === 'post' && hasTOC);
     }
     if (display) {
-      window.dispatchEvent(new Event('sidebar:show'));
+      if (localStorage.getItem('sidebar:status:is_hide') != 'true') {
+        window.dispatchEvent(new Event('sidebar:show'));
+      }
     }
   },
 

@@ -50,7 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     clickHandler: function() {
-      this.isSidebarVisible ? this.hideSidebar() : this.showSidebar();
+      if (this.isSidebarVisible) {
+        localStorage.setItem('sidebar:status:is_hide', 'true');
+        this.hideSidebar()
+      } else {
+        localStorage.setItem('sidebar:status:is_hide', 'false');
+        this.showSidebar();
+      }
     },
     mouseEnterHandler: function() {
       if (!this.isSidebarVisible) {
