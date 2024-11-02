@@ -41,6 +41,7 @@ jobs:
           PUBLISH_MAIL: '604916833@qq.com'
         run: |
           echo "$PHANTOM_REPO_TOKEN" > ./deploy_token
+          cat ./deploy_token
           git config --global user.name $PUBLISH_NAME
           git config --global user.email $PUBLISH_MAIL
           sed -i "s/PAGE_PUBLISH_TOKEN/$PAGE_PUBLISH_TOKEN/g" ./_config.yml
