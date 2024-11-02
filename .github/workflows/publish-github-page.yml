@@ -57,9 +57,7 @@ jobs:
           hexo generate
 
       - name: Deploy hexo static page
-        run: |
-          git config --global core.sshCommand "ssh -i $(pwd)/deploy_token"
-          hexo deploy
+        run: GIT_SSH_COMMAND='ssh -i $(pwd)/deploy_token' hexo deploy
 
 #      - name: Upload Pages artifact
 #        uses: actions/upload-pages-artifact@v3
