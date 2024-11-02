@@ -10,16 +10,16 @@ env:
   TZ: Asia/Shanghai
 
 jobs:
-  hook:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Report Update Blog
-        env:
-          PAGE_UPDATE_TOKEN: ${{ secrets.PAGE_UPDATE_TOKEN }}
-        run: curl -L https://api.phantom27.xyz/cgi/blog/update?token=$PAGE_UPDATE_TOKEN
+  # hook:
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - name: Report Update Blog
+  #       env:
+  #         PAGE_UPDATE_TOKEN: ${{ secrets.PAGE_UPDATE_TOKEN }}
+  #       run: curl -L https://api.phantom27.xyz/cgi/blog/update?token=$PAGE_UPDATE_TOKEN
 
   build:
-    needs: hook
+    # needs: hook
     runs-on: ubuntu-20.04
     steps:
       - name: Git checkout
