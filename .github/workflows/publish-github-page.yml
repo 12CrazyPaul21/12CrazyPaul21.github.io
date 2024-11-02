@@ -33,16 +33,23 @@ jobs:
       - name: Pandoc
         uses: docker://pandoc/core:2.9
 
+      - name: Add Private Key
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H phantom27.tpddns.cn >> ~/.ssh/known_hosts
+          echo "${{ secrets.PHANTOM_REPO_TOKEN }}" > ~/.ssh/deploy_token
+          chmod 700 ~/.ssh/deploy_token
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null	
+          ssh-add ~/.ssh/deploy_token
+
       - name: Config environment
         env:
-          PAGE_PUBLISH_TOKEN: ${{ secrets.PAGE_PUBLISH_TOKEN }}
           PHANTOM_REPO_TOKEN: ${{ secrets.PHANTOM_REPO_TOKEN }}
           PUBLISH_NAME: 'bot'
           PUBLISH_MAIL: '604916833@qq.com'
         run: |
-          echo "${{ secrets.PAGE_PUBLISH_TOKEN }}" > ~/.ssh/deploy_token
-          chmod 700 ~/.ssh/deploy_token
-          ssh-keyscan -H phantom27.tpddns.cn >> ~/.ssh/known_hosts
           git config --global user.name $PUBLISH_NAME
           git config --global user.email $PUBLISH_MAIL
           sed -i "s/PAGE_PUBLISH_TOKEN/$PAGE_PUBLISH_TOKEN/g" ./_config.yml
@@ -59,7 +66,7 @@ jobs:
           hexo generate
 
       - name: Deploy hexo static page
-        run: GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_token' hexo deploy
+        run: hexo deploy
 
 #      - name: Upload Pages artifact
 #        uses: actions/upload-pages-artifact@v3
