@@ -136,8 +136,8 @@ reading_count:
   enable: true
   # increase_url: https://api.phantom27.xyz/blog/increase_post_pv
   # fetch_url: https://api.phantom27.xyz/blog/fetch_post_pv
-  increase_url: https://api.phantom27.xyz:444/blog/increase_post_pv
-  fetch_url: https://api.phantom27.xyz:444/blog/fetch_post_pv
+  increase_url: http://api.phantom27.xyz:81/blog/increase_post_pv
+  fetch_url: http://api.phantom27.xyz:81/blog/fetch_post_pv
   axios: /lib/axios/axios.min.js
 
 # lazyload:
