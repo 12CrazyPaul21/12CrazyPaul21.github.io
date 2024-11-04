@@ -62,7 +62,7 @@ math:
     enable: true
   katex:
     # css: /lib/katex/katex.min.css
-    css: //cdn.bootcdn.net/ajax/libs/KaTeX/0.16.9/katex.min.css
+    css: //cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
 
 mathjax:
   tags: all # or 'ams' or 'all'
@@ -140,7 +140,7 @@ reading_count:
   increase_url: https://api.phantom27.xyz/blog/increase_post_pv
   fetch_url: https://api.phantom27.xyz/blog/fetch_post_pv
   # axios: /lib/axios/axios.min.js
-  axios: //cdn.bootcdn.net/ajax/libs/axios/1.7.2/axios.min.js
+  axios: //cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js
 
 # lazyload:
 #   enable: true

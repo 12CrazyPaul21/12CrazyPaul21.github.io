@@ -120,7 +120,7 @@ darkmode_js:
   label: '<i class="darkmode-lab-light fas fa-sun"></i><i class="darkmode-lab-dark fas fa-moon"></i>'
   autoMatchOsTheme: true # default: true
   # libUrl: /lib/darkmode-js/darkmode-js.min.js
-  libUrl: //cdn.bootcdn.net/ajax/libs/Darkmode.js/1.5.7/darkmode-js.min.js
+  libUrl: //cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js
 
 
 # ---------------------------------------------------------------
@@ -918,7 +918,7 @@ vendors:
 
   # Internal version: 3.1.0
   # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
-  anime: //cdn.bootcdn.net/ajax/libs/animejs/3.2.2/anime.min.js
+  anime: //cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js
 
   # Internal version: 5.13.0
   # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
@@ -928,7 +928,7 @@ vendors:
   # MathJax
   # mathjax: //cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   # mathjax: /lib/mathjax/tex-mml-chtml.js
-  mathjax: //cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js
+  mathjax: //cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.min.js
 
   # KaTeX
   # katex: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
@@ -936,14 +936,14 @@ vendors:
   # copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
   # copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
   # katex: /lib/katex/katex.min.css
-  katex: //cdn.bootcdn.net/ajax/libs/KaTeX/0.16.9/katex.min.css
+  katex: //cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
   copy_tex_js:
   copy_tex_css:
 
   # Internal version: 0.2.8
   # pjax: //cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js
   # pjax: /lib/pjax/pjax.min.js
-  pjax: //cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js
+  pjax: //cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js
 
   # FancyBox
   # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
@@ -952,9 +952,9 @@ vendors:
   # jquery: /lib/jquery/jquery.min.js
   # fancybox: /lib/fancybox/jquery.fancybox.min.js
   # fancybox_css: /lib/fancybox/jquery.fancybox.min.css
-  jquery: //cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js
-  fancybox: //cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js
-  fancybox_css: //cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css
+  jquery: //cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+  fancybox: //cdn.jsdelivr.net/npm/fancybox@3/dist/js/jquery.fancybox.min.js
+  fancybox_css: //cdn.jsdelivr.net/npm/fancybox@3/dist/css/jquery.fancybox.min.css
 
   # Medium-zoom
   # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
@@ -964,7 +964,7 @@ vendors:
   # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
   # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js
   # lazyload: /lib/lozad/lozad.min.js
-  lazyload: //cdn.bootcdn.net/ajax/libs/lozad.js/1.16.0/lozad.min.js
+  lazyload: //cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js
 
   # Pangu
   # pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
@@ -1008,20 +1008,18 @@ vendors:
   # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
   # velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
   # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
-  velocity: //cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js
-  velocity_ui: //cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js
+  velocity: //cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.min.js
+  velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.ui.min.js
 
   # Internal version: 1.0.2
   # pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
   # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
   # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-barber-shop.min.css
   # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-barber-shop.min.css
-
   # pace: /lib/pace/pace.min.js
   # pace_css: /lib/pace/pace-theme-barber-shop.min.css
-
-  pace: //cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js
-  pace_css: //cdn.bootcdn.net/ajax/libs/pace/1.2.4/themes/blue/pace-theme-barber-shop.min.css
+  pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
+  pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-barber-shop.min.css
 
   # Internal version: 1.0.0
   # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
