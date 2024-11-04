@@ -82,6 +82,9 @@
         right: 16px;
       }
     }
+    button.darkmode-toggle:hover > i {
+      color: #87daff;
+    }
     .darkmode-lab-dark {
       display: none;
       color: #222;
