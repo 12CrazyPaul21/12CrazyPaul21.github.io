@@ -9,6 +9,7 @@ categories:
 date: 2023-05-19 14:19:06
 ---
 
+> 这篇文章会随时更新
 
 ## 镜像源
 
@@ -28,6 +29,30 @@ go install -v github.com/haya14busa/goplay/cmd/goplay@latest # goplay
 go install -v github.com/go-delve/delve/cmd/dlv@latest       # dlv
 go install -v honnef.co/go/tools/cmd/staticcheck@latest      # staticcheck
 go install -v golang.org/x/tools/cmd/godoc@latest            # godoc
+```
+
+## vscode调试golang程序
+
+`launch.json` 例子：
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Package",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/cmd/<app name>",
+            "env": {
+                "GOARCH": "amd64"
+            },
+            "args": [],
+            "showLog": true
+        }
+    ]
+}
 ```
 
 ## golang 项目结构布局
