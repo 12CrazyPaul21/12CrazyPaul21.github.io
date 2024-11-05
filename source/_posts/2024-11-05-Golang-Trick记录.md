@@ -46,7 +46,9 @@ go install -v golang.org/x/tools/cmd/godoc@latest            # godoc
             "mode": "debug",
             "program": "${workspaceFolder}/cmd/<app name>",
             "env": {
-                "GOARCH": "amd64"
+                "GOARCH": "amd64",
+                // 可以用这种方法在程序内通过环境变量来判断是否处于调试模式 os.Getenv("DEBUG")
+                "DEBUG": "true",
             },
             "args": [],
             "showLog": true
