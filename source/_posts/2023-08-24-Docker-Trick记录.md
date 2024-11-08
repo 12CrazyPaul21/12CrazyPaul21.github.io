@@ -247,8 +247,6 @@ RUN go mod download
 COPY . .
 ```
 
-
-
 # 时间
 
 ## alpine发行版改为上海时区
@@ -261,5 +259,21 @@ RUN apk --update add tzdata && \
 # 根据需要清理tzdata包和包缓存，安装tzdata包是为了拿里面得时区数据而已
 RUN apk del tzdata && \
 	rm -rf /var/cache/apk/*
+```
+
+# 配置
+
+## 容器随着docker一起启动、重启
+
+如果是在 `compose.yml` 内配置的话，可以：
+
+```yaml
+restart: always
+```
+
+直接更新容器的配置的话，可以：
+
+```bash
+docker update --restart=always <容器名>
 ```
 
